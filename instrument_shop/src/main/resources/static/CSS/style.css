@@ -31487,7 +31487,7 @@ input::-webkit-inner-spin-button {
      sidebar css start
 ==========================**/
 .page-sidebar {
-  margin-top: 77px;
+  margin-top: 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -32734,6 +32734,7 @@ input::-webkit-inner-spin-button {
 
 .page-wrapper.horizontal-sidebar .horizontal-logo {
   display: flex !important;
+  /* height: max-content; */
 }
 
 .page-wrapper.compact-wrapper .horizontal-logo {
@@ -32769,7 +32770,7 @@ input::-webkit-inner-spin-button {
 }
 
 .page-wrapper .page-body-wrapper .page-body {
-  min-height: calc(100vh - 136px);
+  min-height: calc(100vh - 70px);
   padding: 0 15px 0 15px;
   position: relative;
   transition: 0.5s;
@@ -33217,7 +33218,7 @@ header a:hover .svg-color {
 
 header .page-main-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 15px 30px;
   align-items: center;
 }

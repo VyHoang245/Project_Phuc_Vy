@@ -31,7 +31,6 @@ public class ProductControllers {
 		System.out.println(productService.getAllProducts());
         model.addAttribute("products", productService.getAllProducts());
         model.addAttribute("categories", categoryService.getAllCategories());
-
         return "index"; 
     }
     
@@ -44,14 +43,14 @@ public class ProductControllers {
     @GetMapping("/addProduct")
     public String AddUser(Model model) {
     	model.addAttribute("product", new Product());
-    	//model.addAttribute("categories", categoryService.getAllCategories());
-    	return "admin/add-products";
+    	model.addAttribute("categories", categoryService.getAllCategories());
+    	return "addProduct";
     }
     
     @PostMapping("/saveProduct")
     public String saveProduct(Product product) {
     	productService.saveOrUpdateProduct(product);
-    	return "redirect:/getProducts";
+        return "redirect:/admin/products";
     }
     
     @GetMapping("/editProduct/{id}")
@@ -69,16 +68,17 @@ public class ProductControllers {
     }
     
     @PutMapping("/editSaveProduct")
-    public String editSaveProduct(@ModelAttribute Product product) {
+    public String editSaveProduct(@ModelAttribute Product product
+    ) {
     	productService.saveOrUpdateProduct(product);
 
-    	return "redirect:/getProducts";
+        return "redirect:/admin/products";
     }
     
     @GetMapping("/admin/products")
     public String listProducts(Model model) {
     	model.addAttribute("products", productService.getAllProducts());
-    	model.addAttribute("categories", categoryService.getAllCategories());
+    	//model.addAttribute("categories", categoryService.getAllCategories());
     	return "admin/list-products";
     }
 	

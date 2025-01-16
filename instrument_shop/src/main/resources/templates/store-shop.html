@@ -1,0 +1,828 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>PV Symphony</title>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="Images/logo_with_V_and_P__instrument-removebg-preview.png">
+    <link rel="apple-touch-icon" href="Images/logo_with_V_and_P__instrument-removebg-preview.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Images/logo_with_V_and_P__instrument-removebg-preview.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Images/logo_with_V_and_P__instrument-removebg-preview.png">
+    <!-- google fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" href="CSS/vendors.min.css">
+    <link rel="stylesheet" href="CSS/icon.min.css">
+    <link rel="stylesheet" href="CSS/style.min.css">
+    <link rel="stylesheet" href="CSS/responsive.min.css">
+    <link rel="stylesheet" href="CSS/decor-store.css">
+</head>
+
+<body data-mobile-nav-style="classic">
+    <!-- start header -->
+    <header class="header-with-topbar">
+        <!-- start navigation -->
+        <nav class="navbar navbar-expand-lg header-light bg-transparent disable-fixed" data-header-hover="light">
+            <div class="container-fluid">
+                <div class="col-auto">
+                    <a class="navbar-brand" href="store.html">
+                        <img src="" data-at2x="" alt="" class="default-logo">
+                        <img src="" data-at2x="" alt="" class="alt-logo">
+                        <img src="" data-at2x="" alt="" class="mobile-logo">
+                    </a>
+                </div>
+                <div class="col-auto menu-order position-static xs-ps-0">
+                    <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav alt-font">
+                            <li class="nav-item"><a href="store.html" class="nav-link">Home</a></li>
+                            <li class="nav-item dropdown simple-dropdown">
+                                <a href="store-shop.html" class="nav-link">Shop</a>
+                                <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                                    <li><a href="store-shop.html">Piano</a></li>
+                                    <li><a href="store-shop.html">Guitar</a></li>
+                                    <li><a href="store-shop.html">Violin</a></li>
+                                    <li><a href="store-shop.html">Drum</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown simple-dropdown">
+                                <a href="javascript:void(0);" class="nav-link">Pages</a>
+                                <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                                    <li><a href="store-about.html">About</a></li>
+                                    <li><a href="store-faq.html">FAQs</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="store-blog.html" class="nav-link">Blog</a></li>
+                            <li class="nav-item"><a href="store-contact.html" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto ms-auto">
+                    <div class="header-icon">
+                        <div class="header-search-icon icon">
+                            <a href="javascript:void(0)" class="search-form-icon header-search-form"><i
+                                    class="feather icon-feather-search"></i></a>
+                            <div class="search-form-wrapper">
+                                <button title="Close" type="button" class="search-close alt-font">×</button>
+                                <form id="search-form" role="search" method="get" class="search-form bg-white"
+                                    action="search-result.html">
+                                    <div class="search-form-box">
+                                        <h2 class="text-dark-gray text-center mb-7 alt-font fw-700 ls-minus-1px">What
+                                            are you looking for?</h2>
+                                        <input class="search-input alt-font" id="search-form-input5e219ef164995"
+                                            placeholder="Enter your keywords..." name="s" value="" type="text"
+                                            autocomplete="off">
+                                        <button type="submit" class="search-button">
+                                            <i class="feather icon-feather-search" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="header-cart-icon icon">
+                            <div class="header-cart dropdown">
+                                <a href="javascript:void(0);"><i class="feather icon-feather-shopping-bag"></i>
+                                    <!-- <span
+                                        class="cart-count alt-font">2</span> -->
+                                </a>
+                                <!-- <ul class="cart-item-list">
+                                    <li class="cart-item align-items-center">
+                                        <a href="javascript:void(0);" class="alt-font close">×</a>
+                                        <div class="product-image">
+                                            <a href="store-single-product.html"><img
+                                                    src="Images/demo-decor-store-product-01.jpg" class="cart-thumb"
+                                                    alt=""></a>
+                                        </div>
+                                        <div class="product-detail alt-font fw-600">
+                                            <a href="store-single-product.html">Table clock</a>
+                                            <span class="item-ammount fw-500">1 x $23.00</span>
+                                        </div>
+                                    </li>
+                                    <li class="cart-item align-items-center">
+                                        <a href="javascript:void(0);" class="alt-font close">×</a>
+                                        <div class="product-image">
+                                            <a href="store-single-product.html"><img
+                                                    src="Images/demo-decor-store-product-03.jpg" class="cart-thumb"
+                                                    alt=""></a>
+                                        </div>
+                                        <div class="product-detail alt-font fw-600">
+                                            <a href="store-single-product.html">Ceramic mug</a>
+                                            <span class="item-ammount fw-500">2 x $15.00</span>
+                                        </div>
+                                    </li>
+                                    <li class="cart-total">
+                                        <div class="alt-font mb-15px"><span class="w-50 fw-500">Subtotal:</span><span
+                                                class="w-50 text-end fw-700">$199.99</span></div>
+                                        <a href="store-cart.html"
+                                            class="btn btn-large btn-transparent-base-color border-color-extra-medium-gray btn-round-edge">View
+                                            cart</a>
+                                        <a href="store-checkout.html"
+                                            class="btn btn-large btn-base-color btn-box-shadow btn-round-edge">Checkout</a>
+                                    </li>
+                                </ul> -->
+                            </div>
+                        </div>
+                        <div class="widget-text md-ms-20px alt-font">
+                            <a href="store-login.html" class="fs-17 fw-600"><i
+                                    class="feather icon-feather-user d-inline-block d-xl-none"></i><span
+                                    class="d-none d-xl-inline-block"> <i class="bi bi-person"
+                                        style="font-size: larger;"></i>
+                                    <!-- Login -->
+                                </span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- end header -->
+    <!-- start page title -->
+    <section class="page-title-center-alignment cover-background top-space-padding"
+        style="background-image: url(Images/demo-decor-store-title-bg.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center position-relative page-title-extra-large">
+                    <h1 class="alt-font d-inline-block fw-700 ls-minus-05px text-base-color mb-10px mt-3 md-mt-50px">
+                        Shop</h1>
+                </div>
+                <div class="col-12 breadcrumb breadcrumb-style-01 d-flex justify-content-center">
+                    <ul>
+                        <li><a href="store.html">Home</a></li>
+                        <li>shop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end page title -->
+    <!-- start section -->
+    <section class="ps-6 pe-6 lg-ps-3 lg-pe-3 sm-ps-0 sm-pe-0">
+        <div class="container-fluid">
+            <div class="row flex-row-reverse">
+                <div class="col-xxl-10 col-lg-9 ps-5 md-ps-15px md-mb-60px">
+                    <div class="toolbar-wrapper border-bottom border-color-extra-medium-gray d-flex flex-column flex-sm-row align-items-center w-100 mb-40px md-mb-30px pb-15px"
+                        data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay":50, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <!-- <div class="xs-mb-10px">
+                            <a href="#" class="me-10px"><img src="Images/shop-two-column.svg" class="opacity-5"
+                                    alt=""></a>
+                            <a href="#" class="me-10px"><img src="Images/shop-three-column.svg" class="opacity-5"
+                                    alt=""></a>
+                            <a href="#" class="me-10px"><img src="Images/shop-four-column.svg" class="opacity-5"
+                                    alt=""></a>
+                            <a href="#"><img src="Images/shop-list.svg" class="opacity-5" alt=""></a>
+                        </div>
+                        <div class="ms-20px xs-ms-0">Showing 1–12 of 48 results</div> -->
+                        <div class="mx-auto me-sm-0">
+                            <select class="form-select border-0 background-position-right" aria-label="Default sorting">
+                                <option selected="">Default sorting</option>
+                                <option value="1">Sort by popularity</option>
+                                <option value="2">Sort by average rating</option>
+                                <option value="3">Sort by latest</option>
+                                <option value="4">Sort by price: low to high</option>
+                                <option value="5">Sort by price: high to low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <ul class="shop-boxed shop-wrapper grid-loading grid grid-4col xxl-grid-4col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-large text-center"
+                        data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay":100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <li class="grid-sizer"></li>
+                        <!-- start shop item -->
+                        <li class="grid-item">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Fiddlerman Orchestra Beginner-1 (or OB1) Violin Outfit.png"
+                                            alt="">
+                                        <span class="lable hot">Hot</span>
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">Fiddlerman Orchestra
+                                        Beginner-1 (or OB1) Violin
+                                        Outfit</a>
+                                    <div class="fw-500 fs-15 lh-normal">$350.10</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Ming Jiang Zhu 905 x Bam x CodaBow Violin Bundle.png" alt="">
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">Ming
+                                        Jiang Zhu 905 x Bam x CodaBow Violin Bundle</a>
+                                    <div class="fw-500 fs-15 lh-normal">$2,429.49</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item ">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Pearl Midtown 4-Piece Complete Drum Set Pure White.png" alt="">
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">Pearl Midtown
+                                        4-Piece Complete Drum Set Pure
+                                        White</a>
+                                    <div class="fw-500 fs-15 lh-normal">$499.99</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Ibanez TCY10E Talman Acoustic-Electric Guitar Surf Green.png"
+                                            alt="">
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">TCY10E Talman
+                                        Acoustic-Electric Guitar Surf Green</a>
+                                    <div class="fw-500 fs-15 lh-normal">$299.99</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/the-ro-RG-624 -dreadnought-acoustic-guitar.png" alt="">
+                                        <span class="lable hot">Hot</span>
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">Rogue RA-090
+                                        Concert Acoustic Guitar Natural</a>
+                                    <div class="fw-500 fs-15 lh-normal"><del>$99.99</del>$69.99</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Yamaha SV-255 Silent™ Series 5-string Electric Violin.png"
+                                            alt="">
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">Yamaha SV-255
+                                        Silent™ Series 5-string Electric
+                                        Violin</a>
+                                    <div class="fw-500 fs-15 lh-normal">$2,096.99</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item ">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Fiddlerman Apprentice Violin Outfit.png" alt="">
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">Fiddlerman
+                                        Apprentice Violin Outfit</a>
+                                    <div class="fw-500 fs-15 lh-normal">$499.99
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item ">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Williams Symphony Concert Digital Grand With Touchscreen and Bench Ebony 88 Key.png"
+                                            alt="">
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">Williams Symphony
+                                        Concert Digital Grand With
+                                        Touchscreen and Bench Ebony 88 Key</a>
+                                    <div class="fw-500 fs-15 lh-normal"><del>$3,199.99</del>$2,399.99
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Williams Allegro IV 88-Key Digital Piano With Bluetooth and Sustain Pedal Black.png"
+                                            alt="">
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">Williams Allegro IV
+                                        88-Key Digital Piano With
+                                        Bluetooth and Sustain Pedal Black
+                                    </a>
+                                    <div class="fw-500 fs-15 lh-normal">$349.99</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Nord Stage 4 Compact 73-Key Keyboard.png" alt="">
+                                        <span class="lable new">New</span>
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">Nord
+                                        Stage 4 Compact 73-Key Keyboard</a>
+                                    <div class="fw-500 fs-15 lh-normal">$4,899.98</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/PDP by DW Encore Complete 5-Piece Drum Set With Hardware & Cymbals Azure Blue.png"
+                                            alt="">
+                                        <span class="lable hot">Hot</span>
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html"
+                                        class="text-dark-gray fs-17 alt-font fw-600 nameItems">PDP
+                                        by DW Encore Complete 5-Piece Drum Set With Hardware & Cymbals
+                                        Azure Blue</a>
+                                    <div class="fw-500 fs-15 lh-normal"><del>$499.99</del> $399.99</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                        <!-- start shop item -->
+                        <li class="grid-item">
+                            <div class="shop-box pb-25px block-items">
+                                <div class="shop-image block-img-items">
+                                    <a href="store-single-product.html">
+                                        <img src="Images/Roland TD-17KVX2 V-Drums Kit.png" alt="">
+                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                        </div>
+                                    </a>
+                                    <div class="shop-hover d-flex justify-content-center">
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                class="feather icon-feather-heart fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                        <a href="#"
+                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                class="feather icon-feather-eye fs-15"></i></a>
+                                    </div>
+                                </div>
+                                <div class="shop-footer text-center pt-20px">
+                                    <a href="store-single-product.html" class="text-dark-gray fs-17 alt-font fw-600"
+                                        id="nameItems">Roland TD-17KVX2
+                                        V-Drums Kit</a>
+                                    <div class="fw-500 fs-15 lh-normal">$1,899.99</div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end shop item -->
+                    </ul>
+                    <div class="w-100 d-flex mt-3 justify-content-center"
+                        data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay":100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <ul class="pagination pagination-style-01 fs-13 fw-500 mb-0">
+                            <li class="page-item"><a class="page-link" href="#"><i
+                                        class="feather icon-feather-arrow-left fs-18 d-xs-none"></i></a></li>
+                            <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                            <li class="page-item "><a class="page-link" href="#">02</a></li>
+                            <li class="page-item"><a class="page-link" href="#">03</a></li>
+                            <li class="page-item"><a class="page-link" href="#">04</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i
+                                        class="feather icon-feather-arrow-right fs-18 d-xs-none"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xxl-2 col-lg-3 shop-sidebar">
+                    <div class="mb-30px">
+                        <span class="alt-font fw-600 fs-17 text-dark-gray d-block mb-10px">Filter by categories</span>
+                        <ul class="fs-15 shop-filter category-filter">
+                            <li><a href="#"><span class="product-cb product-category-cb"></span>Piano</a><span
+                                    class="item-qty">22</span></li>
+                            <li><a href="#"><span class="product-cb product-category-cb"></span>Violin</a><span
+                                    class="item-qty">28</span></li>
+                            <li><a href="#"><span class="product-cb product-category-cb"></span>Drum</a><span
+                                    class="item-qty">36</span></li>
+                            <li><a href="#"><span class="product-cb product-category-cb"></span>Guitar</a><span
+                                    class="item-qty">24</span></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="mb-30px">
+                        <span class="alt-font fw-600 fs-17 text-dark-gray d-block mb-10px">Filter by color</span>
+                        <ul class="fs-15 shop-filter color-filter">
+                            <li><a href="#"><span class="product-cb product-color-cb"
+                                        style="background-color:#232323"></span>Black</a><span
+                                    class="item-qty">05</span></li>
+                            <li><a href="#"><span class="product-cb product-color-cb"
+                                        style="background-color:#8E412E"></span>Chestnut</a><span
+                                    class="item-qty">24</span></li>
+                            <li><a href="#"><span class="product-cb product-color-cb"
+                                        style="background-color:#E0A699"></span>Brown</a><span
+                                    class="item-qty">32</span></li>
+                            <li><a href="#"><span class="product-cb product-color-cb"
+                                        style="background-color:#E0A699"></span>Pastel pink</a><span
+                                    class="item-qty">22</span></li>
+                            <li><a href="#"><span class="product-cb product-color-cb"
+                                        style="background-color:#9DA693"></span>Litchen green</a><span
+                                    class="item-qty">09</span></li>
+                            <li><a href="#"><span class="product-cb product-color-cb"
+                                        style="background-color:#E7C06D"></span>Yellow</a><span
+                                    class="item-qty">06</span></li>
+                        </ul>
+                    </div> -->
+                    <!-- <div class="mb-30px">
+                        <span class="alt-font fw-600 fs-17 text-dark-gray d-block mb-10px">Filter by fabric</span>
+                        <ul class="fs-15 shop-filter fabric-filter">
+                            <li><a href="#"><span class="product-cb product-fabric-cb"><img
+                                            src="Images/demo-decor-store-product-listing-fabric-01.jpg"
+                                            alt=""></span>Polyolefin</a><span class="item-qty">08</span></li>
+                            <li><a href="#"><span class="product-cb product-fabric-cb"><img
+                                            src="Images/demo-decor-store-product-listing-fabric-02.jpg"
+                                            alt=""></span>Jute fabric</a><span class="item-qty">03</span></li>
+                            <li><a href="#"><span class="product-cb product-fabric-cb"><img
+                                            src="Images/demo-decor-store-product-listing-fabric-03.jpg"
+                                            alt=""></span>Crepe fabric</a><span class="item-qty">20</span></li>
+                            <li><a href="#"><span class="product-cb product-fabric-cb"><img
+                                            src="Images/demo-decor-store-product-listing-fabric-04.jpg"
+                                            alt=""></span>Wollen fabric</a><span class="item-qty">08</span></li>
+                        </ul>
+                    </div> -->
+                    <div class="mb-30px">
+                        <span class="alt-font fw-600 fs-17 text-dark-gray d-block mb-10px">Filter by price</span>
+                        <ul class="fs-15 shop-filter price-filter">
+                            <li><a href="#"><span class="product-cb product-category-cb"></span>Under $500</a><span
+                                    class="item-qty">08</span></li>
+                            <li><a href="#"><span class="product-cb product-category-cb"></span>$500 to $750</a><span
+                                    class="item-qty">05</span></li>
+                            <li><a href="#"><span class="product-cb product-category-cb"></span>$750 to $1,000</a><span
+                                    class="item-qty">25</span></li>
+                            <li><a href="#"><span class="product-cb product-category-cb"></span>$1,000 to
+                                    $1,500</a><span class="item-qty">18</span></li>
+                            <li><a href="#"><span class="product-cb product-category-cb"></span>$1,500 & Above</a><span
+                                    class="item-qty">36</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div>
+                        <span class="alt-font fw-600 fs-17 text-dark-gray d-block mb-10px">Filter by tags</span>
+                        <div class="shop-filter tag-cloud">
+                            <a href="#">furniture</a>
+                            <a href="#">living room</a>
+                            <a href="#">lamp</a>
+                            <a href="#">modern</a>
+                            <a href="#">wooden</a>
+                            <a href="#">armchair</a>
+                            <a href="#">dining room</a>
+                            <a href="#">handmade</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start footer -->
+    <footer class="footer-dark bg-dark-gray pb-0 pt-0 cover-background"
+        style="background-image:url('Images/demo-decor-store-footer-bg.jpg')">
+        <div class="container pt-4 pb-4 md-pt-45px md-pb-45px">
+            <div class="row justify-content-center">
+                <!-- start footer column -->
+                <div class="col-6 col-lg-3 last-paragraph-no-margin order-sm-1 md-mb-50px xs-mb-30px">
+                    <a href="store.html" class="footer-logo mb-15px d-inline-block"><img
+                            src="Images/Logo_PhucVYSymphony.png" style="max-width: 100%;"></a>
+                    <p class="w-80 sm-w-100">Lorem ipsum amet adipiscing elit to eiusmod ad tempor.</p>
+                    <div class="elements-social social-icon-style-02 mt-15px">
+                        <ul class="small-icon light">
+                            <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
+                                        class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i
+                                        class="fa-brands fa-dribbble"></i></a></li>
+                            <li><a class="twitter" href="https://www.twitter.com" target="_blank"><i
+                                        class="fa-brands fa-twitter"></i></a></li>
+                            <li><a class="instagram" href="https://www.instagram.com" target="_blank"><i
+                                        class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end footer column -->
+                <!-- start footer column -->
+                <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
+                    <span class="fs-16 alt-font fw-500 d-block text-white mb-5px">Categories</span>
+                    <ul>
+                        <li><a href="store-shop.html">Piano</a></li>
+                        <li><a href="store-shop.html">Guitar</a></li>
+                        <li><a href="store-shop.html">Violin</a></li>
+                        <li><a href="store-shop.html">Drum</a></li>
+                    </ul>
+                </div>
+                <!-- end footer column -->
+                <!-- start footer column -->
+                <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
+                    <span class="fs-16 alt-font fw-500 d-block text-white mb-5px">Information</span>
+                    <ul>
+                        <li><a href="store-about.html">About us</a></li>
+                        <li><a href="store-contact.html">Contact us</a></li>
+                        <li><a href="store-faq.html">FAQs</a></li>
+                        <!-- <li><a href="store-faq.html">Payment</a></li> -->
+                    </ul>
+                </div>
+                <!-- end footer column -->
+                <!-- start footer column -->
+                <!-- <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
+                    <span class="fs-16 alt-font fw-500 d-block text-white mb-5px">Account</span>
+                    <ul>
+                        <li><a href="store-account.html">My account</a></li>
+                        <li><a href="store-cart.html">Orders</a></li>
+                        <li><a href="store-checkout.html">Checkout</a></li>
+                        <li><a href="#">My wishlists</a></li>
+                    </ul>
+                </div> -->
+                <!-- end footer column -->
+                <!-- start footer column -->
+                <div class="col-lg-3 col-sm-6 ps-20px sm-ps-15px md-mb-50px xs-mb-0 order-sm-2 order-lg-5">
+                    <span class="fs-16 alt-font fw-500 d-block text-white mb-5px">Newsletter</span>
+                    <div class="mb-20px">Get everything you need succeed!</div>
+                    <div class="d-inline-block w-100 newsletter-style-02 position-relative mb-15px">
+                        <form action="email-templates/subscribe-newsletter.php" method="post"
+                            class="position-relative w-100">
+                            <input
+                                class="bg-blue-tangaroa border-color-transparent-white-light w-100 form-control pe-50px ps-20px lg-ps-15px required"
+                                type="email" name="email" placeholder="Enter your email">
+                            <input type="hidden" name="redirect" value="">
+                            <button class="btn pe-20px submit" aria-label="submit"><i
+                                    class="icon feather icon-feather-mail icon-small text-white"></i></button>
+                            <div
+                                class="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="footer-card">
+                        <a href="#" class="d-inline-block me-5px align-middle"><img
+                                src="Images/demo-decor-store-payment-icon-01.png" alt=""></a>
+                        <a href="#" class="d-inline-block me-5px align-middle"><img
+                                src="Images/demo-decor-store-payment-icon-02.png" alt=""></a>
+                        <a href="#" class="d-inline-block me-5px align-middle"><img
+                                src="Images/demo-decor-store-payment-icon-03.png" alt=""></a>
+                        <a href="#" class="d-inline-block me-5px align-middle"><img
+                                src="Images/demo-decor-store-payment-icon-04.png" alt=""></a>
+                    </div>
+                </div>
+                <!-- end footer column -->
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- start scroll progress -->
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+        </a>
+    </div>
+    <!-- end scroll progress -->
+    <!-- javascript libraries -->
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="text/javascript" src="JS/jquery.js"></script>
+    <script type="text/javascript" src="JS/vendors.min.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
+</body>
+
+</html>

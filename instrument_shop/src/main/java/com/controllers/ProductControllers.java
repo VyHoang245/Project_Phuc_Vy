@@ -7,17 +7,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.models.Product;
-import com.models.Category;
-import com.services.ProductRepository;
 import com.services.ProductService;
 import com.services.CategoryService;
-import com.services.CategoryRepository;
-
-import java.util.*;
 
 @Controller
 public class ProductControllers {
@@ -31,9 +24,68 @@ public class ProductControllers {
 		System.out.println(productService.getAllProducts());
         model.addAttribute("products", productService.getAllProducts());
         model.addAttribute("categories", categoryService.getAllCategories());
-        return "index"; 
+        return "store";
     }
-    
+
+    @GetMapping("/shop")
+    public String shop(Model model) {
+        model.addAttribute("products", productService.getAllProducts());
+        return "store-shop";
+    }
+
+    @GetMapping("/about")
+    public String about(Model model) {
+//        model.addAttribute("products", productService.getAllProducts());
+        return "store-about";
+    }
+
+    @GetMapping("/faq")
+    public String faq(Model model) {
+//        model.addAttribute("products", productService.getAllProducts());
+        return "store-faq";
+    }
+
+    @GetMapping("/blog")
+    public String blog(Model model) {
+        return "store-blog";
+    }
+
+    @GetMapping("/blog-detail")
+    public String blogDetail(Model model) {
+//        model.addAttribute("products", productService.getAllProducts());
+        return "store-blog-single-classic";
+    }
+
+    @GetMapping("/contact")
+    public String contact(Model model) {
+        return "store-contact";
+    }
+
+    @GetMapping("/cart")
+    public String cart(Model model) {
+        return "store-cart";
+    }
+
+    @GetMapping("/checkout")
+    public String checkout(Model model) {
+        return "store-checkout";
+    }
+
+    @GetMapping("/login")
+    public String login(Model model) {
+        return "store-login";
+    }
+
+    @GetMapping("/registration")
+    public String registration(Model model) {
+        return "store-registration";
+    }
+
+    @GetMapping("/product-detail")
+    public String productDetail(Model model) {
+        return "store-single-product";
+    }
+
     @GetMapping("/getProducts")
     public String geProducts(Model model) {
         model.addAttribute("products", productService.getAllProducts());
@@ -46,11 +98,7 @@ public class ProductControllers {
     	model.addAttribute("categories", categoryService.getAllCategories());
     	return "addProduct";
     }
-    @GetMapping("/shop")
-    public String shop(Model model) {
-        model.addAttribute("products", productService.getAllProducts());
-        return "store-shop";
-    }
+
     
     @PostMapping("/saveProduct")
     public String saveProduct(Product product) {

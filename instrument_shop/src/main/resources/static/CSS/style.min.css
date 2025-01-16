@@ -9835,7 +9835,8 @@ header.sticky .navbar.disable-fixed {
 .header-icon .icon .header-account>a,
 .header-icon .icon .header-cart>a,
 .header-icon .icon .header-language>a {
-    padding-left: 14px;
+    /* padding-left: 14px; */
+    padding: 25px;
     color: var(--white);
     font-size: 17px
 }
@@ -9953,8 +9954,8 @@ header.sticky .navbar.disable-fixed {
 
 .header-cart-icon .cart-count {
     position: absolute;
-    top: -7px;
-    right: -11px;
+    top: 15px;
+    left: 40px;
     width: 17px;
     height: 17px;
     font-weight: 600;
@@ -11374,6 +11375,7 @@ button:focus {
     margin-top: 96px
 }
 
+/* Chỉnh cái này */
 .top-space-padding {
     padding-top: 50px !important
 }
@@ -22104,7 +22106,7 @@ canvas {
 }
 
 .nameItems,
-.titleNewss {
+.titleNews {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;

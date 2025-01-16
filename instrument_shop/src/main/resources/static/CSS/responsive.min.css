@@ -27603,6 +27603,18 @@
         padding-left: 50px;
         padding-right: 50px
     }
+
+    .header-cart>a {
+        margin-left: 20px;
+    }
+
+    .header-cart-icon .cart-count {
+        left: 30px;
+    }
+
+    .footerContent {
+        text-align: center;
+    }
 }
 
 @media (max-width:767px) {

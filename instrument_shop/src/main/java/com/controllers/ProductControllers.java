@@ -46,6 +46,11 @@ public class ProductControllers {
     	model.addAttribute("categories", categoryService.getAllCategories());
     	return "addProduct";
     }
+    @GetMapping("/shop")
+    public String shop(Model model) {
+        model.addAttribute("products", productService.getAllProducts());
+        return "store-shop";
+    }
     
     @PostMapping("/saveProduct")
     public String saveProduct(Product product) {

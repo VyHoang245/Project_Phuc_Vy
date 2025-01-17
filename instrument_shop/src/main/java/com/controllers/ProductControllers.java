@@ -106,6 +106,20 @@ public class ProductControllers {
         return "admin";
     }
 
+    @GetMapping("/manage-products")
+    public String managePoducts(Model model) {
+//        model.addAttribute("product", new Product());
+//        model.addAttribute("categories", categoryService.getAllCategories());
+        return "manage-products";
+    }
+
+    @GetMapping("/category")
+    public String category(Model model) {
+//        model.addAttribute("product", new Product());
+//        model.addAttribute("categories", categoryService.getAllCategories());
+        return "category";
+    }
+
     @PostMapping("/saveProduct")
     public String saveProduct(Product product) {
     	productService.saveOrUpdateProduct(product);

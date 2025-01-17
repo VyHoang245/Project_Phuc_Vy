@@ -15,13 +15,13 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&amp;display=swap"
     rel="stylesheet" />
-  <!-- fontawesome -->
+  <!-- Fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
     integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Whether Icon css-->
-  <link rel="stylesheet" type="text/css" href="../CSS/scrollbar.css" />
-  <link rel="stylesheet" type="text/css" href="../CSS/quill.snow.css" />
+  <link rel="stylesheet" type="text/css" href="../CSS/vendors/scrollbar.css" />
+  <link rel="stylesheet" type="text/css" href="../CSS/style-simple-datatable.css" />
   <link rel="stylesheet" type="text/css" href="../CSS/slick.css" />
   <link rel="stylesheet" type="text/css" href="../CSS/slick-theme.css" />
   <!-- App css -->
@@ -32,7 +32,7 @@
 <body>
   <!-- page-wrapper Start-->
   <!-- tap on top starts-->
-  <div class="tap-top"><i class="iconly-Arrow-Up icli"></i></div>
+  <div class="tap-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
   <!-- tap on tap ends-->
   <!-- loader-->
   <div class="loader-wrapper">
@@ -146,7 +146,7 @@
             <li class="sidebar-list"> <i class="fa fa-thumb-tack fa-thumbtack"></i>
               <a class="sidebar-link" href="/category">
                 <i class="fa fa-table" aria-hidden="true"></i>
-                <h6 class="f-w-600">Manage Categoris</h6>
+                <h6 class="f-w-600">Manage Categories</h6>
               </a>
             </li>
             <li class="sidebar-list"> <i class="fa fa-thumb-tack fa-thumbtack"></i>
@@ -189,39 +189,167 @@
           <div class="page-title">
             <div class="row">
               <div class="col-sm-6 col-12">
-                <h2>Default Dashboard</h2>
-                <p class="mb-0 text-title-gray">Welcome back! Let’s start from where you left.</p>
+                <h2>Category</h2>
               </div>
               <div class="col-sm-6 col-12">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="/admin"><i class="fa fa-home svg-color"></i></a></li>
-                  <li class="breadcrumb-item">Dashboard</li>
+                  <li class="breadcrumb-item"> Manage Categories</li>
                 </ol>
               </div>
             </div>
           </div>
         </div>
         <!-- Container-fluid starts-->
-
-        <!-- jquery-->
-        <script src="../JS/jquery.min.js"></script>
-        <!-- bootstrap js-->
-        <script src="../JS/bootstrap.bundle.min.js" defer=""></script>
-        <script src="../JS/popper.min.js" defer=""></script>
-        <!--fontawesome-->
-        <script src="../JS/fontawesome-min.js"></script>
-        <!-- feather-->
-        <script src="../JS/feather.min.js"></script>
-        <script src="../JS/custom-script.js"></script>
-        <!-- sidebar -->
-        <script src="../JS/sidebar.js"></script>
-        <!--print-->
-        <script src="../JS/print.js"></script>
-        <!-- scrollbar-->
-        <script src="../JS/simplebar.js"></script>
-        <script src="../JS/custom.js"></script>
-        <!-- custom script -->
-        <script src="../JS/script.js"></script>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="list-product-header">
+                    <div>
+                      <div class="light-box"><a data-bs-toggle="collapse" href="#collapseProduct" role="button"
+                          aria-expanded="false" aria-controls="collapseProduct"><i class="filter-icon show"
+                            data-feather="filter"></i><i class="fa fa-times icon-close filter-close hide"></i></a></div>
+                      <a class="btn btn-primary" href="#!"><i class="fa-solid fa fa-plus"></i>Add Category</a>
+                    </div>
+                    <div class="collapse" id="collapseProduct">
+                      <div class="card card-body list-product-body">
+                        <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 g-3">
+                          <div class="col">
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected="">Choose Product</option>
+                              <option value="1">Apple iphone 13 Pro</option>
+                            </select>
+                          </div>
+                          <div class="col">
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected="">Choose Category</option>
+                              <option value="1">Furniture</option>
+                            </select>
+                          </div>
+                          <div class="col">
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected="">Choose Sub Category</option>
+                              <option value="1">Smart Phones</option>
+                            </select>
+                          </div>
+                          <div class="col">
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected="">Status</option>
+                              <option value="1">Sold Out </option>
+                            </select>
+                          </div>
+                          <div class="col">
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected="">Price</option>
+                              <option value="1">56000.00</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-product list-category">
+                    <table class="table" id="project-status">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input checkbox-primary" type="checkbox" />
+                            </div>
+                          </th>
+                          <th> <span class="f-light f-w-600">Category</span></th>
+                          <th> <span class="f-light f-w-600">Description</span></th>
+                          <th> <span class="f-light f-w-600">Category Type</span></th>
+                          <th> <span class="f-light f-w-600">Action</span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="product-removes">
+                          <td>
+                            <div class="form-check">
+                              <input class="form-check-input checkbox-primary" type="checkbox" />
+                            </div>
+                          </td>
+                          <td>
+                            <div class="product-names">
+                              <div class="light-product-box"><img class="img-fluid" src="../assets/images/product/1.png"
+                                  alt="t-shirt" /></div>
+                              <p>T-Shirts</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="f-light">Special PriceGet at flat ₹229</p>
+                          </td>
+                          <td> <span class="badge badge-light-primary">Clothing</span></td>
+                          <td>
+                            <div class="product-action">
+                              <i class="fa fa-pencil" aria-hidden="true"></i>
+                              <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="product-removes">
+                          <td>
+                            <div class="form-check">
+                              <input class="form-check-input checkbox-primary" type="checkbox" />
+                            </div>
+                          </td>
+                          <td>
+                            <div class="product-names">
+                              <div class="light-product-box"><img class="img-fluid"
+                                  src="../assets/images/product/product-categories/1.png" alt="chairs" /></div>
+                              <p>Chairs</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="f-light">Passed 30+ quality checks performed by experts for Comfort & Design.</p>
+                          </td>
+                          <td> <span class="badge badge-light-secondary">Accessories</span></td>
+                          <td>
+                            <div class="product-action">
+                              <i class="fa fa-pencil" aria-hidden="true"></i>
+                              <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Container-fluid starts-->
+      </div>
+    </div>
+  </div>
+  <!-- jquery-->
+  <script src="../JS/jquery.min.js"></script>
+  <!-- bootstrap js-->
+  <script src="../JS/bootstrap.bundle.min.js" defer=""></script>
+  <script src="../JS/popper.min.js" defer=""></script>
+  <!--fontawesome-->
+  <script src="../JS/fontawesome-min.js"></script>
+  <!-- feather-->
+  <script src="../JS/feather.min.js"></script>
+  <script src="../JS/custom-script.js"></script>
+  <!-- sidebar -->
+  <script src="../JS/sidebar.js"></script>
+  <!-- scrollbar-->
+  <script src="../JS/simplebar.js"></script>
+  <script src="../JS/custom.js"></script>
+  <!-- slick-->
+  <script src="../JS/slick.min.js"></script>
+  <script src="../JS/slick.js"></script>
+  <!-- datatables-->
+  <script src="../JS/simple-datatables%40latest.js"></script>
+  <!-- custom_list_product-->
+  <script src="../JS/custom-list-product.js"></script>
+  <!-- custom script -->
+  <script src="../JS/script.js"></script>
 </body>
 
 </html>

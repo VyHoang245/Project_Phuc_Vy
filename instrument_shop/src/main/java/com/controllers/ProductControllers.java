@@ -99,7 +99,13 @@ public class ProductControllers {
     	return "addProduct";
     }
 
-    
+    @GetMapping("/admin")
+    public String adminDashboard(Model model) {
+//        model.addAttribute("product", new Product());
+//        model.addAttribute("categories", categoryService.getAllCategories());
+        return "admin";
+    }
+
     @PostMapping("/saveProduct")
     public String saveProduct(Product product) {
     	productService.saveOrUpdateProduct(product);

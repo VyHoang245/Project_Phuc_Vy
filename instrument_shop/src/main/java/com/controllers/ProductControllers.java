@@ -108,8 +108,8 @@ public class ProductControllers {
 
     @GetMapping("/manage-products")
     public String managePoducts(Model model) {
-//        model.addAttribute("product", new Product());
-//        model.addAttribute("categories", categoryService.getAllCategories());
+        model.addAttribute("products", productService.getAllProducts());
+        model.addAttribute("categories", categoryService.getAllCategories());
         return "manage-products";
     }
 
@@ -151,7 +151,7 @@ public class ProductControllers {
     @GetMapping("/admin/products")
     public String listProducts(Model model) {
     	model.addAttribute("products", productService.getAllProducts());
-    	//model.addAttribute("categories", categoryService.getAllCategories());
+    	model.addAttribute("categories", categoryService.getAllCategories());
     	return "admin/list-products";
     }
 	

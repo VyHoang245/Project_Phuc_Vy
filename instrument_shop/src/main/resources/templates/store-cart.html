@@ -190,7 +190,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr th:each="cart:${carts}">
                                         <td class="product-remove">
                                             <a href="#" class="fs-20 fw-500">×</a>
                                         </td>
@@ -199,66 +199,66 @@
                                                     src="Images/demo-decor-store-product-01.jpg" alt=""></a></td>
                                         <td class="product-name">
                                             <a href="/product-detail"
-                                                class="text-dark-gray fw-500 d-block lh-initial">Table clock</a>
-                                            <span class="fs-14">Color: Pink</span>
+                                                class="text-dark-gray fw-500 d-block lh-initial" th:text="${cart.getProduct().getName()}">Table clock</a>
+                                            <span class="fs-14" th:text="@{'Category: '+${cart.getProduct().getCategory().getName()}}">Color: Pink</span>
                                         </td>
-                                        <td class="product-price" data-title="Price">$23.00</td>
+                                        <td class="product-price" data-title="Price" th:text="@{'$'+${cart.getProduct().getPrice()}}">$23.00</td>
                                         <td class="product-quantity" data-title="Quantity">
                                             <div class="quantity">
                                                 <button type="button" class="qty-minus">-</button>
-                                                <input class="qty-text" type="text" id="1" value="1"
+                                                <input class="qty-text" type="text" id="1" th:value="${cart.quantity}"
                                                     aria-label="qty-text">
                                                 <button type="button" class="qty-plus">+</button>
                                             </div>
                                         </td>
-                                        <td class="product-subtotal" data-title="Total">$23.00</td>
+                                        <td class="product-subtotal" data-title="Total" th:text="${cart.quantity}*${cart.getProduct().getPrice()}">$23.00</td>
                                     </tr>
-                                    <tr>
-                                        <td class="product-remove">
-                                            <a href="#" class="fs-20 fw-500">×</a>
-                                        </td>
-                                        <td class="product-thumbnail"><a href="/product-detail"><img
-                                                    class="cart-product-image"
-                                                    src="Images/demo-decor-store-product-09.jpg" alt=""></a></td>
-                                        <td class="product-name">
-                                            <a href="/product-detail"
-                                                class="text-dark-gray fw-500 d-block lh-initial">Designer pot</a>
-                                            <span class="fs-14">Color: Brown</span>
-                                        </td>
-                                        <td class="product-price" data-title="Price">$35.00</td>
-                                        <td class="product-quantity" data-title="Quantity">
-                                            <div class="quantity">
-                                                <button type="button" class="qty-minus">-</button>
-                                                <input class="qty-text" type="text" id="2" value="1"
-                                                    aria-label="qty-text">
-                                                <button type="button" class="qty-plus">+</button>
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal" data-title="Total">$70.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-remove">
-                                            <a href="#" class="fs-20 fw-500">×</a>
-                                        </td>
-                                        <td class="product-thumbnail"><a href="/product-detail"><img
-                                                    class="cart-product-image"
-                                                    src="Images/demo-decor-store-product-03.jpg" alt=""></a></td>
-                                        <td class="product-name">
-                                            <a href="/product-detail"
-                                                class="text-dark-gray fw-500 d-block lh-initial">Ceramic mug</a>
-                                            <span class="fs-14">Color: White</span>
-                                        </td>
-                                        <td class="product-price" data-title="Price">$15.00</td>
-                                        <td class="product-quantity" data-title="Quantity">
-                                            <div class="quantity">
-                                                <button type="button" class="qty-minus">-</button>
-                                                <input class="qty-text" type="text" id="3" value="1"
-                                                    aria-label="qty-text">
-                                                <button type="button" class="qty-plus">+</button>
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal" data-title="Total">$15.00</td>
-                                    </tr>
+<!--                                    <tr>-->
+<!--                                        <td class="product-remove">-->
+<!--                                            <a href="#" class="fs-20 fw-500">×</a>-->
+<!--                                        </td>-->
+<!--                                        <td class="product-thumbnail"><a href="/product-detail"><img-->
+<!--                                                    class="cart-product-image"-->
+<!--                                                    src="Images/demo-decor-store-product-09.jpg" alt=""></a></td>-->
+<!--                                        <td class="product-name">-->
+<!--                                            <a href="/product-detail"-->
+<!--                                                class="text-dark-gray fw-500 d-block lh-initial">Designer pot</a>-->
+<!--                                            <span class="fs-14">Color: Brown</span>-->
+<!--                                        </td>-->
+<!--                                        <td class="product-price" data-title="Price">$35.00</td>-->
+<!--                                        <td class="product-quantity" data-title="Quantity">-->
+<!--                                            <div class="quantity">-->
+<!--                                                <button type="button" class="qty-minus">-</button>-->
+<!--                                                <input class="qty-text" type="text" id="2" value="1"-->
+<!--                                                    aria-label="qty-text">-->
+<!--                                                <button type="button" class="qty-plus">+</button>-->
+<!--                                            </div>-->
+<!--                                        </td>-->
+<!--                                        <td class="product-subtotal" data-title="Total">$70.00</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td class="product-remove">-->
+<!--                                            <a href="#" class="fs-20 fw-500">×</a>-->
+<!--                                        </td>-->
+<!--                                        <td class="product-thumbnail"><a href="/product-detail"><img-->
+<!--                                                    class="cart-product-image"-->
+<!--                                                    src="Images/demo-decor-store-product-03.jpg" alt=""></a></td>-->
+<!--                                        <td class="product-name">-->
+<!--                                            <a href="/product-detail"-->
+<!--                                                class="text-dark-gray fw-500 d-block lh-initial">Ceramic mug</a>-->
+<!--                                            <span class="fs-14">Color: White</span>-->
+<!--                                        </td>-->
+<!--                                        <td class="product-price" data-title="Price">$15.00</td>-->
+<!--                                        <td class="product-quantity" data-title="Quantity">-->
+<!--                                            <div class="quantity">-->
+<!--                                                <button type="button" class="qty-minus">-</button>-->
+<!--                                                <input class="qty-text" type="text" id="3" value="1"-->
+<!--                                                    aria-label="qty-text">-->
+<!--                                                <button type="button" class="qty-plus">+</button>-->
+<!--                                            </div>-->
+<!--                                        </td>-->
+<!--                                        <td class="product-subtotal" data-title="Total">$15.00</td>-->
+<!--                                    </tr>-->
                                 </tbody>
                             </table>
                         </div>

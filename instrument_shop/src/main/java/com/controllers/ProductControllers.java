@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import com.models.Brand;
 import com.models.Product;
 import com.models.Category;
+import com.models.ShoppingCart;
 
 import com.services.ProductService;
 import com.services.CategoryService;
 import com.services.BrandService;
+import com.services.ShopppingCartService;
 
 @Controller
 public class ProductControllers {
@@ -28,6 +30,9 @@ public class ProductControllers {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ShopppingCartService shoppingCartService;
 	
 	@GetMapping({"/",""})
     public String getAllProducts(Model model) {
@@ -242,4 +247,14 @@ public String manageUsers(Model model) {
         brandService.saveBrand(brand);
         return "redirect:/manage-brand";
     }
+
+    // Cart management
+    @GetMapping("/shopping-Cart")
+    public String manageCarts(Model model) {
+        model.addAttribute("products", productService.getAllProducts());
+        model.addAttribute("carts", shoppingCartService.getAllCarts());
+        return "store-cart";
+    }
 }
+
+

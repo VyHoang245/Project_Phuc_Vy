@@ -327,8 +327,8 @@ footer ul li {
 
     section,
     footer {
-        padding-top: 75px;
-        padding-bottom: 75px;
+        padding-top: 35px;
+        padding-bottom: 35px;
     }
 
     .tab-style-04 .nav-tabs .nav-item {
@@ -358,7 +358,7 @@ footer ul li {
     section,
     footer {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 30px;
     }
 
     .tab-style-04 .nav-tabs .nav-item .nav-link {

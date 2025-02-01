@@ -1,156 +1,11 @@
 ﻿<!doctype html>
 <html class="no-js" lang="en">
 
-<head>
-    <title>PV Symphony</title>
-    <meta charset="utf-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!-- favicon icon -->
-    <link rel="shortcut icon" href="Images/logo_with_V_and_P__instrument-removebg-preview.png">
-    <link rel="apple-touch-icon" href="Images/logo_with_V_and_P__instrument-removebg-preview.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="Images/logo_with_V_and_P__instrument-removebg-preview.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="Images/logo_with_V_and_P__instrument-removebg-preview.png">
-    <!-- google fonts preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <!-- style sheets and font icons  -->
-    <link rel="stylesheet" href="CSS/vendors.min.css">
-    <link rel="stylesheet" href="CSS/icon.min.css">
-    <link rel="stylesheet" href="CSS/style.min.css">
-    <link rel="stylesheet" href="CSS/responsive.min.css">
-    <link rel="stylesheet" href="CSS/decor-store.css">
-</head>
+<head th:replace="layout :: cssStyle"> </head>
 
 <body data-mobile-nav-style="classic">
     <!-- start header -->
-    <header class="header-with-topbar">
-        <!-- start navigation -->
-        <nav class="navbar navbar-expand-lg header-light bg-transparent disable-fixed" data-header-hover="light">
-            <div class="container-fluid">
-                <div class="col-auto">
-                    <a class="navbar-brand" href="/">
-                        <img src="" data-at2x="" alt="" class="default-logo">
-                        <img src="" data-at2x="" alt="" class="alt-logo">
-                        <img src="" data-at2x="" alt="" class="mobile-logo">
-                    </a>
-                </div>
-                <div class="col-auto menu-order position-static xs-ps-0">
-                    <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-line"></span>
-                        <span class="navbar-toggler-line"></span>
-                        <span class="navbar-toggler-line"></span>
-                        <span class="navbar-toggler-line"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                        <ul class="navbar-nav alt-font">
-                            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                            <li class="nav-item dropdown simple-dropdown">
-                                <a href="/shop" class="nav-link">Shop</a>
-                                <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
-                                    <li><a href="/shop">Piano</a></li>
-                                    <li><a href="/shop">Guitar</a></li>
-                                    <li><a href="/shop">Violin</a></li>
-                                    <li><a href="/shop">Drum</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item dropdown simple-dropdown">
-                                <a href="javascript:void(0);" class="nav-link">Pages</a>
-                                <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
-                                    <li><a href="/about">About</a></li>
-                                    <li><a href="/faq">FAQs</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item"><a href="//blog" class="nav-link">Blog</a></li>
-                            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-auto ms-auto">
-                    <div class="header-icon">
-                        <div class="header-search-icon icon">
-                            <a href="javascript:void(0)" class="search-form-icon header-search-form"><i
-                                    class="feather icon-feather-search"></i></a>
-                            <div class="search-form-wrapper">
-                                <button title="Close" type="button" class="search-close alt-font">×</button>
-                                <form id="search-form" role="search" method="get" class="search-form bg-white"
-                                    action="search-result.html">
-                                    <div class="search-form-box">
-                                        <h2 class="text-dark-gray text-center mb-7 alt-font fw-700 ls-minus-1px">What
-                                            are you looking for?</h2>
-                                        <input class="search-input alt-font" id="search-form-input5e219ef164995"
-                                            placeholder="Enter your keywords..." name="s" value="" type="text"
-                                            autocomplete="off">
-                                        <button type="submit" class="search-button">
-                                            <i class="feather icon-feather-search" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="header-cart-icon icon">
-                            <div class="header-cart dropdown">
-                                <a href="javascript:void(0);"><i class="feather icon-feather-shopping-bag"></i>
-                                    <!-- <span
-                                        class="cart-count alt-font">2</span> -->
-                                </a>
-                                <!-- <ul class="cart-item-list">
-                                    <li class="cart-item align-items-center">
-                                        <a href="javascript:void(0);" class="alt-font close">×</a>
-                                        <div class="product-image">
-                                            <a href="/product-detail"><img
-                                                    src="Images/demo-decor-store-product-01.jpg" class="cart-thumb"
-                                                    alt=""></a>
-                                        </div>
-                                        <div class="product-detail alt-font fw-600">
-                                            <a href="/product-detail">Table clock</a>
-                                            <span class="item-ammount fw-500">1 x $23.00</span>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item align-items-center">
-                                        <a href="javascript:void(0);" class="alt-font close">×</a>
-                                        <div class="product-image">
-                                            <a href="/product-detail"><img
-                                                    src="Images/demo-decor-store-product-03.jpg" class="cart-thumb"
-                                                    alt=""></a>
-                                        </div>
-                                        <div class="product-detail alt-font fw-600">
-                                            <a href="/product-detail">Ceramic mug</a>
-                                            <span class="item-ammount fw-500">2 x $15.00</span>
-                                        </div>
-                                    </li>
-                                    <li class="cart-total">
-                                        <div class="alt-font mb-15px"><span class="w-50 fw-500">Subtotal:</span><span
-                                                class="w-50 text-end fw-700">$199.99</span></div>
-                                        <a href="/cart"
-                                            class="btn btn-large btn-transparent-base-color border-color-extra-medium-gray btn-round-edge">View
-                                            cart</a>
-                                        <a href="/checkout"
-                                            class="btn btn-large btn-base-color btn-box-shadow btn-round-edge">Checkout</a>
-                                    </li>
-                                </ul> -->
-                            </div>
-                        </div>
-                        <div class="widget-text md-ms-20px alt-font">
-                            <a href="/login" class="fs-17 fw-600"><i
-                                    class="feather icon-feather-user d-inline-block d-xl-none"></i><span
-                                    class="d-none d-xl-inline-block"> <i class="bi bi-person"
-                                        style="font-size: larger;"></i>
-                                    <!-- Login -->
-                                </span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <header th:replace="layout :: header"> </header>
     <!-- end header -->
     <!-- start breadcrumb -->
     <section
@@ -948,8 +803,8 @@
                                     </div>
                                 </div>
                                 <div class="shop-footer text-center pt-20px">
-                                    <a href="/product-detail"
-                                        class="text-dark-gray fs-17 alt-font fw-600">Table clock</a>
+                                    <a href="/product-detail" class="text-dark-gray fs-17 alt-font fw-600">Table
+                                        clock</a>
                                     <div class="fw-500 fs-15 lh-normal"><del>$30.00</del>$23.00</div>
                                 </div>
                             </div>
@@ -979,8 +834,8 @@
                                     </div>
                                 </div>
                                 <div class="shop-footer text-center pt-20px">
-                                    <a href="/product-detail"
-                                        class="text-dark-gray fs-17 alt-font fw-600">Wood stool</a>
+                                    <a href="/product-detail" class="text-dark-gray fs-17 alt-font fw-600">Wood
+                                        stool</a>
                                     <div class="fw-500 fs-15 lh-normal">$54.00</div>
                                 </div>
                             </div>
@@ -1010,8 +865,8 @@
                                     </div>
                                 </div>
                                 <div class="shop-footer text-center pt-20px">
-                                    <a href="/product-detail"
-                                        class="text-dark-gray fs-17 alt-font fw-600">Ceramic mug</a>
+                                    <a href="/product-detail" class="text-dark-gray fs-17 alt-font fw-600">Ceramic
+                                        mug</a>
                                     <div class="fw-500 fs-15 lh-normal"><del>$20.00</del>$15.00</div>
                                 </div>
                             </div>
@@ -1041,8 +896,8 @@
                                     </div>
                                 </div>
                                 <div class="shop-footer text-center pt-20px">
-                                    <a href="/product-detail"
-                                        class="text-dark-gray fs-17 alt-font fw-600">Decorative plants</a>
+                                    <a href="/product-detail" class="text-dark-gray fs-17 alt-font fw-600">Decorative
+                                        plants</a>
                                     <div class="fw-500 fs-15 lh-normal"><del>$30.00</del>$35.00</div>
                                 </div>
                             </div>
@@ -1055,96 +910,7 @@
     </section>
     <!-- end section -->
     <!-- start footer -->
-    <footer class="footer-dark bg-dark-gray pb-0 pt-0 cover-background"
-        style="background-image:url('Images/demo-decor-store-footer-bg.jpg')">
-        <div class="container pt-4 pb-4 md-pt-45px md-pb-45px">
-            <div class="row justify-content-center">
-                <!-- start footer column -->
-                <div class="col-6 col-lg-3 last-paragraph-no-margin order-sm-1 md-mb-50px xs-mb-30px">
-                    <a href="/" class="footer-logo mb-15px d-inline-block"><img
-                            src="Images/demo-decor-store-logo-white.png"
-                            data-at2x="Images/demo-decor-store-logo-white@2x.png" alt=""></a>
-                    <p class="w-80 sm-w-100">Lorem ipsum amet adipiscing elit to eiusmod ad tempor.</p>
-                    <div class="elements-social social-icon-style-02 mt-15px">
-                        <ul class="small-icon light">
-                            <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
-                                        class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i
-                                        class="fa-brands fa-dribbble"></i></a></li>
-                            <li><a class="twitter" href="https://www.twitter.com" target="_blank"><i
-                                        class="fa-brands fa-twitter"></i></a></li>
-                            <li><a class="instagram" href="https://www.instagram.com" target="_blank"><i
-                                        class="fa-brands fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- end footer column -->
-                <!-- start footer column -->
-                <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
-                    <span class="fs-16 alt-font fw-500 d-block text-white mb-5px">Categories</span>
-                    <ul>
-                        <li><a href="/shop">Bed room</a></li>
-                        <li><a href="/shop">Living room</a></li>
-                        <li><a href="/shop">Lightning</a></li>
-                        <li><a href="/shop">Fabrics sofa</a></li>
-                    </ul>
-                </div>
-                <!-- end footer column -->
-                <!-- start footer column -->
-                <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
-                    <span class="fs-16 alt-font fw-500 d-block text-white mb-5px">Information</span>
-                    <ul>
-                        <li><a href="demo-decor-/about">About us</a></li>
-                        <li><a href="/contact">Contact us</a></li>
-                        <li><a href="/faq">FAQs</a></li>
-                        <li><a href="/faq">Payment</a></li>
-                    </ul>
-                </div>
-                <!-- end footer column -->
-                <!-- start footer column -->
-                <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
-                    <span class="fs-16 alt-font fw-500 d-block text-white mb-5px">Account</span>
-                    <ul>
-                        <li><a href="demo-decor-store-account.html">My account</a></li>
-                        <li><a href="/cart">Orders</a></li>
-                        <li><a href="/checkout">Checkout</a></li>
-                        <li><a href="#">My wishlists</a></li>
-                    </ul>
-                </div>
-                <!-- end footer column -->
-                <!-- start footer column -->
-                <div class="col-lg-3 col-sm-6 ps-20px sm-ps-15px md-mb-50px xs-mb-0 order-sm-2 order-lg-5">
-                    <span class="fs-16 alt-font fw-500 d-block text-white mb-5px">Newsletter</span>
-                    <div class="mb-20px">Get everything you need succeed!</div>
-                    <div class="d-inline-block w-100 newsletter-style-02 position-relative mb-15px">
-                        <form action="email-templates/subscribe-newsletter.php" method="post"
-                            class="position-relative w-100">
-                            <input
-                                class="bg-blue-tangaroa border-color-transparent-white-light w-100 form-control pe-50px ps-20px lg-ps-15px required"
-                                type="email" name="email" placeholder="Enter your email">
-                            <input type="hidden" name="redirect" value="">
-                            <button class="btn pe-20px submit" aria-label="submit"><i
-                                    class="icon feather icon-feather-mail icon-small text-white"></i></button>
-                            <div
-                                class="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="footer-card">
-                        <a href="#" class="d-inline-block me-5px align-middle"><img
-                                src="Images/demo-decor-store-payment-icon-01.png" alt=""></a>
-                        <a href="#" class="d-inline-block me-5px align-middle"><img
-                                src="Images/demo-decor-store-payment-icon-02.png" alt=""></a>
-                        <a href="#" class="d-inline-block me-5px align-middle"><img
-                                src="Images/demo-decor-store-payment-icon-03.png" alt=""></a>
-                        <a href="#" class="d-inline-block me-5px align-middle"><img
-                                src="Images/demo-decor-store-payment-icon-04.png" alt=""></a>
-                    </div>
-                </div>
-                <!-- end footer column -->
-            </div>
-        </div>
-    </footer>
+    <footer th:replace="layout :: footer"> </footer>
     <!-- end footer -->
     <!-- start scroll progress -->
     <div class="scroll-progress d-none d-xxl-block">
@@ -1154,10 +920,7 @@
     </div>
     <!-- end scroll progress -->
     <!-- javascript libraries -->
-    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script type="text/javascript" src="JS/jquery.js"></script>
-    <script type="text/javascript" src="JS/vendors.min.js"></script>
-    <script type="text/javascript" src="JS/main.js"></script>
+    <section th:replace="layout :: scriptStyle"> </section>
 </body>
 
 </html>

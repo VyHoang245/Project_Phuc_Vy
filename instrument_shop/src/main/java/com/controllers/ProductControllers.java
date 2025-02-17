@@ -1,4 +1,5 @@
 package com.controllers;
+import com.models.*;
 import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,11 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-
-import com.models.Brand;
-import com.models.Product;
-import com.models.Category;
-import com.models.ShoppingCart;
 
 import com.services.ProductService;
 import com.services.CategoryService;
@@ -27,14 +23,14 @@ public class ProductControllers {
 	private CategoryService categoryService;
     @Autowired
     private BrandService brandService;
-
     @Autowired
     private UserService userService;
-
     @Autowired
     private ShopppingCartService shoppingCartService;
-	
-	@GetMapping({"/",""})
+    @Autowired
+    private ShopppingCartService shopppingCartService;
+
+    @GetMapping({"/",""})
     public String getAllProducts(Model model) {
 		System.out.println(productService.getAllProducts());
         model.addAttribute("products", productService.getAllProducts());
@@ -254,6 +250,24 @@ public String manageUsers(Model model) {
         model.addAttribute("products", productService.getAllProducts());
         model.addAttribute("carts", shoppingCartService.getAllCarts());
         return "store-cart";
+    }
+
+    @GetMapping("/addAndSaveCart/{productID}")
+    public String addAndSaveCart(@PathVariable int productID) {
+        User user;
+        user = userService.getUserById(1);
+        ShoppingCart cart;
+        if(!shoppingCartService.checkExist(productID, user)){
+             cart = new ShoppingCart();
+            cart.setProduct(productService.getProductById(productID));
+            cart.setUser(user);
+            cart.setQuantity(1);
+        }
+        else{
+            cart = shopppingCartService.increaseQuantityProduct(productID);
+        }
+        shoppingCartService.saveShoppingCart(cart);
+        return "redirect:/";
     }
 }
 

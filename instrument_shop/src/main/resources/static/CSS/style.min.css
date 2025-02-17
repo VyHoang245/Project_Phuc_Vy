@@ -23254,4 +23254,76 @@ footer .footer-navbar .nav-item:last-child a {
     max-height: 55px !important
 }
 
+
+
+/*Toast*/
+.successButton {
+    text-align: center;
+    margin: 50px;
+}
+
+.successButton button {
+    background: #333;
+    color: white;
+    border: 0;
+    outline: 0;
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+
+#toastBox {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    z-index: 10000;
+}
+
+.toast {
+    position: relative;
+    width: 250px;
+    height: 50px;
+    background: rgb(255, 255, 255);
+    font-weight: 300;
+    margin: 15px 0;
+    box-shadow: 0 4px 12px #0000001a;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    /* overflow: hidden; */
+}
+
+.toast i {
+    margin: 0 10px;
+    font-size: 25px;
+    color: green;
+
+}
+
+.toast ::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anim 2s linear forwards;
+}
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+/*Toast*/
+
 /*# sourceMappingURL=style.min.css.map */

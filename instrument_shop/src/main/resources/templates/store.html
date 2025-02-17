@@ -130,7 +130,6 @@
     </header>
 
     <!-- Slider -->
-
     <section class="p-0">
         <article class="content">
             <div class="forcefullwidth_wrapper_tp_banner" id="decor-store-slider_forcefullwidth1"
@@ -463,6 +462,15 @@
             </div>
         </div>
     </section>
+
+    <!--    Toast-->
+    <div class="successButton">
+        <button class="showToast" id="showToast">Success</button>
+        <!-- <button>Warning</button>
+        <button>Error</button> -->
+    </div>
+    <div id="toastBox"></div>
+    <!--    Toast-->
 
     <section class="pt-0 pb-0">
         <div class="container">
@@ -2004,6 +2012,23 @@
         </a>
     </div>
     <!-- end scroll progress -->
+    <script type="text/javascript" >
+
+        let successMg = '<i class="fa fa-check-circle" aria-hidden="true"></i>  Product added successfully getByID';
+        // document.addEventListener("DOMContentLoaded", function () {
+            // Add click event listener to the entire document
+        document.getElementById('showToast').addEventListener('click', function(){
+            let toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML = successMg;
+            let toastBox = document.getElementById('toastBox');
+            toastBox.appendChild(toast);
+            // setTimeout(() => {
+            //     toast.remove();
+            // }, 3000)
+        });
+        // });
+    </script>
     <div th:replace="layout :: scriptStyle"> </div>
     <!-- Check Slider -->
     <!-- Check Slider -->

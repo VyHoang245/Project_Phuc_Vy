@@ -495,10 +495,55 @@
                                     <ul class="shop-boxed shop-wrapper grid grid-4col xxl-grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-large text-center"
                                         data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay":150, "staggervalue": 150, "easing": "easeOutQuad" }'>
                                         <li class="grid-sizer"></li>
+
+                                        <!--Demo product-->
                                         <li class="grid-item ">
                                             <div class="shop-box pb-25px block-items">
                                                 <div class="shop-image block-img-items">
                                                     <a href="/product-detail">
+                                                        <!--Link hình-->
+                                                        <img th:src="@{'./assets/images/'+${product.imageLink}}" alt="">
+                                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent">
+                                                        </div>
+                                                    </a>
+                                                    <div class="shop-hover d-flex justify-content-center">
+                                                        <a href="#"
+                                                           class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                                           data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i
+                                                                class="feather icon-feather-heart fs-15"></i></a>
+                                                        <a href="#"
+                                                           class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                                           data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
+                                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                                        <a href="#"
+                                                           class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                                           data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
+                                                                class="feather icon-feather-eye fs-15"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="shop-footer text-center pt-20px">
+                                                    <!--Tên sản phẩm-->
+                                                    <a href="/product-detail" class="text-dark-gray fs-17 alt-font fw-600 nameItems">
+                                                        <!-- Rogue
+                                                            RA-090
+                                                            Dreadnought Cutaway Acoustic-Electric Guitar Black -->
+                                                        <p th:text="${product.name}"></p>
+                                                    </a>
+                                                    <!--Giá-->
+                                                    <div class="fw-500 fs-15 lh-normal">
+                                                        <p th:text="@{'$'+${product.price}}"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!--Demo product-->
+
+
+                                        <li class="grid-item ">
+                                            <div class="shop-box pb-25px block-items">
+                                                <div class="shop-image block-img-items">
+                                                    <a href="/product-detail">
+                                                        <!--Link hình-->
                                                         <img src="Images/the-extremely-affordable-Rogue-RA-090d-readnought-acoustic-electric-guitar.png"
                                                             alt="">
                                                         <div
@@ -524,10 +569,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="shop-footer text-center pt-20px">
+                                                    <!--Tên sản phẩm-->
                                                     <a href="/product-detail"
                                                         class="text-dark-gray fs-17 alt-font fw-600 nameItems">Rogue
                                                         RA-090
                                                         Dreadnought Cutaway Acoustic-Electric Guitar Black</a>
+                                                    <!--Giá-->
                                                     <div class="fw-500 fs-15 lh-normal"><del>$159.99</del>$99.99</div>
                                                 </div>
                                             </div>
@@ -2012,6 +2059,7 @@
         </a>
     </div>
     <!-- end scroll progress -->
+    <!--    Toast-->
     <script type="text/javascript" >
 
         let successMg = '<i class="fa fa-check-circle" aria-hidden="true"></i>  Product added successfully getByID';

@@ -23277,7 +23277,7 @@ footer .footer-navbar .nav-item:last-child a {
 
 #toastBox {
     position: fixed;
-    top: 20px;
+    top: 0px;
     right: 30px;
     display: flex;
     align-items: flex-end;
@@ -23289,16 +23289,16 @@ footer .footer-navbar .nav-item:last-child a {
 
 .toast {
     position: relative;
-    width: 250px;
+    /*width: 250px;*/
     height: 50px;
-    background: rgb(255, 255, 255);
-    font-weight: 300;
-    margin: 15px 0;
+    /*background: rgb(255, 255, 255);*/
+    /*font-weight: 300;*/
+    margin: 5px 0;
     box-shadow: 0 4px 12px #0000001a;
     display: flex;
     align-items: center;
-    border-radius: 12px;
-    /* overflow: hidden; */
+    /*border-radius: 12px;*/
+     overflow: hidden;
 }
 
 .toast i {

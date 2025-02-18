@@ -5495,7 +5495,7 @@ fieldset:disabled .btn {
 
 .badge:empty,
 .toast:not(.show) {
-    display: none
+    /*display: none*/
 }
 
 .btn .badge {

@@ -511,11 +511,13 @@
 <!--                                                           class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"-->
 <!--                                                           data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i-->
 <!--                                                                class="feather icon-feather-heart fs-15"></i></a>-->
-                                                        <a type="button" id="showToast"
-                                                           class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
+                                                        <span type="button"
+                                                           class="showToast bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
                                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"
                                                            th:href="@{/addAndSaveCart/{productID}(productID=${product.getId()})}"><i
-                                                                class="feather icon-feather-shopping-bag fs-15"></i></a>
+                                                                class="feather icon-feather-shopping-bag fs-15"></i></span>
+
+
                                                         <a href="#"
                                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
                                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Quick shop"><i
@@ -2064,16 +2066,31 @@
         // document.addEventListener("DOMContentLoaded", function () {
             // Add click event listener to the entire document
         document.getElementById('showToast').addEventListener('click', function(){
-            let toast = document.createElement('div');
-            toast.classList.add('toast');
-            toast.innerHTML = successMg;
-            let toastBox = document.getElementById('toastBox');
-            toastBox.appendChild(toast);
-            // setTimeout(() => {
-            //     toast.remove();
-            // }, 2000)
+
+
         });
         // });
+    </script>
+
+
+    <script>
+        $(".showToast").click(function(){
+            let url = $(this).attr("href");
+            $.get( url)
+                .done(function( data ) {
+                    console.log(data);
+                    if(data == "ok") {
+                        let toast = document.createElement('div');
+                        toast.classList.add('toast');
+                        toast.innerHTML = successMg;
+                        let toastBox = document.getElementById('toastBox');
+                        toastBox.appendChild(toast);
+                        setTimeout(() => {
+                            toast.remove();
+                        }, 2000)
+                    }
+                });
+        });
     </script>
     <div th:replace="layout :: scriptStyle"> </div>
     <!-- Check Slider -->

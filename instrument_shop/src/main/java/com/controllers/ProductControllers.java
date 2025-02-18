@@ -4,11 +4,7 @@ import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 
 import com.services.ProductService;
 import com.services.CategoryService;
@@ -27,8 +23,6 @@ public class ProductControllers {
     private UserService userService;
     @Autowired
     private ShopppingCartService shoppingCartService;
-    @Autowired
-    private ShopppingCartService shopppingCartService;
 
     @GetMapping({"/",""})
     public String getAllProducts(Model model) {
@@ -252,23 +246,23 @@ public String manageUsers(Model model) {
         return "store-cart";
     }
 
-    @GetMapping("/addAndSaveCart/{productID}")
-    public String addAndSaveCart(@PathVariable int productID) {
-        User user;
-        user = userService.getUserById(1);
-        ShoppingCart cart;
-        if(!shoppingCartService.checkExist(productID, user)){
-             cart = new ShoppingCart();
-            cart.setProduct(productService.getProductById(productID));
-            cart.setUser(user);
-            cart.setQuantity(1);
-        }
-        else{
-            cart = shopppingCartService.increaseQuantityProduct(productID);
-        }
-        shoppingCartService.saveShoppingCart(cart);
-        return "redirect:/";
-    }
+//    @GetMapping("/addAndSaveCart/{productID}")
+//    public String addAndSaveCart(@PathVariable int productID) {
+//        User user;
+//        user = userService.getUserById(1);
+//        ShoppingCart cart;
+//        if(!shoppingCartService.checkExist(productID, user)){
+//            cart = new ShoppingCart();
+//            cart.setProduct(productService.getProductById(productID));
+//            cart.setUser(user);
+//            cart.setQuantity(1);
+//        }
+//        else{
+//            cart = shoppingCartService.increaseQuantityProduct(productID);
+//        }
+//        shoppingCartService.saveShoppingCart(cart);
+//        return "redirect:/";
+//    }
 }
 
 

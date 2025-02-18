@@ -23257,29 +23257,26 @@ footer .footer-navbar .nav-item:last-child a {
 
 
 /*Toast*/
-.successButton {
-    text-align: center;
-    margin: 50px;
-}
-
-.successButton button {
-    background: #333;
-    color: white;
-    border: 0;
-    outline: 0;
-    width: 120px;
-    height: 40px;
-    margin: 5px;
-    cursor: pointer;
-}
-/*.grid-item:hover > #showToast{*/
-/*    display: block !important;*/
+/*.successButton {*/
+/*    text-align: center;*/
+/*    margin: 50px;*/
 /*}*/
 
-/*#showToast{*/
+/*.successButton button {*/
+/*    background: #333;*/
+/*    color: white;*/
+/*    border: 0;*/
+/*    outline: 0;*/
+/*    width: 120px;*/
+/*    height: 40px;*/
+/*    margin: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+#showToast{
 /*    !*display: none !important;*!*/
-/*    border: none;*/
-/*}*/
+    border: none;
+}
 
 #toastBox {
     position: fixed;

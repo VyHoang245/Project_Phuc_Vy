@@ -23272,8 +23272,14 @@ footer .footer-navbar .nav-item:last-child a {
     margin: 5px;
     cursor: pointer;
 }
+/*.grid-item:hover > #showToast{*/
+/*    display: block !important;*/
+/*}*/
 
-
+/*#showToast{*/
+/*    !*display: none !important;*!*/
+/*    border: none;*/
+/*}*/
 
 #toastBox {
     position: fixed;

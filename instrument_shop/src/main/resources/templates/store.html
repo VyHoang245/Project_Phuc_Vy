@@ -464,11 +464,11 @@
     </section>
 
     <!--    Toast-->
-    <div class="successButton">
-<!--        <button class="showToast" id="showToast">Success</button>-->
-        <!-- <button>Warning</button>
-        <button>Error</button> -->
-    </div>
+<!--    <div class="successButton">-->
+<!--&lt;!&ndash;        <button class="showToast" id="showToast">Success</button>&ndash;&gt;-->
+<!--        &lt;!&ndash; <button>Warning</button>-->
+<!--        <button>Error</button> &ndash;&gt;-->
+<!--    </div>-->
     <div id="toastBox"></div>
     <!--    Toast-->
 
@@ -511,7 +511,7 @@
 <!--                                                           class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"-->
 <!--                                                           data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i-->
 <!--                                                                class="feather icon-feather-heart fs-15"></i></a>-->
-                                                        <a id="showToast"
+                                                        <a type="button" id="showToast"
                                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
                                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"
                                                            th:href="@{/addAndSaveCart/{productID}(productID=${product.getId()})}"><i

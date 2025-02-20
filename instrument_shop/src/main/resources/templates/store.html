@@ -2058,51 +2058,7 @@
         </a>
     </div>
     <!-- end scroll progress -->
-
-    <!--    Toast-->
-<!--    <script type="text/javascript" >-->
-<!--        let successMg = '<i class="fa fa-check-circle" aria-hidden="true"></i>  Product added successfully getByID';-->
-<!--        // document.addEventListener("DOMContentLoaded", function () {-->
-<!--            // Add click event listener to the entire document-->
-<!--        document.getElementById('showToast').addEventListener('click', function(){-->
-<!--        });-->
-<!--        // });-->
-<!--    </script>-->
-
-
-    <script>
-        $(".showToast").click(function(){
-            let url = $(this).attr("data-href");
-            $.get( url)
-                .done(function( data ) {
-                    if(data == "successful") {
-                        let successMg = '<i class="fa fa-check-circle" aria-hidden="true"></i>  Product added successfully getByID';
-                        let toast = document.createElement('div');
-                        toast.classList.add('toast');
-                        toast.innerHTML = successMg;
-                        let toastBox = document.getElementById('toastBox');
-                        toastBox.appendChild(toast);
-                        setTimeout(() => {
-                            toast.remove();
-                        }, 2000)
-                    }else{
-                        let successMg = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  Product can not add successfully getByID';
-                        let toast = document.createElement('div');
-                        toast.classList.add('toast');
-                        toast.innerHTML = successMg;
-                        let toastBox = document.getElementById('toastBox');
-                        toastBox.appendChild(toast);
-                        setTimeout(() => {
-                            toast.remove();
-                        }, 2000)
-                    }
-                });
-        });
-    </script>
     <div th:replace="layout :: scriptStyle"> </div>
-    <!-- Check Slider -->
-    <!-- Check Slider -->
-
 </body>
 
 </html>

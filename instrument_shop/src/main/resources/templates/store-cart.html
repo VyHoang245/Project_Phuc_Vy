@@ -46,7 +46,7 @@
                                                 <button type="button" class="qty-minus">-</button>
                                                 <input class="qty-text" type="text" id="1" th:value="${cart.quantity}"
                                                     aria-label="qty-text">
-                                                <button type="button" class="qty-plus">+</button>
+                                                <button type="button" class="qty-plus showToast" ><a th:href="@{/increaseAndSaveCart/{id}(id=${cart.getId()})}">+</a></button>
                                             </div>
                                         </td>
                                         <td class="product-subtotal" data-title="Total"

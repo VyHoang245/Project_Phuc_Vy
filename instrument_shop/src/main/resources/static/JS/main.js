@@ -3412,6 +3412,7 @@ $(".main-menuMB").on("click", "li", function () {
     $('.qty-plus').click(function () {
         var th = $(this).closest('.quantity').find('.qty-text');
         th.val(+th.val() + 1);
+
     });
     $('.qty-minus').click(function () {
         var th = $(this).closest('.quantity').find('.qty-text');

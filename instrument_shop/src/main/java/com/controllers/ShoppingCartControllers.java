@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.models.Brand;
 import com.models.Product;
 import com.models.ShoppingCart;
 import com.models.User;
@@ -40,4 +41,15 @@ public class ShoppingCartControllers {
         shoppingCartService.saveShoppingCart(cart);
         return result;
     }
+
+//    @RequestMapping(value = "/increaseAndSaveCart/{id}", method = RequestMethod.GET)
+    @GetMapping("/increaseAndSaveCart/{id}")
+    @ResponseBody
+    public ShoppingCart increaseAndSaveCart(@PathVariable int id) {
+        ShoppingCart cart = shoppingCartService.getShoppingCartById(id);
+        cart.setQuantity(cart.getQuantity() + 1);
+        shoppingCartService.saveShoppingCart(cart);
+        return cart;
+    }
+
 }

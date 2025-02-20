@@ -24,8 +24,10 @@ public class ShopppingCartService {
         List<ShoppingCart> cartList = getAllCarts();
         for (ShoppingCart cart : cartList) {
             if(cart.getProduct().getId() == productID ) {
-                cart.setQuantity(cart.getQuantity() + 1);
-                return cart;
+                if(cart.getProduct().getQuantityInStock()> cart.getQuantity()) {
+                    cart.setQuantity(cart.getQuantity() + 1);
+                    return cart;
+                }
             }
         }
         return null;

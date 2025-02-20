@@ -246,23 +246,12 @@ public String manageUsers(Model model) {
         return "store-cart";
     }
 
-//    @GetMapping("/addAndSaveCart/{productID}")
-//    public String addAndSaveCart(@PathVariable int productID) {
-//        User user;
-//        user = userService.getUserById(1);
-//        ShoppingCart cart;
-//        if(!shoppingCartService.checkExist(productID, user)){
-//            cart = new ShoppingCart();
-//            cart.setProduct(productService.getProductById(productID));
-//            cart.setUser(user);
-//            cart.setQuantity(1);
-//        }
-//        else{
-//            cart = shoppingCartService.increaseQuantityProduct(productID);
-//        }
-//        shoppingCartService.saveShoppingCart(cart);
-//        return "redirect:/";
-//    }
+    @GetMapping("/deleteCart/{id}")
+    public String deleteCart(@PathVariable int id) {
+        shoppingCartService.deleteShoppingCart(id);
+
+        return "redirect:/shopping-Cart";
+    }
 }
 
 

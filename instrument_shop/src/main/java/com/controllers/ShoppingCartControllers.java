@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.models.Product;
 import com.models.ShoppingCart;
 import com.models.User;
 import com.services.ProductService;
@@ -21,17 +22,22 @@ public class ShoppingCartControllers {
     public String addAndSaveCart(@PathVariable int productID) {
         User user;
         user = userService.getUserById(1);
+        Product product = productService.getProductById(productID);
         ShoppingCart cart;
+        String result = "Fail";
         if(!shoppingCartService.checkExist(productID, user)){
             cart = new ShoppingCart();
-            cart.setProduct(productService.getProductById(productID));
+            cart.setProduct(product);
             cart.setUser(user);
             cart.setQuantity(1);
         }
         else{
             cart = shoppingCartService.increaseQuantityProduct(productID);
         }
+        if(cart != null){
+            result = "successful";
+        }
         shoppingCartService.saveShoppingCart(cart);
-        return "ok";
+        return result;
     }
 }

@@ -27,11 +27,11 @@
                                 <tbody>
                                     <tr th:each="cart:${carts}">
                                         <td class="product-remove">
-                                            <a href="#" class="fs-20 fw-500">×</a>
+                                            <a href="#" class="fs-20 fw-500" th:href="@{/deleteCart/{id}(id=${cart.getId()})}">×</a>
                                         </td>
                                         <td class="product-thumbnail"><a href="/product-detail"><img
                                                     class="cart-product-image"
-                                                    src="Images/demo-decor-store-product-01.jpg" alt=""></a></td>
+                                                    th:src="@{'./assets/images/'+${cart.getProduct().getImageLink()}}"alt=""></a></td>
                                         <td class="product-name">
                                             <a href="/product-detail" class="text-dark-gray fw-500 d-block lh-initial"
                                                 th:text="${cart.getProduct().getName()}">Table clock</a>

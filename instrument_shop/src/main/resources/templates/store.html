@@ -514,9 +514,8 @@
                                                         <span type="button"
                                                            class="showToast bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
                                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"
-                                                           th:href="@{/addAndSaveCart/{productID}(productID=${product.getId()})}"><i
+                                                           th:data-href="@{/addAndSaveCart/{productID}(productID=${product.getId()})}"><i
                                                                 class="feather icon-feather-shopping-bag fs-15"></i></span>
-
 
                                                         <a href="#"
                                                            class="bg-white w-45px h-45px text-dark-gray d-flex flex-column align-items-center justify-content-center rounded-circle ms-5px me-5px box-shadow-medium-bottom"
@@ -2059,27 +2058,35 @@
         </a>
     </div>
     <!-- end scroll progress -->
+
     <!--    Toast-->
-    <script type="text/javascript" >
-
-        let successMg = '<i class="fa fa-check-circle" aria-hidden="true"></i>  Product added successfully getByID';
-        // document.addEventListener("DOMContentLoaded", function () {
-            // Add click event listener to the entire document
-        document.getElementById('showToast').addEventListener('click', function(){
-
-
-        });
-        // });
-    </script>
+<!--    <script type="text/javascript" >-->
+<!--        let successMg = '<i class="fa fa-check-circle" aria-hidden="true"></i>  Product added successfully getByID';-->
+<!--        // document.addEventListener("DOMContentLoaded", function () {-->
+<!--            // Add click event listener to the entire document-->
+<!--        document.getElementById('showToast').addEventListener('click', function(){-->
+<!--        });-->
+<!--        // });-->
+<!--    </script>-->
 
 
     <script>
         $(".showToast").click(function(){
-            let url = $(this).attr("href");
+            let url = $(this).attr("data-href");
             $.get( url)
                 .done(function( data ) {
-                    console.log(data);
-                    if(data == "ok") {
+                    if(data == "successful") {
+                        let successMg = '<i class="fa fa-check-circle" aria-hidden="true"></i>  Product added successfully getByID';
+                        let toast = document.createElement('div');
+                        toast.classList.add('toast');
+                        toast.innerHTML = successMg;
+                        let toastBox = document.getElementById('toastBox');
+                        toastBox.appendChild(toast);
+                        setTimeout(() => {
+                            toast.remove();
+                        }, 2000)
+                    }else{
+                        let successMg = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  Product can not add successfully getByID';
                         let toast = document.createElement('div');
                         toast.classList.add('toast');
                         toast.innerHTML = successMg;

@@ -23328,5 +23328,8 @@ footer .footer-navbar .nav-item:last-child a {
     }
 }
 /*Toast*/
-
+/*product-name */
+.cart-products td.product-name{
+    width: 250px;
+}
 /*# sourceMappingURL=style.min.css.map */

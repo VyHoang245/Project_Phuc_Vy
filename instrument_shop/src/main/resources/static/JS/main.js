@@ -3408,17 +3408,75 @@ $(".main-menuMB").on("click", "li", function () {
     /* ===================================
      Quantity input
      ====================================== */
-
+    //Tăng số lượng
+    // $('.qty-plus').click(function () {
+    //     var th = $(this).closest('.quantity').find('.qty-text');
+    //     th.val(+th.val() + 1);
+    // });
     $('.qty-plus').click(function () {
         var th = $(this).closest('.quantity').find('.qty-text');
-        th.val(+th.val() + 1);
+        var currentVal = parseInt(th.val());
+        var maxVal = parseInt(th.data('max'));
+        if (currentVal < maxVal) {
+            th.val(currentVal + 1);
+            updateTotals();
 
+            // var url = $(this).find('span').attr('th:data-href'); // Use th:data-href attribute
+            // $.ajax({
+            //     url: url,
+            //     type: 'GET',
+            //     success: function (response) {
+            //         // Update the subtotal and grand total
+            //         updateTotals();
+            //         // Optionally show a toast message or any other feedback
+            //         // $('#toastBox').text('Item quantity updated successfully!');
+            //     },
+            //     error: function (error) {
+            //         // Handle error if needed
+            //         console.error('Error updating quantity:', error);
+            //     }
+            // });
+
+
+            // window.location.href = $(this).find('span').attr('th:data-href'); // Use data-href attribute
+
+        }
     });
     $('.qty-minus').click(function () {
         var th = $(this).closest('.quantity').find('.qty-text');
-        if (th.val() > 1)
+        if (th.val() > 1){
             th.val(+th.val() - 1);
+            updateTotals();
+        }
+
     });
+
+    function updateTotals() {
+        let grandTotal = 0;
+
+        $('.product-subtotal').each(function () {
+            const price = parseFloat($(this).siblings('.product-price').text().replace('$', ''));
+            const quantity = parseInt($(this).siblings('.product-quantity').find('.qty-text').val());
+            const subtotal = price * quantity;
+
+            $(this).text(`$${subtotal.toFixed(2)}`);
+            grandTotal += subtotal;
+        });
+
+        // $('#totalPrice').text(`$${grandTotal.toFixed(2)}`);
+    }
+
+    // $(document).ready(function() {
+    //     let grandTotal = 0;
+    //
+    //     $('.product-subtotal').each(function () {
+    //         const price = parseFloat($(this).siblings('.product-price').text().replace('$', ''));
+    //         const quantity = parseInt($(this).siblings('.product-quantity').find('.qty-text').val());
+    //         const subtotal = price * quantity;
+    //
+    //         $(this).text(`$${subtotal.toFixed(2)}`);
+    //         grandTotal += subtotal;
+    // });
 
     /* ===================================
      Infinite looping animation

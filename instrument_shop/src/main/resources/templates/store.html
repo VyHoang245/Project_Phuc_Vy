@@ -153,7 +153,7 @@
                                         data-dim="w:100%;h:100%;" data-basealign="slide" data-frame_999="o:0;st:w;"
                                         style="z-index:6;background-color:rgba(0,0,0,0.22);">
                                     </rs-layer><!--
-                    
+
                                                 --><rs-layer id="slider-1-slide-1-layer-1" data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:l,l,l,c;xo:30px,30px,30px,0;y:m;yo:-125px,-89px,-67px,-21px;"
@@ -162,7 +162,7 @@
                                         data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:7640;"
                                         style="z-index:10;font-family:'Space Grotesk';">Begin your journey of
                                     </rs-layer><!--
-                    
+
                                                 --><rs-layer id="slider-1-slide-1-layer-2" data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:l,l,l,c;xo:30px,30px,30px,0;y:m;yo:-4px,6px,12px,38px;"
@@ -172,7 +172,7 @@
                                         data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6730;"
                                         style="z-index:9;font-family:'Space Grotesk';text-transform:uppercase;">Music
                                     </rs-layer><!--
-                    
+
                                                 --><rs-layer id="slider-1-slide-1-layer-5" data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:l,l,l,c;xo:30px,30px,30px,0;y:m;yo:126px,124px,113px,125px;"
@@ -184,7 +184,7 @@
                                         style="z-index:8;font-family:'Roboto';">Experience the
                                         best of sounds.
                                     </rs-layer><!--
-                    
+
                                                 --><a id="slider-1-slide-1-layer-6"
                                         class="rs-layer pbmit-rev-button rev-btn" href="/shop" target="_self"
                                         data-type="button" data-rsp_ch="on"
@@ -214,7 +214,7 @@
                                         data-dim="w:100%;h:100%;" data-basealign="slide" data-frame_999="o:0;st:w;"
                                         style="z-index:6;background-color:rgba(0,0,0,0.22);">
                                     </rs-layer><!--
-                    
+
                                                 --><rs-layer id="slider-1-slide-3-layer-1" data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:l,l,l,c;xo:30px,30px,30px,0;y:m;yo:-125px,-89px,-67px,-21px;"
@@ -223,7 +223,7 @@
                                         data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:7640;"
                                         style="z-index:10;font-family:'Space Grotesk';">We provide a variety of
                                     </rs-layer><!--
-                    
+
                                                 --><rs-layer id="slider-1-slide-3-layer-2" data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:l,l,l,c;xo:30px,30px,30px,0;y:m;yo:-4px,6px,12px,38px;"
@@ -233,7 +233,7 @@
                                         data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6730;"
                                         style="z-index:9;font-family:'Space Grotesk';text-transform:uppercase;">rental
                                     </rs-layer><!--
-                    
+
                                                 --><rs-layer id="slider-1-slide-3-layer-5" data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:l,l,l,c;xo:30px,30px,30px,0;y:m;yo:126px,124px,113px,125px;"
@@ -245,7 +245,7 @@
                                         style="z-index:8;font-family:'Roboto';">Options
                                         to fit everyone's needs and we offer the biggest selection of instruments.
                                     </rs-layer><!--
-                    
+
                                                 --><a id="slider-1-slide-3-layer-6"
                                         class="rs-layer pbmit-rev-button rev-btn" href="/shop" target="_self"
                                         data-type="button" data-rsp_ch="on"
@@ -497,7 +497,7 @@
                                         <li class="grid-sizer"></li>
 
                                         <!--Demo product-->
-                                        <li class="grid-item " th:each="product:${products}">
+                                        <li class="grid-item product-items " th:each="product:${products}">
                                             <div class="shop-box pb-25px block-items">
                                                 <div class="shop-image block-img-items">
                                                     <a href="/product-detail">
@@ -2059,6 +2059,19 @@
     </div>
     <!-- end scroll progress -->
     <div th:replace="layout :: scriptStyle"> </div>
+
+<script>
+    $(document).ready(function() {
+        const items = $(".product-items");
+        const limit = 5;
+
+        items.each(function(index) {
+            if (index >= limit) {
+                $(this).hide();
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

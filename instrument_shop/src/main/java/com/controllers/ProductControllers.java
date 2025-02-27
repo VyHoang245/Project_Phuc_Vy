@@ -66,10 +66,10 @@ public class ProductControllers {
         return "store-contact";
     }
 
-    @GetMapping("/cart")
-    public String cart(Model model) {
-        return "store-cart";
-    }
+//    @GetMapping("/cart")
+//    public String cart(Model model) {
+//        return "store-cart";
+//    }
 
     @GetMapping("/checkout")
     public String checkout(Model model) {
@@ -239,7 +239,7 @@ public String manageUsers(Model model) {
     }
 
     // Cart management
-    @GetMapping("/shopping-Cart")
+    @GetMapping("/cart")
     public String manageCarts(Model model) {
         model.addAttribute("products", productService.getAllProducts());
         model.addAttribute("carts", shoppingCartService.getAllCarts());

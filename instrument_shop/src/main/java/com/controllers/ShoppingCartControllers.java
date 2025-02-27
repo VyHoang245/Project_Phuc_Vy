@@ -43,6 +43,8 @@ public class ShoppingCartControllers {
     }
 
 //    @RequestMapping(value = "/increaseAndSaveCart/{id}", method = RequestMethod.GET)
+
+
     @GetMapping("/increaseAndSaveCart/{id}")
     @ResponseBody
     public ShoppingCart increaseAndSaveCart(@PathVariable int id) {
@@ -51,5 +53,28 @@ public class ShoppingCartControllers {
         shoppingCartService.saveShoppingCart(cart);
         return cart;
     }
+
+//    @PostMapping("/increaseAndSaveCart/{id}")
+//    @ResponseBody
+//    public ResponseEntity<ShoppingCart> increaseAndSaveCart(@PathVariable int id) {
+//        ShoppingCart cart = shoppingCartService.getShoppingCartById(id);
+//        if (cart == null) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//
+//        int currentQuantity = cart.getQuantity();
+//        int maxQuantity = cart.getProduct().getQuantityInStock();
+//
+//        if (currentQuantity < maxQuantity) {
+//            cart.setQuantity(currentQuantity + 1);
+//            shoppingCartService.saveShoppingCart(cart);
+//
+//            return new ResponseEntity<>(cart, HttpStatus.OK);
+//        } else {
+//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST); // Or any other suitable status code
+//        }
+//    }
+//
+
 
 }

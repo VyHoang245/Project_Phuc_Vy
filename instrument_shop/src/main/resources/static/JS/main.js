@@ -3417,28 +3417,28 @@ $(".main-menuMB").on("click", "li", function () {
         var th = $(this).closest('.quantity').find('.qty-text');
         var currentVal = parseInt(th.val());
         var maxVal = parseInt(th.data('max'));
+        var id = th.attr('id');
+        var url = th.attr('data-href');
+
         if (currentVal < maxVal) {
             th.val(currentVal + 1);
             updateTotals();
+            var curVal = parseInt(th.val());
 
-            // var url = $(this).find('span').attr('th:data-href'); // Use th:data-href attribute
-            // $.ajax({
-            //     url: url,
-            //     type: 'GET',
-            //     success: function (response) {
-            //         // Update the subtotal and grand total
-            //         updateTotals();
-            //         // Optionally show a toast message or any other feedback
-            //         // $('#toastBox').text('Item quantity updated successfully!');
-            //     },
-            //     error: function (error) {
-            //         // Handle error if needed
-            //         console.error('Error updating quantity:', error);
-            //     }
-            // });
+            var newUrl = url +'/'+curVal;
+            $.ajax({
+                url: newUrl,
+                method: 'POST',
+                contentType: 'application/json',
+                // data: JSON.stringify({ id: id}),
+                success: function(response) {
+                    // alert('Quantity updated successfully');
+                },
+                error: function(error) {
+                    // alert('Error updating quantity');
+                }
+            });
 
-
-            // window.location.href = $(this).find('span').attr('th:data-href'); // Use data-href attribute
 
         }
     });
@@ -3447,7 +3447,23 @@ $(".main-menuMB").on("click", "li", function () {
         if (th.val() > 1){
             th.val(+th.val() - 1);
             updateTotals();
+            var curVal = parseInt(th.val());
+            var url = th.attr('data-href');
+            var newUrl = url +'/'+curVal;
+            $.ajax({
+                url: newUrl,
+                method: 'POST',
+                contentType: 'application/json',
+                // data: JSON.stringify({ id: id}),
+                success: function(response) {
+                    // alert('Quantity updated successfully');
+                },
+                error: function(error) {
+                    // alert('Error updating quantity');
+                }
+            });
         }
+
 
     });
 

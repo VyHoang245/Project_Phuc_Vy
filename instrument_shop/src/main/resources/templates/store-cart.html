@@ -44,9 +44,11 @@
                                         <td class="product-quantity" data-title="Quantity">
                                             <div class="quantity">
                                                 <button type="button" class="qty-minus">-</button>
-                                                <input class="qty-text" type="text" id="1" th:value="${cart.quantity}"
-                                                    aria-label="qty-text" th:data-max="${cart.getProduct().getQuantityInStock()}">
-                                                <button type="button" class="qty-plus" ><span th:href="@{/increaseAndSaveCart/{id}(id=${cart.getId()})}">+</span></button>
+                                                <input class="qty-text" type="text" th:id="${cart.id}" th:data-href="@{/increaseAndSaveCart/{id}(id=${cart.getId()})}" th:value="${cart.quantity}"
+                                                    aria-label="qty-text" th:data-max="${cart.getProduct().getQuantityInStock()}" >
+<!--                                                <input class="id-text" type="hidden"  th:value="${cart.id}"-->
+<!--                                                       aria-label="id-text">-->
+                                                <button type="button" class="qty-plus" ><span >+</span></button>
 <!--                                                <button type="button" class="qty-plus showToast" >+</button>-->
                                             </div>
                                         </td>

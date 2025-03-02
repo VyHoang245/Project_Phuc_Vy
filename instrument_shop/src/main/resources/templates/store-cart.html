@@ -25,7 +25,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="cart:${carts}">
+                                    <tr th:each="cart:${cartList}">
                                         <td class="product-remove">
                                             <a href="#" class="fs-20 fw-500" th:href="@{/deleteCart/{id}(id=${cart.getId()})}">×</a>
                                         </td>
@@ -129,7 +129,7 @@
                             <tbody>
                                 <tr>
                                     <th class="w-45 fw-600 text-dark-gray alt-font">Subtotal</th>
-                                    <td class="text-dark-gray fw-600">$405.00</td>
+                                    <td class="text-dark-gray fw-600 totalPrice">$405.00</td>
                                 </tr>
                                 <tr class="shipping">
                                     <th class="fw-600 text-dark-gray alt-font">Shipping</th>
@@ -440,13 +440,13 @@
                                 <tr class="total-amount">
                                     <th class="fw-600 text-dark-gray alt-font pb-0">Total</th>
                                     <td class="pb-0" data-title="Total">
-                                        <h6 class="d-block fw-700 mb-0 text-dark-gray alt-font">$405.00</h6>
+                                        <h6 class="d-block fw-700 mb-0 text-dark-gray alt-font totalPrice">$405.00</h6>
                                         <span class="fs-14">(Includes $19.29 tax)</span>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <a href="/checkout"
+                        <a th:href="@{/checkout/{id}(id=1)}"
                             class="btn btn-base-color btn-extra-large btn-switch-text btn-round-edge btn-box-shadow w-100 text-transform-none mt-25px">
                             <span>
                                 <span class="btn-double-text" data-text="Proceed to checkout">Proceed to checkout</span>

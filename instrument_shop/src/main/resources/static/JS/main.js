@@ -3479,20 +3479,22 @@ $(".main-menuMB").on("click", "li", function () {
             grandTotal += subtotal;
         });
 
-        // $('#totalPrice').text(`$${grandTotal.toFixed(2)}`);
+         $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
     }
 
-    // $(document).ready(function() {
-    //     let grandTotal = 0;
-    //
-    //     $('.product-subtotal').each(function () {
-    //         const price = parseFloat($(this).siblings('.product-price').text().replace('$', ''));
-    //         const quantity = parseInt($(this).siblings('.product-quantity').find('.qty-text').val());
-    //         const subtotal = price * quantity;
-    //
-    //         $(this).text(`$${subtotal.toFixed(2)}`);
-    //         grandTotal += subtotal;
-    // });
+    $(document).ready(function() {
+        let grandTotal = 0;
+
+        $('.product-subtotal').each(function () {
+            const price = parseFloat($(this).siblings('.product-price').text().replace('$', ''));
+            const quantity = parseInt($(this).siblings('.product-quantity').find('.qty-text').val());
+            const subtotal = price * quantity;
+
+            $(this).text(`$${subtotal.toFixed(2)}`);
+            grandTotal += subtotal;
+    });
+        $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
+    })
 
     /* ===================================
      Infinite looping animation

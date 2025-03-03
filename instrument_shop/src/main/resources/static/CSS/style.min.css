@@ -23333,3 +23333,230 @@ footer .footer-navbar .nav-item:last-child a {
     width: 250px;
 }
 /*# sourceMappingURL=style.min.css.map */
+
+/* account page */
+.card {
+    border-radius: 0.5rem;
+}
+
+.card-profile {
+    margin-bottom: 40px;
+}
+
+.card-header {
+    background-color: var(--white);
+    border-bottom: none
+}
+
+.card-title-profile {
+    margin-bottom: var(--bs-card-title-spacer-y);
+    color: var(--bs-card-title-color);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card-header:first-child {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.profile-title .d-flex {
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.form-control-name,
+.form-control-email,
+.form-control-address,
+.form-control-password {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.upload-profile-form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.upload-profile {
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    border-color: transparent;
+    line-height: 1.5rem;
+    font-weight: 300;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    background-color: #1b3250e8;
+
+    border-color: #e4e4e4;
+    color: #ffffff;
+}
+
+.upload-profile:hover {
+    background-color: #1b3250;
+}
+
+/* .order:not(:last-child) {
+    margin-bottom: 27px;
+} */
+
+.order {
+    display: block;
+    position: relative;
+}
+
+.order-header {
+    align-items: center;
+    background-color: #1b3250;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+.order-header .order-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.order-header .order-date {
+    font-size: .8rem;
+    margin: 0;
+}
+
+.order-header .order-status-badge-completed {
+    color: #2f5acf;
+}
+
+.order-header .order-status-badge {
+    background-color: #fff;
+    border-radius: 1.5rem;
+    /* color: #000; */
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    padding: .375rem .75rem;
+    text-align: center;
+}
+
+.order-body {
+    background-color: #e6eff4;
+    margin-top: -16px;
+    padding-top: 16px;
+
+}
+
+.order-status {
+    font-weight: bold;
+}
+
+.order-item:not(:last-child) {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.order-item {
+    display: flex;
+    padding: 1rem 30px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #d9d9d9;
+    /* border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9; */
+}
+
+.order-item-thumbnail {
+    display: block;
+    margin-right: 1rem;
+    position: relative;
+    width: 100px;
+}
+
+.order-item-thumbnail img {
+    border-radius: 8px;
+    left: 0;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.order-item-info {
+    flex: 1;
+}
+
+.order-item-info {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.order-item-title {
+    font-weight: 600;
+}
+
+.order-item-quantity,
+.order-item-variant-label {
+    color: rgba(0, 0, 0, .6);
+}
+
+.order-item-variant-label {
+    font-weight: 400;
+    margin: 0;
+}
+
+.order-item-price {
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+}
+
+.order-footer {
+    align-items: center;
+    background-color: #e6eff4;
+    border-radius: 0 0 .5rem .5rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 30px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.order-footer__left {
+    font-size: 25px;
+    text-align: left;
+    margin: 15px 0;
+}
+
+.order-footer__right {
+    font-size: 25px;
+    text-align: right;
+    margin: 15px 0;
+}
+/* account page */

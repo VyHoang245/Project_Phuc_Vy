@@ -258,6 +258,11 @@ public class ProductControllers {
 
         return "redirect:/shopping-Cart";
     }
+
+    @GetMapping("/myAccount")
+    public String myAccount(Model model) {
+        return "store-account";
+    }
 }
 
 

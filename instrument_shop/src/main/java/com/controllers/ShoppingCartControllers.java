@@ -8,6 +8,7 @@ import com.services.ProductService;
 import com.services.ShopppingCartService;
 import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -53,6 +54,8 @@ public class ShoppingCartControllers {
         shoppingCartService.saveShoppingCart(cart);
         return cart;
     }
+
+
 
 //    @PostMapping("/increaseAndSaveCart/{id}")
 //    @ResponseBody

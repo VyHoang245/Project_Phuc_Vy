@@ -9,6 +9,7 @@ import com.services.ShopppingCartService;
 import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
 @RestController
 public class ShoppingCartControllers {
@@ -45,13 +46,13 @@ public class ShoppingCartControllers {
 //    @RequestMapping(value = "/increaseAndSaveCart/{id}", method = RequestMethod.GET)
 
 
-    @GetMapping("/increaseAndSaveCart/{id}")
+    @PostMapping("/increaseAndSaveCart/{id}/{quantity}")
     @ResponseBody
-    public ShoppingCart increaseAndSaveCart(@PathVariable int id) {
+    public ResponseEntity<String> increaseAndSaveCart(@PathVariable int id, @PathVariable int quantity) {
         ShoppingCart cart = shoppingCartService.getShoppingCartById(id);
-        cart.setQuantity(cart.getQuantity() + 1);
+        cart.setQuantity(quantity);
         shoppingCartService.saveShoppingCart(cart);
-        return cart;
+        return ResponseEntity.ok("Quantity updated successfully");
     }
 
 //    @PostMapping("/increaseAndSaveCart/{id}")

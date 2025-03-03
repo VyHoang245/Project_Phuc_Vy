@@ -3417,28 +3417,28 @@ $(".main-menuMB").on("click", "li", function () {
         var th = $(this).closest('.quantity').find('.qty-text');
         var currentVal = parseInt(th.val());
         var maxVal = parseInt(th.data('max'));
+        var id = th.attr('id');
+        var url = th.attr('data-href');
+
         if (currentVal < maxVal) {
             th.val(currentVal + 1);
             updateTotals();
+            var curVal = parseInt(th.val());
 
-            // var url = $(this).find('span').attr('th:data-href'); // Use th:data-href attribute
-            // $.ajax({
-            //     url: url,
-            //     type: 'GET',
-            //     success: function (response) {
-            //         // Update the subtotal and grand total
-            //         updateTotals();
-            //         // Optionally show a toast message or any other feedback
-            //         // $('#toastBox').text('Item quantity updated successfully!');
-            //     },
-            //     error: function (error) {
-            //         // Handle error if needed
-            //         console.error('Error updating quantity:', error);
-            //     }
-            // });
+            var newUrl = url +'/'+curVal;
+            $.ajax({
+                url: newUrl,
+                method: 'POST',
+                contentType: 'application/json',
+                // data: JSON.stringify({ id: id}),
+                success: function(response) {
+                    // alert('Quantity updated successfully');
+                },
+                error: function(error) {
+                    // alert('Error updating quantity');
+                }
+            });
 
-
-            // window.location.href = $(this).find('span').attr('th:data-href'); // Use data-href attribute
 
         }
     });
@@ -3447,7 +3447,23 @@ $(".main-menuMB").on("click", "li", function () {
         if (th.val() > 1){
             th.val(+th.val() - 1);
             updateTotals();
+            var curVal = parseInt(th.val());
+            var url = th.attr('data-href');
+            var newUrl = url +'/'+curVal;
+            $.ajax({
+                url: newUrl,
+                method: 'POST',
+                contentType: 'application/json',
+                // data: JSON.stringify({ id: id}),
+                success: function(response) {
+                    // alert('Quantity updated successfully');
+                },
+                error: function(error) {
+                    // alert('Error updating quantity');
+                }
+            });
         }
+
 
     });
 
@@ -3463,20 +3479,22 @@ $(".main-menuMB").on("click", "li", function () {
             grandTotal += subtotal;
         });
 
-        // $('#totalPrice').text(`$${grandTotal.toFixed(2)}`);
+         $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
     }
 
-    // $(document).ready(function() {
-    //     let grandTotal = 0;
-    //
-    //     $('.product-subtotal').each(function () {
-    //         const price = parseFloat($(this).siblings('.product-price').text().replace('$', ''));
-    //         const quantity = parseInt($(this).siblings('.product-quantity').find('.qty-text').val());
-    //         const subtotal = price * quantity;
-    //
-    //         $(this).text(`$${subtotal.toFixed(2)}`);
-    //         grandTotal += subtotal;
-    // });
+    $(document).ready(function() {
+        let grandTotal = 0;
+
+        $('.product-subtotal').each(function () {
+            const price = parseFloat($(this).siblings('.product-price').text().replace('$', ''));
+            const quantity = parseInt($(this).siblings('.product-quantity').find('.qty-text').val());
+            const subtotal = price * quantity;
+
+            $(this).text(`$${subtotal.toFixed(2)}`);
+            grandTotal += subtotal;
+    });
+        $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
+    })
 
     /* ===================================
      Infinite looping animation

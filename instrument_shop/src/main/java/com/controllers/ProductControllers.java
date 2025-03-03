@@ -12,6 +12,8 @@ import com.services.CategoryService;
 import com.services.BrandService;
 import com.services.ShopppingCartService;
 
+import java.util.List;
+
 @Controller
 public class ProductControllers {
     @Autowired
@@ -247,17 +249,33 @@ public class ProductControllers {
     // Cart management
     @GetMapping("/cart")
     public String manageCarts(Model model) {
-        model.addAttribute("products", productService.getAllProducts());
-        model.addAttribute("carts", shoppingCartService.getAllCarts());
+        List<ShoppingCart> cartList = shoppingCartService.getShoppingCartByUserId(1);
+        model.addAttribute("cartList", cartList);
         return "store-cart";
     }
+
+//    @GetMapping("/cart/{id}")
+//    public String manageCarts(Model model, @PathVariable int id) {
+//        List<ShoppingCart> cartList = shoppingCartService.getShoppingCartByUserId(id);
+//        model.addAttribute("cartList", cartList);
+//        return "store-cart";
+//    }
 
     @GetMapping("/deleteCart/{id}")
     public String deleteCart(@PathVariable int id) {
         shoppingCartService.deleteShoppingCart(id);
 
-        return "redirect:/shopping-Cart";
+        return "redirect:/cart";
     }
+
+    //Check out
+    @GetMapping("/checkout/{id}")
+    public String checkOutPage(@PathVariable int id, Model model) {
+        List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(id);
+        model.addAttribute("carts", carts);
+        return "store-checkout";
+    }
+
 }
 
 

@@ -8,7 +8,7 @@ import com.services.ProductService;
 import com.services.ShopppingCartService;
 import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -55,29 +55,14 @@ public class ShoppingCartControllers {
         return cart;
     }
 
-
-
-//    @PostMapping("/increaseAndSaveCart/{id}")
-//    @ResponseBody
-//    public ResponseEntity<ShoppingCart> increaseAndSaveCart(@PathVariable int id) {
-//        ShoppingCart cart = shoppingCartService.getShoppingCartById(id);
-//        if (cart == null) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//
-//        int currentQuantity = cart.getQuantity();
-//        int maxQuantity = cart.getProduct().getQuantityInStock();
-//
-//        if (currentQuantity < maxQuantity) {
-//            cart.setQuantity(currentQuantity + 1);
-//            shoppingCartService.saveShoppingCart(cart);
-//
-//            return new ResponseEntity<>(cart, HttpStatus.OK);
-//        } else {
-//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST); // Or any other suitable status code
-//        }
-//    }
-//
+    @PostMapping("/increaseAndSaveCart/{id}/{quantity}")
+    @ResponseBody
+    public ResponseEntity<String> increaseAndSaveCart(@PathVariable int id, @PathVariable int quantity) {
+        ShoppingCart cart = shoppingCartService.getShoppingCartById(id);
+        cart.setQuantity(quantity);
+        shoppingCartService.saveShoppingCart(cart);
+        return ResponseEntity.ok("Quantity updated successfully");
+    }
 
 
 }

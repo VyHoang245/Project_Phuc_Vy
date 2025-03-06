@@ -12,6 +12,8 @@ import com.services.CategoryService;
 import com.services.BrandService;
 import com.services.ShopppingCartService;
 
+import java.util.List;
+
 @Controller
 public class ProductControllers {
     @Autowired
@@ -247,8 +249,8 @@ public class ProductControllers {
     // Cart management
     @GetMapping("/cart")
     public String manageCarts(Model model) {
-        model.addAttribute("products", productService.getAllProducts());
-        model.addAttribute("carts", shoppingCartService.getAllCarts());
+        List<ShoppingCart> cartList = shoppingCartService.getShoppingCartByUserId(1);
+        model.addAttribute("cartList", cartList);
         return "store-cart";
     }
 

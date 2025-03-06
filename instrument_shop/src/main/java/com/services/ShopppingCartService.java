@@ -6,7 +6,7 @@ import com.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 public class ShopppingCartService {
@@ -19,6 +19,15 @@ public class ShopppingCartService {
 
     public ShoppingCart getShoppingCartById(int id) {
         return shoppingCartRepository.findById(id).orElse(null);
+    }
+    public List<ShoppingCart> getShoppingCartByUserId(int id) {
+        List<ShoppingCart> cartList = new ArrayList<>();
+        for (ShoppingCart cart : getAllCarts()) {
+            if (cart.getUser().getId() == id) {
+                cartList.add(cart);
+            }
+        }
+        return cartList;
     }
     public ShoppingCart increaseQuantityProduct(int productID) {
         List<ShoppingCart> cartList = getAllCarts();

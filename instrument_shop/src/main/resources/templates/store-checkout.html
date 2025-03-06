@@ -96,7 +96,7 @@
                                 <th class="w-60 lg-w-55 xs-w-50 fw-600 text-dark-gray alt-font">Product</th>
                                 <td class="fw-600 text-dark-gray alt-font">Total</td>
                             </tr>
-                            <tr class="product">
+                            <tr class="product" th:each="cart:${carts}">
                                 <td class="product-thumbnail">
                                     <a href="store-single-product.html"
                                        class="text-dark-gray fw-500 d-block lh-initial" th:text="@{${cart.getProduct().getName()}+' x '+${cart.quantity}}"></a>

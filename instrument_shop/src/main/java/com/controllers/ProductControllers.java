@@ -73,10 +73,10 @@ public class ProductControllers {
 //        return "store-cart";
 //    }
 
-    @GetMapping("/checkout")
-    public String checkout(Model model) {
-        return "store-checkout";
-    }
+//    @GetMapping("/checkout")
+//    public String checkout(Model model) {
+//        return "store-checkout";
+//    }
 
     @GetMapping("/login")
     public String login(Model model) {
@@ -263,11 +263,20 @@ public String manageUsers(Model model) {
     }
 
     //Check out
-    @GetMapping("/checkout/{id}")
-    public String checkOutPage(@PathVariable int id, Model model) {
-        List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(id);
+    @GetMapping("/checkout")
+    public String checkOutPage(Model model) {
+        model.addAttribute("newOrder", new Order());
+        List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(1);
         model.addAttribute("carts", carts);
         return "store-checkout";
+    }
+
+    @PostMapping("/saveOrder")
+    public String saveOrder(Order order) {
+
+
+//        productService.saveOrUpdateProduct(product);
+        return "redirect:/admin/products";
     }
 
 }

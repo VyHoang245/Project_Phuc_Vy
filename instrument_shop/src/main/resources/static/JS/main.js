@@ -3425,16 +3425,16 @@ $(".main-menuMB").on("click", "li", function () {
             updateTotals();
             var curVal = parseInt(th.val());
 
-            var newUrl = url +'/'+curVal;
+            var newUrl = url + '/' + curVal;
             $.ajax({
                 url: newUrl,
                 method: 'POST',
                 contentType: 'application/json',
                 // data: JSON.stringify({ id: id}),
-                success: function(response) {
+                success: function (response) {
                     // alert('Quantity updated successfully');
                 },
-                error: function(error) {
+                error: function (error) {
                     // alert('Error updating quantity');
                 }
             });
@@ -3444,21 +3444,21 @@ $(".main-menuMB").on("click", "li", function () {
     });
     $('.qty-minus').click(function () {
         var th = $(this).closest('.quantity').find('.qty-text');
-        if (th.val() > 1){
+        if (th.val() > 1) {
             th.val(+th.val() - 1);
             updateTotals();
             var curVal = parseInt(th.val());
             var url = th.attr('data-href');
-            var newUrl = url +'/'+curVal;
+            var newUrl = url + '/' + curVal;
             $.ajax({
                 url: newUrl,
                 method: 'POST',
                 contentType: 'application/json',
                 // data: JSON.stringify({ id: id}),
-                success: function(response) {
+                success: function (response) {
                     // alert('Quantity updated successfully');
                 },
-                error: function(error) {
+                error: function (error) {
                     // alert('Error updating quantity');
                 }
             });
@@ -3479,10 +3479,10 @@ $(".main-menuMB").on("click", "li", function () {
             grandTotal += subtotal;
         });
 
-         $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
+        $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         let grandTotal = 0;
 
         $('.product-subtotal').each(function () {
@@ -3492,8 +3492,16 @@ $(".main-menuMB").on("click", "li", function () {
 
             $(this).text(`$${subtotal.toFixed(2)}`);
             grandTotal += subtotal;
-    });
+        });
         $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
+
+        let totalCheckout = 0;
+        $('.product-price').each(function () {
+            const subtotal = parseFloat($(this).text().replace('$', ''));
+
+            totalCheckout += subtotal;
+        });
+        $('.totalPriceCheckout').text(`$${totalCheckout.toFixed(2)}`);
     })
 
     /* ===================================

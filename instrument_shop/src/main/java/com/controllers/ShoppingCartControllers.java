@@ -1,15 +1,17 @@
 package com.controllers;
 
-import com.models.Brand;
-import com.models.Product;
-import com.models.ShoppingCart;
-import com.models.User;
+import com.DTO.OrderDetailRequest;
+import com.DTO.OrderRequest;
+import com.models.*;
+import com.services.OrderService;
 import com.services.ProductService;
 import com.services.ShopppingCartService;
 import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.*;
 
 @RestController
 public class ShoppingCartControllers {
@@ -19,6 +21,8 @@ public class ShoppingCartControllers {
     private UserService userService;
     @Autowired
     private ShopppingCartService shoppingCartService;
+    @Autowired
+    private OrderService orderService;
 
     @RequestMapping(value = "/addAndSaveCart/{productID}", method = RequestMethod.GET)
     public String addAndSaveCart(@PathVariable int productID) {
@@ -63,6 +67,27 @@ public class ShoppingCartControllers {
         shoppingCartService.saveShoppingCart(cart);
         return ResponseEntity.ok("Quantity updated successfully");
     }
+//Order
+@PostMapping("/submit")
+public ResponseEntity<String> submitOrder(@RequestBody OrderRequest orderRequest) {
+    Order order = new Order();
+    order.setFullName(orderRequest.getFullName());
+    order.setPhone(orderRequest.getPhone());
+    order.setAddress(orderRequest.getAddress());
+    order.setTotalPrice(orderRequest.getTotalPrice());
+//    order.setPaymentMethod(orderRequest.getPaymentMethod());
 
+    List<OrderDetail> orderDetails = new ArrayList<>();
+    for (OrderDetailRequest detailRequest : orderRequest.getOrderDetails()) {
+        OrderDetail orderDetail = new OrderDetail();
+        orderDetail.setOrder(order);
+        orderDetail.setProduct(productService.getProductById(detailRequest.getProductId()));
+        orderDetail.setQuantity(detailRequest.getQuantity());
+        orderDetails.add(orderDetail);
+    }
+
+    orderService.saveOrder(order, orderDetails);
+    return ResponseEntity.ok("Order placed successfully");
+}
 
 }

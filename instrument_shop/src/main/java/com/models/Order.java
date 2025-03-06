@@ -2,6 +2,8 @@ package com.models;
 
 import jakarta.persistence.*;
 
+import java.util.*;
+
 @Entity
 @Table(name = "orderTable")
 public class Order {
@@ -18,6 +20,17 @@ public class Order {
     private String address;
     private String phone;
     private String note;
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderDetail> orderDetails = new ArrayList<>();
+
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
 
     public User getUser() {
         return user;

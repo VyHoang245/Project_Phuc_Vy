@@ -3417,13 +3417,9 @@ $(".main-menuMB").on("click", "li", function () {
         var th = $(this).closest('.quantity').find('.qty-text');
         var currentVal = parseInt(th.val());
         var maxVal = parseInt(th.data('max'));
-        var id = th.attr('id');
-        var url = th.attr('data-href');
-
         if (currentVal < maxVal) {
             th.val(currentVal + 1);
             updateTotals();
-            var curVal = parseInt(th.val());
 
             var newUrl = url + '/' + curVal;
             $.ajax({
@@ -3439,6 +3435,8 @@ $(".main-menuMB").on("click", "li", function () {
                 }
             });
 
+
+            // window.location.href = $(this).find('span').attr('th:data-href'); // Use data-href attribute
 
         }
     });
@@ -3463,7 +3461,6 @@ $(".main-menuMB").on("click", "li", function () {
                 }
             });
         }
-
 
     });
 

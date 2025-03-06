@@ -1,4 +1,5 @@
 package com.controllers;
+
 import com.models.*;
 import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +12,12 @@ import com.services.CategoryService;
 import com.services.BrandService;
 import com.services.ShopppingCartService;
 
-import java.util.List;
-
 @Controller
 public class ProductControllers {
     @Autowired
-	private ProductService productService;
+    private ProductService productService;
     @Autowired
-	private CategoryService categoryService;
+    private CategoryService categoryService;
     @Autowired
     private BrandService brandService;
     @Autowired
@@ -26,9 +25,9 @@ public class ProductControllers {
     @Autowired
     private ShopppingCartService shoppingCartService;
 
-    @GetMapping({"/",""})
+    @GetMapping({"/", ""})
     public String getAllProducts(Model model) {
-		System.out.println(productService.getAllProducts());
+        System.out.println(productService.getAllProducts());
         model.addAttribute("products", productService.getAllProducts());
         model.addAttribute("categories", categoryService.getAllCategories());
         return "store";
@@ -96,14 +95,14 @@ public class ProductControllers {
     @GetMapping("/getProducts")
     public String geProducts(Model model) {
         model.addAttribute("products", productService.getAllProducts());
-        return "ViewProducts"; 
+        return "ViewProducts";
     }
-    
+
     @GetMapping("/addProduct")
     public String AddUser(Model model) {
-    	model.addAttribute("product", new Product());
-    	model.addAttribute("categories", categoryService.getAllCategories());
-    	return "addProduct";
+        model.addAttribute("product", new Product());
+        model.addAttribute("categories", categoryService.getAllCategories());
+        return "addProduct";
     }
 
     @GetMapping("/admin")
@@ -122,47 +121,49 @@ public class ProductControllers {
 
     @PostMapping("/saveProduct")
     public String saveProduct(Product product) {
-    	productService.saveOrUpdateProduct(product);
+        productService.saveOrUpdateProduct(product);
         return "redirect:/admin/products";
     }
-    
+
     @GetMapping("/editProduct/{id}")
     public String editProduct(@PathVariable int id, Model model) {
-    	model.addAttribute("product", productService.getProductById(id));
-    	model.addAttribute("categories", categoryService.getAllCategories());
-    	return "EditProduct";
+        model.addAttribute("product", productService.getProductById(id));
+        model.addAttribute("categories", categoryService.getAllCategories());
+        return "EditProduct";
     }
-    
+
     @GetMapping("/deleteProduct/{id}")
     public String deleteProduct(@PathVariable int id) {
-    	productService.deleteProduct(id);
-    	
-    	return "redirect:/admin/products";
-    }
-    
-    @PutMapping("/editSaveProduct")
-    public String editSaveProduct(@ModelAttribute Product product
-    ) {
-    	productService.saveOrUpdateProduct(product);
+        productService.deleteProduct(id);
 
         return "redirect:/admin/products";
     }
-    
+
+    @PutMapping("/editSaveProduct")
+    public String editSaveProduct(@ModelAttribute Product product
+    ) {
+        productService.saveOrUpdateProduct(product);
+
+        return "redirect:/admin/products";
+    }
+
     @GetMapping("/admin/products")
     public String listProducts(Model model) {
-    	model.addAttribute("products", productService.getAllProducts());
-    	model.addAttribute("categories", categoryService.getAllCategories());
-    	return "admin/list-products";
+        model.addAttribute("products", productService.getAllProducts());
+        model.addAttribute("categories", categoryService.getAllCategories());
+        return "admin/list-products";
     }
-//	User management
-@GetMapping("/manage-users")
-public String manageUsers(Model model) {
-    model.addAttribute("users",userService.getAllUsers());
-    return "userList";
-}
+
+    //	User management
+    @GetMapping("/manage-users")
+    public String manageUsers(Model model) {
+        model.addAttribute("users", userService.getAllUsers());
+        return "userList";
+    }
+
     @GetMapping("/edit-users")
     public String editUsers(Model model) {
-        model.addAttribute("users",userService.getAllUsers());
+        model.addAttribute("users", userService.getAllUsers());
         return "userEdit";
     }
 
@@ -173,12 +174,14 @@ public String manageUsers(Model model) {
         model.addAttribute("categories", categoryService.getAllCategories());
         return "category-mangement";
     }
+
     @GetMapping("/addCategory")
     public String AddCategory(Model model) {
         model.addAttribute("category", new Category());
         model.addAttribute("categories", categoryService.getAllCategories());
         return "category-add";
     }
+
     @PostMapping("/saveCategory")
     public String saveCategory(Category category) {
         categoryService.saveCategory(category);
@@ -234,6 +237,7 @@ public String manageUsers(Model model) {
 
         return "redirect:/manage-brand";
     }
+
     @PostMapping("/saveBrand")
     public String saveBrand(Brand brand) {
         brandService.saveBrand(brand);
@@ -243,23 +247,16 @@ public String manageUsers(Model model) {
     // Cart management
     @GetMapping("/cart")
     public String manageCarts(Model model) {
-        List<ShoppingCart> cartList = shoppingCartService.getShoppingCartByUserId(1);
-        model.addAttribute("cartList", cartList);
+        model.addAttribute("products", productService.getAllProducts());
+        model.addAttribute("carts", shoppingCartService.getAllCarts());
         return "store-cart";
     }
-
-//    @GetMapping("/cart/{id}")
-//    public String manageCarts(Model model, @PathVariable int id) {
-//        List<ShoppingCart> cartList = shoppingCartService.getShoppingCartByUserId(id);
-//        model.addAttribute("cartList", cartList);
-//        return "store-cart";
-//    }
 
     @GetMapping("/deleteCart/{id}")
     public String deleteCart(@PathVariable int id) {
         shoppingCartService.deleteShoppingCart(id);
 
-        return "redirect:/cart";
+        return "redirect:/shopping-Cart";
     }
 
     //Check out
@@ -279,6 +276,10 @@ public String manageUsers(Model model) {
         return "redirect:/admin/products";
     }
 
+    @GetMapping("/myAccount")
+    public String myAccount(Model model) {
+        return "store-account";
+    }
 }
 
 

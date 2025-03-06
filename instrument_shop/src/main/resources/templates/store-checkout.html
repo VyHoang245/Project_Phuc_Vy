@@ -96,7 +96,7 @@
                                 <th class="w-60 lg-w-55 xs-w-50 fw-600 text-dark-gray alt-font">Product</th>
                                 <td class="fw-600 text-dark-gray alt-font">Total</td>
                             </tr>
-                            <tr class="product" th:each="cart:${carts}">
+                            <tr class="product">
                                 <td class="product-thumbnail">
                                     <a href="store-single-product.html"
                                        class="text-dark-gray fw-500 d-block lh-initial" th:text="@{${cart.getProduct().getName()}+' x '+${cart.quantity}}"></a>
@@ -104,14 +104,6 @@
                                 </td>
                                 <td class="product-price" data-title="Price" th:text="@{'$'+${cart.quantity * cart.getProduct().getPrice()}}" >$23.00</td>
                             </tr>
-<!--                            <tr class="product">-->
-<!--                                <td class="product-thumbnail">-->
-<!--                                    <a href="store-single-product.html"-->
-<!--                                       class="text-dark-gray fw-500 d-block lh-initial">Ceramic mug x 1</a>-->
-<!--                                    <span class="fs-14 d-block">Color: White</span>-->
-<!--                                </td>-->
-<!--                                <td class="product-price" data-title="Price">$15.00</td>-->
-<!--                            </tr>-->
                             <tr>
                                 <th class="w-50 fw-600 text-dark-gray alt-font">Subtotal</th>
                                 <td class="text-dark-gray fw-600 totalPriceCheckout">$405.00</td>

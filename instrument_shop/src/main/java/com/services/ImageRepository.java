@@ -1,11 +1,9 @@
 package com.services;
 
+import com.models.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.models.Product;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Integer>{
-//16:57
+public interface ImageRepository extends JpaRepository<Image, Long> {
 }

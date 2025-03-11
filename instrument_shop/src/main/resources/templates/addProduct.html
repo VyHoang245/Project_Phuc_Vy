@@ -215,7 +215,7 @@
 							</div>
 							<div class="card-body">
 								<div class="row g-xl-5 g-3">
-									<form th:action="@{/saveProduct}" th:object="${product}" method="post">
+									<form th:action="@{/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
 										<div class="row">
 											<div class="col-lg-6 col-12">
 												<label for="name" >Products Name<span style="color:red;">*</span></label>
@@ -244,10 +244,6 @@
 
 											</div>
 											<div class="col-lg-6 col-12">
-												<!--<label for="date">Ngày sinh</label>
-                                                    <br>
-                                                    <input type="Date" id="date" class="block">
-                                                    <br>-->
 												<label for="quantityInStock">Quantity in stock</label>
 												<br>
 												<input type="text" th:field="*{quantityInStock}" id="quantityInStock"
@@ -255,8 +251,7 @@
 												<br>
 												<label for="image">Image Link</label>
 												<br>
-												<input type="text" th:field="*{imageLink}" id="image" class="form-control input-sm"
-													   required="required">
+												<input type="file" name="file" id="image" class="form-control input-sm" required="required">
 												<br>
 												<label for="description">Description</label>
 												<br>

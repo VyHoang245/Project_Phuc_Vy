@@ -3471,12 +3471,19 @@ $(".main-menuMB").on("click", "li", function () {
             const price = parseFloat($(this).siblings('.product-price').text().replace('$', ''));
             const quantity = parseInt($(this).siblings('.product-quantity').find('.qty-text').val());
             const subtotal = price * quantity;
-
-            $(this).text(`$${subtotal.toFixed(2)}`);
+            let formattedSubtotal = subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            $(this).text(`$${formattedSubtotal}`);
             grandTotal += subtotal;
         });
+<<<<<<< Updated upstream
 
         $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
+=======
+        // let subtotal = 123456;
+        // let formattedSubtotal = subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        // $(this).text(`$${formattedSubtotal}`
+        // $('#totalPrice').text(`$${grandTotal.toFixed(2)}`);
+>>>>>>> Stashed changes
     }
 
     $(document).ready(function () {

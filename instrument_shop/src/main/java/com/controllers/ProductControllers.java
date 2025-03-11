@@ -1,17 +1,15 @@
 package com.controllers;
 
 import com.models.*;
-import com.services.UserService;
+import com.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import com.services.ProductService;
-import com.services.CategoryService;
-import com.services.BrandService;
-import com.services.ShopppingCartService;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -26,6 +24,9 @@ public class ProductControllers {
     private UserService userService;
     @Autowired
     private ShopppingCartService shoppingCartService;
+
+    @Autowired
+    private ImageService imageService;
 
     @GetMapping({"/", ""})
     public String getAllProducts(Model model) {
@@ -122,8 +123,8 @@ public class ProductControllers {
     }
 
     @PostMapping("/saveProduct")
-    public String saveProduct(Product product) {
-        productService.saveOrUpdateProduct(product);
+    public String saveProduct(@RequestParam("file") MultipartFile file, Product product) throws IOException {
+        productService.saveOrUpdateProduct(file, product);
         return "redirect:/admin/products";
     }
 
@@ -142,10 +143,9 @@ public class ProductControllers {
     }
 
     @PutMapping("/editSaveProduct")
-    public String editSaveProduct(@ModelAttribute Product product
-    ) {
-        productService.saveOrUpdateProduct(product);
-
+    public String editSaveProduct(@RequestParam("file") MultipartFile file,@ModelAttribute Product product
+    ) throws IOException {
+        productService.saveOrUpdateProduct( file, product);
         return "redirect:/admin/products";
     }
 

@@ -75,5 +75,6 @@ public class Product {
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 	}
+
 	
 }

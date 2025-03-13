@@ -9,6 +9,7 @@
     <!-- start section -->
     <section>
         <div class="container">
+            <form class="" th:action="@{/submit}" th:object="${orderRequest}" method="post">
             <div class="row justify-content-center mb-8 lg-mb-10 align-items-center">
                 <div class="col-auto icon-with-text-style-08 lg-mb-10px">
                     <div class="feature-box feature-box-left-icon">
@@ -27,34 +28,34 @@
             <div class="row align-items-start">
                 <div class="col-lg-7 pe-50px md-pe-15px md-mb-50px xs-mb-35px">
                     <span class="fs-26 alt-font fw-600 text-dark-gray mb-20px d-block">Billing details</span>
-                    <form class="">
+
                         <div class="row">
                             <div class="col-md-6 mb-20px">
                                 <label class="mb-10px">First name <span class="text-red">*</span></label>
-                                <input class="border-radius-4px input-small required" type="text" aria-label="text"
+                                <input class="border-radius-4px input-small required" type="text" th:field="*{firstName}" aria-label="text"
                                        required="">
                             </div>
                             <div class="col-md-6 mb-20px">
                                 <label class="mb-10px">Last name <span class="text-red">*</span></label>
-                                <input class="border-radius-4px input-small required" type="text" aria-label="text"
+                                <input class="border-radius-4px input-small required" type="text" th:field="*{lastName}" aria-label="text"
                                        required="">
                             </div>
                             <div class="col-12 mb-20px">
                                 <label class="mb-10px">Phone <span class="text-red">*</span></label>
-                                <input class="border-radius-4px input-small required" type="text" required="">
+                                <input class="border-radius-4px input-small required" type="text" th:field="*{phone}" required="">
                             </div>
                             <div class="col-12 mb-10px">
                                 <div class="row">
                                     <div class="col-12">
                                         <label class="mb-10px">Street address <span class="text-red">*</span></label>
                                         <input class="border-radius-4px input-small mb-20px required" type="text"
-                                               placeholder="House number and street name" required="">
+                                               placeholder="House number and street name" th:field="*{street}" required="">
                                     </div>
                                     <div class="col-4 mb-10px">
                                         <label class="mb-10px" for="city">Province <span
                                                 class="text-red">*</span></label>
                                         <select name="contry" id="city" class="form-select select-small required "
-                                                required="">
+                                                required="" th:field="*{province}">
                                             <option value="">Select a province</option>
                                         </select>
                                     </div>
@@ -62,14 +63,14 @@
                                         <label class="mb-10px" for="district">Town/City <span
                                                 class="text-red">*</span></label>
                                         <select name="contry" id="district" class="form-select select-small required"
-                                                required="">
+                                                required="" th:field="*{city}">
                                             <option value="">Select a town/city</option>
                                         </select>
                                     </div>
                                     <div class="col-4 mb-10px">
                                         <label class="mb-10px" for="ward">Ward <span class="text-red">*</span></label>
                                         <select name="contry" id="ward" class="form-select select-small required"
-                                                required="">
+                                                required="" th:field="*{ward}">
                                             <option value="">Select a ward</option>
                                         </select>
                                     </div>
@@ -77,15 +78,15 @@
                             </div>
                             <div class="col-12 mb-20px">
                                 <label class="mb-10px">Email address</label>
-                                <input class="border-radius-4px input-small" type="email">
+                                <input class="border-radius-4px input-small" type="email" >
                             </div>
                             <div class="col-12">
                                 <label class="mb-10px">Order notes (optional)</label>
                                 <textarea class="border-radius-4px textarea-small" rows="5" cols="5"
-                                          placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                          placeholder="Notes about your order, e.g. special notes for delivery." th:field="*{notes}"></textarea>
                             </div>
                         </div>
-                    </form>
+
                 </div>
                 <div class="col-lg-5">
                     <div class="bg-very-light-gray border-radius-6px p-50px lg-p-25px your-order-box">
@@ -106,12 +107,12 @@
                             </tr>
                             <tr>
                                 <th class="w-50 fw-600 text-dark-gray alt-font">Subtotal</th>
-                                <td class="text-dark-gray fw-600 totalPriceCheckout">$405.00</td>
+                                <td class="text-dark-gray fw-600 totalPriceCheckout" th:field="*{totalPrice}">$405.00</td>
                             </tr>
                             <tr class="total-amount">
                                 <th class="fw-600 text-dark-gray alt-font">Total</th>
                                 <td data-title="Total">
-                                    <h6 class="d-block fw-700 mb-0 text-dark-gray alt-font totalPriceCheckout">$405.00</h6>
+                                    <h6 class="d-block fw-700 mb-0 text-dark-gray alt-font totalPriceCheckout" >$405.00</h6>
                                     <span class="fs-14">(Includes $19.29 tax)</span>
                                 </td>
                             </tr>
@@ -156,12 +157,13 @@
                         <a href="#"
                            class="btn btn-base-color btn-extra-large btn-switch-text btn-round-edge btn-box-shadow w-100 text-transform-none mt-30px">
                             <span>
-                                <span class="btn-double-text" data-text="Place order">Place order</span>
+                                <button type="submit" class="btn-double-text" data-text="Place order">Place order</button>
                             </span>
                         </a>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </section>
     <!-- end section -->

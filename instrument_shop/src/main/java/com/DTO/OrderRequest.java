@@ -1,22 +1,38 @@
 package com.DTO;
 
+import com.models.ShoppingCart;
+
 import java.util.List;
 
 public class OrderRequest {
-    private String fullName;
+    private String firstName;
+    private String lastName;
     private String phone;
-    private String address;
-//    private String email;
-    private double totalPrice;
-//    private String paymentMethod;
-    private List<OrderDetailRequest> orderDetails;
+    private String street;
+    private String province;
+    private String city;
+    private String ward;
+    private String notes;
 
-    public String getFullName() {
-        return fullName;
+    public String getNotes() {
+        return notes;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    //    private String email;
+    private double totalPrice;
+//    private String paymentMethod;
+    private List<ShoppingCart> carts;
+
+    public List<ShoppingCart> getCarts() {
+        return carts;
+    }
+
+    public void setCarts(List<ShoppingCart> carts) {
+        this.carts = carts;
     }
 
     public String getPhone() {
@@ -27,14 +43,6 @@ public class OrderRequest {
         this.phone = phone;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public double getTotalPrice() {
         return totalPrice;
     }
@@ -43,11 +51,51 @@ public class OrderRequest {
         this.totalPrice = totalPrice;
     }
 
-    public List<OrderDetailRequest> getOrderDetails() {
-        return orderDetails;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setOrderDetails(List<OrderDetailRequest> orderDetails) {
-        this.orderDetails = orderDetails;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getWard() {
+        return ward;
+    }
+
+    public void setWard(String ward) {
+        this.ward = ward;
     }
 }

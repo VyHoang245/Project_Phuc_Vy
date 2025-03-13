@@ -9,6 +9,7 @@ import com.services.ShopppingCartService;
 import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -66,23 +67,27 @@ public class ShoppingCartControllers {
         cart.setQuantity(quantity);
         shoppingCartService.saveShoppingCart(cart);
         return ResponseEntity.ok("Quantity updated successfully");
+
     }
+
 //Order
 @PostMapping("/submit")
-public ResponseEntity<String> submitOrder(@RequestBody OrderRequest orderRequest) {
+public ResponseEntity<String> submitOrder(OrderRequest orderRequest) {
     Order order = new Order();
-    order.setFullName(orderRequest.getFullName());
+    order.setUser(userService.getUserById(1));
+    order.setFullName(orderRequest.getFirstName()+orderRequest.getLastName());
     order.setPhone(orderRequest.getPhone());
-    order.setAddress(orderRequest.getAddress());
+    order.setAddress(orderRequest.getStreet()+"-"+orderRequest.getWard()+"-"+orderRequest.getCity()+"-"+orderRequest.getProvince());
     order.setTotalPrice(orderRequest.getTotalPrice());
+    order.setNote(orderRequest.getNotes());
 //    order.setPaymentMethod(orderRequest.getPaymentMethod());
 
     List<OrderDetail> orderDetails = new ArrayList<>();
-    for (OrderDetailRequest detailRequest : orderRequest.getOrderDetails()) {
+    for (ShoppingCart cart : orderRequest.getCarts()) {
         OrderDetail orderDetail = new OrderDetail();
         orderDetail.setOrder(order);
-        orderDetail.setProduct(productService.getProductById(detailRequest.getProductId()));
-        orderDetail.setQuantity(detailRequest.getQuantity());
+        orderDetail.setProduct(productService.getProductById(cart.getProduct().getId()));
+        orderDetail.setQuantity(cart.getQuantity());
         orderDetails.add(orderDetail);
     }
 

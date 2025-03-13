@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.DTO.OrderRequest;
 import com.models.*;
 import com.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -264,7 +265,7 @@ public class ProductControllers {
     //Check out
     @GetMapping("/checkout")
     public String checkOutPage(Model model) {
-        model.addAttribute("newOrder", new Order());
+        model.addAttribute("orderRequest", new OrderRequest());
         List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(1);
         model.addAttribute("carts", carts);
         return "store-checkout";

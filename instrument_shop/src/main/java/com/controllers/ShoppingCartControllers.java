@@ -82,8 +82,9 @@ public ResponseEntity<String> submitOrder(OrderRequest orderRequest) {
     order.setNote(orderRequest.getNotes());
 //    order.setPaymentMethod(orderRequest.getPaymentMethod());
 
+    List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(1);
     List<OrderDetail> orderDetails = new ArrayList<>();
-    for (ShoppingCart cart : orderRequest.getCarts()) {
+    for (ShoppingCart cart : carts) {
         OrderDetail orderDetail = new OrderDetail();
         orderDetail.setOrder(order);
         orderDetail.setProduct(productService.getProductById(cart.getProduct().getId()));

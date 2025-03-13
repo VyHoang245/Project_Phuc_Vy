@@ -71,16 +71,6 @@ public class ProductControllers {
         return "store-contact";
     }
 
-//    @GetMapping("/cart")
-//    public String cart(Model model) {
-//        return "store-cart";
-//    }
-
-//    @GetMapping("/checkout")
-//    public String checkout(Model model) {
-//        return "store-checkout";
-//    }
-
     @GetMapping("/login")
     public String login(Model model) {
         return "store-login";

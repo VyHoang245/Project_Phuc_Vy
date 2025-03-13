@@ -3475,15 +3475,13 @@ $(".main-menuMB").on("click", "li", function () {
             $(this).text(`$${formattedSubtotal}`);
             grandTotal += subtotal;
         });
-<<<<<<< Updated upstream
 
         $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
-=======
         // let subtotal = 123456;
         // let formattedSubtotal = subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         // $(this).text(`$${formattedSubtotal}`
         // $('#totalPrice').text(`$${grandTotal.toFixed(2)}`);
->>>>>>> Stashed changes
+
     }
 
     $(document).ready(function () {

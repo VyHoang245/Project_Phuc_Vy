@@ -373,7 +373,7 @@
                 return T.querySelectorAll(":scope")
             }), le.cssHas = $(function () {
                 try {
-                    return T.querySelector(":has(*,:jqfake)"), !1
+                    return T.querySelector(":has()"), !1
                 } catch (e) {
                     return !0
                 }

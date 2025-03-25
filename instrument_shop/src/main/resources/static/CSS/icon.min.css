@@ -1,11 +1,5 @@
 ﻿@charset "UTF-8";
 
-/*!
-    Font Awesome
-    Version: 6.5.1
-    Plugin URL: https://fontawesome.com
-    License: Copyright 2023 Fonticons, Inc. | https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
-!*/
 .fa-stack,
 .fa-ul>li {
     position: relative

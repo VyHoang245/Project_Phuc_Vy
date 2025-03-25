@@ -238,7 +238,7 @@ public class ProductControllers {
     }
 
     // Cart management
-    @GetMapping("/cart")
+        @GetMapping("/cart")
     public String manageCarts(Model model) {
         List<ShoppingCart> cartList = shoppingCartService.getShoppingCartByUserId(1);
         model.addAttribute("cartList", cartList);
@@ -263,8 +263,6 @@ public class ProductControllers {
 
     @PostMapping("/saveOrder")
     public String saveOrder(Order order) {
-
-
 //        productService.saveOrUpdateProduct(product);
         return "redirect:/admin/products";
     }

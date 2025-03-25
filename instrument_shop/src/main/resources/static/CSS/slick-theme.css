@@ -1,21 +1,4 @@
-@charset 'UTF-8';
-/* Slider */
-.slick-loading .slick-list {
-  background: #fff url("../../images/ajax-loader.html") center center no-repeat;
-}
 
-/* Icons */
-@font-face {
-  font-family: "slick";
-  font-weight: normal;
-  font-style: normal;
-
-  src: url("https://admin.pixelstrap.net/admiro/assets/fonts/slick/slick.eot");
-  src: url("https://admin.pixelstrap.net/admiro/assets/fonts/slick/slick.eot?#iefix") format("embedded-opentype"),
-    url("https://admin.pixelstrap.net/admiro/assets/fonts/slick/slick.woff") format("woff"),
-    url("https://admin.pixelstrap.net/admiro/assets/fonts/slick/slick.ttf") format("truetype"),
-    url("https://admin.pixelstrap.net/admiro/assets/fonts/slick/slick.svg#slick") format("svg");
-}
 /* Arrows */
 .slick-prev,
 .slick-next {

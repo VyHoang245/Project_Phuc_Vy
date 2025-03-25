@@ -1,9 +1,9 @@
-@font-face {
-  font-family: 'pbminfotech-base-icons';
-  src: url('/Demo4/assets/fonts/pbminfotech-base-icons0999.woff2?13629842') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
+/*@font-face {*/
+/*  font-family: 'pbminfotech-base-icons';*/
+/*  src: url('/static/fonts/pbminfotech-base-icons0999.woff2') format('woff2');*/
+/*  font-weight: normal;*/
+/*  font-style: normal;*/
+/*}*/
 
 [class^="pbmit-base-icon-"]:before,
 [class*=" pbmit-base-icon-"]:before {

@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-20px">
                                 <label class="mb-10px">First name <span class="text-red">*</span></label>
-                                <input class="border-radius-4px input-small required" type="text" th:field="*{firstName}" aria-label="text"
+                                <input id="name" class="border-radius-4px input-small required" type="text" th:field="*{firstName}" aria-label="text"
                                        required="">
                             </div>
                             <div class="col-md-6 mb-20px">
@@ -154,9 +154,7 @@
 
                             </div>
                         </div>
-
                         <button type="submit" class="btn btn-base-color btn-extra-large btn-switch-text btn-round-edge btn-box-shadow w-100 text-transform-none mt-30px" data-text="Place order">Place order</button>
-
                     </div>
                 </div>
             </div>
@@ -175,7 +173,17 @@
     </div>
     <!-- end scroll progress -->
     <!-- javascript libraries -->
+    <script src="">
+        document.addEventListener('DOMContentLoaded', () => {
+            const citySelect = document.querySelector('#district');
+            citySelect.addEventListener('change', () => {
+                const selectedCityName = citySelect.options[citySelect.selectedIndex].text;
+                console.log('Selected City Name:', selectedCityName);
+            });
+        });
+    </script>
     <section th:replace="layout :: scriptStyle"> </section>
+
 </body>
 
 </html>

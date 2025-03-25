@@ -1,0 +1,200 @@
+body {
+    counter-reset: pbmitbox1 pbmitbox2 pbmitbox3;
+    background-color: var(--pbmit-xinterio-body-bg-color)
+}
+
+.pbmit-slider-area a.pbmit-rev-button {
+    position: relative
+}
+
+.pbmit-slider-area a.pbmit-rev-button {
+    margin-right: 40px
+}
+
+.pbmit-blog-classic .pbmit-read-more-link a,
+.pbmit-btn a.pbmit-button-inner,
+.pbmit-btn-shape-normal .elementor-button-wrapper a.elementor-button,
+.pbmit-btn-shape-outline .elementor-button-wrapper a.elementor-button,
+.pbmit-button-box-second .pbmit-header-button2 a.pbmit-header-button,
+.pbmit-form .wpcf7-submit,
+.pbmit-ihbox-btn .pbmit-button-inner,
+.pbmit-slider-area .pbmit-rev-button,
+.pbmit-slider-footer-area .pbmit-rev-button,
+.pbmit-slider-footer-area .pbmit-rev-button2,
+.pbmit-static-btn .pbmit-button-inner {
+    position: relative;
+    display: inline-block;
+    padding: 13px 30px;
+    border: 1px solid rgba(var(--pbmit-xinterio-blackish-color-rgb), .2);
+    border-radius: 30px
+}
+
+.pbmit-blog-classic .pbmit-read-more-link a .pbmit-btn-inner-wrapper,
+.pbmit-btn a.pbmit-button-inner .pbmit-button-wrapper,
+.pbmit-btn-shape-normal .elementor-button-wrapper .elementor-button .elementor-button-content-wrapper,
+.pbmit-btn-shape-outline .elementor-button-wrapper .elementor-button .elementor-button-content-wrapper,
+.pbmit-button-box-second .pbmit-header-button2 .pbmit-header-button .pbmit-header-button-wrapper,
+.pbmit-form .wpcf7-submit .pbmit-button-icon-wrapper,
+.pbmit-ihbox-btn .pbmit-button-inner .pbmit-button-wrapper,
+.pbmit-newsletter .pbmit-btn .pbmit-btn-inner-wrapper,
+.pbmit-slider-area .pbmit-rev-button .pbmit-rev-button-wrapper,
+.pbmit-slider-footer-area .pbmit-rev-button .pbmit-rev-button-wrapper,
+.pbmit-static-btn .pbmit-button-inner .pbmit-button-wrapper {
+    display: flex;
+    justify-content: center
+}
+
+.elementor-widget-button.pbmit-btn-shape-normal .elementor-button-wrapper .elementor-button>span,
+.elementor-widget-button.pbmit-btn-shape-outline .elementor-button-wrapper .elementor-button>span,
+.pbmit-blog-classic .pbmit-read-more-link a>span,
+.pbmit-btn a>span,
+.pbmit-button-box-second .pbmit-header-button2 .pbmit-header-button>span,
+.pbmit-form .wpcf7-submit>span,
+.pbmit-ihbox-btn .pbmit-button-inner>span,
+.pbmit-newsletter .pbmit-btn>span,
+.pbmit-slider-area .pbmit-rev-button>span,
+.pbmit-slider-footer-area .pbmit-rev-button>span,
+.pbmit-static-btn .pbmit-button-inner>span {
+    overflow: hidden
+}
+
+.elementor-widget-button.pbmit-btn-shape-normal .elementor-button-wrapper .elementor-button .elementor-button-text,
+.elementor-widget-button.pbmit-btn-shape-outline .elementor-button-wrapper .elementor-button .elementor-button-text,
+.pbmit-blog-classic .pbmit-read-more-link a .pbmit-btn-inner-wrapper span,
+.pbmit-btn a .pbmit-button-wrapper .pbmit-button-text,
+.pbmit-button-box-second .pbmit-header-button2 .pbmit-header-button .pbmit-header-button2-text,
+.pbmit-form .wpcf7-submit .pbmit-button-icon-wrapper span,
+.pbmit-ihbox-btn .pbmit-button-inner .pbmit-button-wrapper span,
+.pbmit-newsletter .pbmit-btn .pbmit-btn-inner-wrapper span,
+.pbmit-slider-area .pbmit-rev-button .pbmit-rev-button-text,
+.pbmit-slider-footer-area .pbmit-rev-button .pbmit-rev-button-text,
+.pbmit-static-btn .pbmit-button-inner .pbmit-button-wrapper span {
+    position: relative;
+    overflow: hidden
+}
+
+.elementor-widget-button.pbmit-btn-shape-normal .elementor-button-wrapper .elementor-button:hover .elementor-button-text,
+.elementor-widget-button.pbmit-btn-shape-outline .elementor-button-wrapper .elementor-button:hover .elementor-button-text,
+.pbmit-blog-classic .pbmit-read-more-link a:hover .pbmit-btn-inner-wrapper span,
+.pbmit-btn a:hover .pbmit-button-wrapper .pbmit-button-text,
+.pbmit-button-box-second .pbmit-header-button2 .pbmit-header-button:hover .pbmit-header-button2-text,
+.pbmit-form .wpcf7-submit:hover .pbmit-button-icon-wrapper span,
+.pbmit-ihbox-btn .pbmit-button-inner:hover .pbmit-button-wrapper span,
+.pbmit-newsletter .pbmit-btn:hover .pbmit-btn-inner-wrapper span,
+.pbmit-slider-area .pbmit-rev-button:hover .pbmit-rev-button-text,
+.pbmit-slider-footer-area .pbmit-rev-button:hover .pbmit-rev-button-text,
+.pbmit-static-btn .pbmit-button-inner:hover .pbmit-button-wrapper span {
+    animation: MoveUpInitial .2s forwards, MoveUpEnd .2s forwards .2s
+}
+
+@keyframes MoveUpInitial {
+    0% {
+        transform: translate3d(0, 0, 0)
+    }
+
+    50% {
+        transform: translate3d(0, -30%, 0)
+    }
+
+    100% {
+        transform: translate3d(0, -105%, 0)
+    }
+}
+
+@keyframes MoveUpEnd {
+    from {
+        transform: translate3d(0, 100%, 0)
+    }
+
+    to {
+        transform: translate3d(0, 0, 0)
+    }
+}
+
+.pbmit-blog-classic .pbmit-read-more-link a .pbmit-btn-inner-wrapper::after,
+.pbmit-btn-shape-normal .elementor-button-wrapper a.elementor-button::after,
+.pbmit-btn-shape-outline .elementor-button-wrapper a.elementor-button::after,
+.pbmit-button-box-second .pbmit-header-button2 a.pbmit-header-button::after,
+.pbmit-form .wpcf7-submit::after,
+.pbmit-ihbox-btn .pbmit-button-inner .pbmit-button-wrapper::after,
+.pbmit-slider-area a.pbmit-rev-button::after,
+.pbmit-slider-footer-area a.pbmit-rev-button::after,
+.pbmit-static-btn .pbmit-button-inner .pbmit-button-wrapper::after {
+    position: absolute;
+    right: -35px;
+    left: auto;
+    width: 50px;
+    height: 50px;
+    background-color: var(--pbmit-xinterio-global-color);
+    color: var(--pbmit-xinterio-white-color);
+    top: 0;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 12px;
+    text-align: center;
+    transform: translate3d(0, 0, 0) rotateZ(0);
+    transform-style: preserve-3d;
+    transition: all .5s ease-in-out
+}
+
+.rtl .pbmit-blog-classic .pbmit-read-more-link a .pbmit-btn-inner-wrapper::after,
+.rtl .pbmit-btn-shape-normal .elementor-button-wrapper a.elementor-button::after,
+.rtl .pbmit-btn-shape-outline .elementor-button-wrapper a.elementor-button::after,
+.rtl .pbmit-button-box-second .pbmit-header-button2 a.pbmit-header-button::after,
+.rtl .pbmit-form .wpcf7-submit::after,
+.rtl .pbmit-ihbox-btn .pbmit-button-inner .pbmit-button-wrapper::after,
+.rtl .pbmit-slider-area a.pbmit-rev-button::after,
+.rtl .pbmit-slider-footer-area a.pbmit-rev-button::after,
+.rtl .pbmit-static-btn .pbmit-button-inner .pbmit-button-wrapper::after {
+    left: -35px;
+    right: auto;
+    transform: translate3d(0, 0, 0) rotateZ(0) scaleX(-1)
+}
+
+.pbmit-blog-classic .pbmit-read-more-link a .pbmit-btn-inner-wrapper::after,
+.pbmit-btn-shape-normal .elementor-button-wrapper a.elementor-button::after,
+.pbmit-btn-shape-outline .elementor-button-wrapper a.elementor-button::after,
+.pbmit-button-box-second .pbmit-header-button2 a.pbmit-header-button::after,
+.pbmit-form .wpcf7-submit::after,
+.pbmit-ihbox-btn .pbmit-button-inner .pbmit-button-wrapper::after,
+.pbmit-slider-area a.pbmit-rev-button::after,
+.pbmit-slider-footer-area a.pbmit-rev-button::after,
+.pbmit-static-btn .pbmit-button-inner .pbmit-button-wrapper::after {
+    content: '\e8eb';
+    font-family: pbminfotech-base-icons
+}
+
+.pbmit-blog-classic .pbmit-read-more-link a:hover .pbmit-btn-inner-wrapper::after,
+.pbmit-btn-shape-normal .elementor-button-wrapper a.elementor-button:hover::after,
+.pbmit-btn-shape-outline .elementor-button-wrapper a.elementor-button:hover::after,
+.pbmit-button-box-second .pbmit-header-button2 a.pbmit-header-button:hover::after,
+.pbmit-ele-blog.pbmit-blog-style-1:hover .pbmit-blog-btn,
+.pbmit-ele-portfolio:hover .pbmit-ele-portfolio,
+.pbmit-form .wpcf7-submit:hover::after,
+.pbmit-ihbox-btn .pbmit-button-inner:hover .pbmit-button-wrapper::after,
+.pbmit-slider-area a.pbmit-rev-button:hover::after,
+.pbmit-slider-footer-area a.pbmit-rev-button:hover::after,
+.pbmit-static-btn .pbmit-button-inner:hover .pbmit-button-wrapper::after {
+    transform: translate3d(10px, 0, 0) rotateZ(45deg)
+}
+
+.rtl .pbmit-blog-classic .pbmit-read-more-link a:hover .pbmit-btn-inner-wrapper::after,
+.rtl .pbmit-btn-shape-normal .elementor-button-wrapper a.elementor-button:hover::after,
+.rtl .pbmit-btn-shape-outline .elementor-button-wrapper a.elementor-button:hover::after,
+.rtl .pbmit-button-box-second .pbmit-header-button2 a.pbmit-header-button:hover::after,
+.rtl .pbmit-form .wpcf7-submit:hover::after,
+.rtl .pbmit-ihbox-btn .pbmit-button-inner:hover .pbmit-button-wrapper::after,
+.rtl .pbmit-slider-area a.pbmit-rev-button:hover::after,
+.rtl .pbmit-slider-footer-area a.pbmit-rev-button:hover::after {
+    transform: translate3d(-10px, 0, 0) rotateZ(-45deg) scaleX(-1)
+}
+
+.pbmit-slider-area a.pbmit-rev-button::after {
+    color: var(--pbmit-xinterio-global-color);
+    background-color: var(--pbmit-xinterio-white-color)
+}
+
+
+.site-header:not(.pbmit-header-style-2) .pbmit-slider-area .pbmit-slider-dots-corner {
+    display: none
+}

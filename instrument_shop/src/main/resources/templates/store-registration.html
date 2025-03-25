@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="layout :: cssStyle"> </head>
 
@@ -13,9 +13,9 @@
                 <div class="col-lg-6 col-md-10 p-6 box-shadow-extra-large border-radius-6px sign-up"
                     data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay":150, "staggervalue": 150, "easing": "easeOutQuad" }'>
                     <span class="fs-26 xs-fs-24 alt-font fw-600 text-dark-gray mb-20px d-block">Create an account</span>
-                    <form action="email-templates/contact-form.php" method="post">
+                    <form th:action="@{/registration}" method="post" th:object="${user}">
                         <label class="text-dark-gray mb-10px fw-500">Username<span class="text-red">*</span></label>
-                        <input class="mb-20px bg-very-light-gray form-control required" type="text" name="name"
+                        <input class="mb-20px bg-very-light-gray form-control required" type="text" name="username"
                             placeholder="Enter your username">
                         <label class="text-dark-gray mb-10px fw-500">Email address<span
                                 class="text-red">*</span></label>
@@ -29,7 +29,7 @@
                                 In</a></span>
                         <button
                             class="btn btn-medium btn-round-edge btn-base-color btn-box-shadow submit w-100 text-transform-none"
-                            type="submit">Register</button>
+                            type="submit" value="Register">Register</button>
                         <div class="form-results mt-20px d-none"></div>
                     </form>
                 </div>

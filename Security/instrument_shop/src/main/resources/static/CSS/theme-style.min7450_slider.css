@@ -1,0 +1,45 @@
+:root {
+    --pbmit-xinterio-global-color: #bb9a65;
+    --pbmit-xinterio-secondary-color: #403226;
+    --pbmit-xinterio-gradient-color-first: #bb9a65;
+    --pbmit-xinterio-gradient-color-last: #baae9e;
+    --pbmit-xinterio-logo-height: 30px;
+    --pbmit-xinterio-sticky-logo-height: 30px;
+    --pbmit-xinterio-responsive-logo-height: 30px;
+    --pbmit-xinterio-link-color-normal: #403226;
+    --pbmit-xinterio-link-color-hover: #bb9a65;
+    --pbmit-xinterio-body-bg-color: #fff;
+    --pbmit-xinterio-white-color: #fff;
+    --pbmit-xinterio-light-bg-color: #f6f6f6;
+    --pbmit-xinterio-blackish-color: #403226;
+    --pbmit-xinterio-blackish-bg-color: #403226;
+    --pbmit-xinterio-preheader-bgcolor-custom: #fff;
+    --pbmit-xinterio-header-height: 85px;
+    --pbmit-xinterio-header-background-color: #fff;
+    --pbmit-xinterio-sticky-header-height: 90px;
+    --pbmit-xinterio-sticky-header-background-color: #fff;
+    --pbmit-xinterio-main-menu-typography-font-family: Space Grotesk;
+    --pbmit-xinterio-main-menu-typography-variant: 600;
+    --pbmit-xinterio-main-menu-typography-font-size: 16px;
+    --pbmit-xinterio-main-menu-typography-line-height: 24px;
+    --pbmit-xinterio-main-menu-typography-letter-spacing: 0;
+    --pbmit-xinterio-main-menu-typography-color: #403226;
+    --pbmit-xinterio-main-menu-typography-text-transform: none;
+    --pbmit-xinterio-main-menu-typography-font-style: normal;
+    --pbmit-xinterio-main-menu-typography-font-weight: 600;
+    --pbmit-xinterio-main-menu-sticky-color: #403226;
+    --pbmit-xinterio-main-menu-sticky-active-color: #bb9a65;
+    --pbmit-xinterio-titlebar-height: 600px;
+    --pbmit-xinterio-footer-1-col-width: 33%;
+    --pbmit-xinterio-footer-2-col-width: 34%;
+    --pbmit-xinterio-footer-3-col-width: 34%;
+    --pbmit-xinterio-footer-4-col-width: hide%;
+    --pbmit-xinterio-global-color-rgb: 187, 154, 101;
+    --pbmit-xinterio-secondary-color-rgb: 64, 50, 38;
+    --pbmit-xinterio-white-color-rgb: 255, 255, 255;
+    --pbmit-xinterio-light-bg-color-rgb: 246, 246, 246;
+    --pbmit-xinterio-blackish-color-rgb: 64, 50, 38;
+    --pbmit-xinterio-blackish-bg-color-rgb: 64, 50, 38;
+    --pbmit-xinterio-main-menu-typography-color-rgb: 64, 50, 38;
+    --pbmit-xinterio-titlebar-breadcrumb-typography-color-rgb: 255, 255, 255
+}

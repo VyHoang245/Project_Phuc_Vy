@@ -1,0 +1,221 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head th:replace="layout :: cssStyle"> </head>
+
+<body data-mobile-nav-style="classic">
+<header th:replace="layout :: header"> </header>
+<section th:replace="~{layout :: pageTitle('My account')}"></section>
+<!-- start section -->
+<section class="account-profile">
+    <div class="container">
+        <div class="edit-profile">
+            <div class="row">
+                <div class="col-xl-4 ">
+                    <div class="card card-profile">
+                        <div class="card-header card-no-border pb-0">
+                            <h3 class="card-title-profile mb-0">My Profile</h3>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-2">
+                                    <div class="profile-title">
+                                        <div class="d-flex gap-3"> <img class="img-70 rounded-circle" alt=""
+                                                                        src="./assets/images/avtar-07.jpg" />
+                                            <div class="flex-grow-1">
+                                                <h6 class="mt-1 mb-1">MARK JECNO</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label-name">Full Name</label>
+                                    <input class="form-control-name" type="text" placeholder="Full Name" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label-password">Password</label>
+                                    <input class="form-control-password" type="password" value="password" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label-email">Emai</label>
+                                    <input class="form-control-email" type="email" placeholder="Email" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label-address">Address</label>
+                                    <input class="form-control-address" type="text" placeholder="Home Address" />
+                                </div>
+
+                                <!-- <div class="form-footer">
+                                    <button class="btn btn-primary btn-block">Save</button>
+                                </div> -->
+
+                                <div class="upload-profile-form">
+                                    <button class="upload-profile" type="submit">Update profile</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <form class="card">
+                        <div class="card-header card-no-border pb-0">
+                            <h3 class="card-title-profile mb-0">History Order</h3>
+                        </div>
+                        <div class="card-body">
+                            <a class="order" href="">
+                                <div class="order-header">
+                                    <div>
+                                        <p class="order-title">764</p>
+                                        <p class="order-date">29.11.2024</p>
+                                    </div>
+                                    <div class="order-status-badge order-status-badge-completed">
+                                        <span class="order-status">Giao hàng thành công</span>
+                                    </div>
+                                </div>
+                                <div class="order-body">
+                                    <div class="order-item">
+                                        <div class="order-item-thumbnail">
+                                            <a href="">
+                                                <img data-v-451fd4eb=""
+                                                     src="Images/Williams Symphony Concert Digital Grand With Touchscreen and Bench Ebony 88 Key.png"
+                                                     alt="Áo Thun Nam C&amp;S Chubby Corgi">
+                                            </a>
+                                        </div>
+                                        <div class="order-item-info">
+                                            <a href="" class="order-item-title">
+                                                Áo Thun Nam C&amp;S Chubby Corgi
+                                            </a>
+                                            <div class="order-item-variant-label">
+                                                Đen / M
+                                            </div>
+                                            <div class="order-item-quantity">
+                                                x 1
+                                            </div>
+                                            <div class="order-item-price">
+                                                229.000đ
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-item">
+                                        <div class="order-item-thumbnail">
+                                            <a href="">
+                                                <img data-v-451fd4eb=""
+                                                     src="Images/Williams Symphony Concert Digital Grand With Touchscreen and Bench Ebony 88 Key.png"
+                                                     alt="Áo Thun Nam C&amp;S Chubby Corgi">
+                                            </a>
+                                        </div>
+                                        <div class="order-item-info">
+                                            <a href="" class="order-item-title">
+                                                Áo Thun Nam C&amp;S Chubby Corgi
+                                            </a>
+                                            <div class="order-item-variant-label">
+                                                Đen / M
+                                            </div>
+                                            <div class="order-item-quantity">
+                                                x 1
+                                            </div>
+                                            <div class="order-item-price">
+                                                229.000đ
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div data-v-37be0bb0="" class="order-footer__left">
+                                        <div><b>Total</b></div>
+                                    </div>
+                                    <div data-v-37be0bb0="" class="order-footer__right">
+                                        <div><b>450.000đ</b></div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="order" href="">
+                                <div class="order-header">
+                                    <div>
+                                        <p class="order-title">#76496279420</p>
+                                        <p class="order-date">29.11.2024</p>
+                                    </div>
+                                    <div class="order-status-badge order-status-badge-completed">
+                                        <span class="order-status">Giao hàng thành công</span>
+                                    </div>
+                                </div>
+                                <div class="order-body">
+                                    <div class="order-item">
+                                        <div class="order-item-thumbnail">
+                                            <a href="">
+                                                <img data-v-451fd4eb=""
+                                                     src="Images/Williams Symphony Concert Digital Grand With Touchscreen and Bench Ebony 88 Key.png"
+                                                     alt="Áo Thun Nam C&amp;S Chubby Corgi">
+                                            </a>
+                                        </div>
+                                        <div class="order-item-info">
+                                            <a href="" class="order-item-title">
+                                                Áo Thun Nam C&amp;S Chubby Corgi
+                                            </a>
+                                            <div class="order-item-variant-label">
+                                                Đen / M
+                                            </div>
+                                            <div class="order-item-quantity">
+                                                x 1
+                                            </div>
+                                            <div class="order-item-price">
+                                                229.000đ
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-item">
+                                        <div class="order-item-thumbnail">
+                                            <a href="">
+                                                <img data-v-451fd4eb=""
+                                                     src="Images/Williams Symphony Concert Digital Grand With Touchscreen and Bench Ebony 88 Key.png"
+                                                     alt="Áo Thun Nam C&amp;S Chubby Corgi">
+                                            </a>
+                                        </div>
+                                        <div class="order-item-info">
+                                            <a href="" class="order-item-title">
+                                                Áo Thun Nam C&amp;S Chubby Corgi
+                                            </a>
+                                            <div class="order-item-variant-label">
+                                                Đen / M
+                                            </div>
+                                            <div class="order-item-quantity">
+                                                x 1
+                                            </div>
+                                            <div class="order-item-price">
+                                                229.000đ
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div data-v-37be0bb0="" class="order-footer__left">
+                                        <div><b>Total</b></div>
+                                    </div>
+                                    <div data-v-37be0bb0="" class="order-footer__right">
+                                        <div><b>450.000đ</b></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start footer -->
+<footer th:replace="layout :: footer"> </footer>
+<!-- end footer -->
+<!-- start scroll progress -->
+<div class="scroll-progress d-none d-xxl-block">
+    <a href="#" class="scroll-top" aria-label="scroll">
+        <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+    </a>
+</div>
+<!-- end scroll progress -->
+<!-- javascript libraries -->
+<div th:replace="layout :: scriptStyle"></div>
+</body>
+
+</html>

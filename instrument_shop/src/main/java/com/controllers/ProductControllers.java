@@ -29,6 +29,23 @@ public class ProductControllers {
     @Autowired
     private ImageService imageService;
 
+    @GetMapping("/login")
+    public String loginPage() {
+        return "loginPage";
+    }
+
+    @GetMapping("/registration")
+    public String registrationPage(Model model) {
+        model.addAttribute("user", new User());
+        return "store-registration";
+    }
+
+    @PostMapping("/registration")
+    public String registrationUser(@ModelAttribute User user) {
+        userService.addUser(user);
+        return "redirect:/login?success";
+    }
+
     @GetMapping({"/", ""})
     public String getAllProducts(Model model) {
         System.out.println(productService.getAllProducts());
@@ -69,16 +86,6 @@ public class ProductControllers {
     @GetMapping("/contact")
     public String contact(Model model) {
         return "store-contact";
-    }
-
-    @GetMapping("/login")
-    public String login(Model model) {
-        return "store-login";
-    }
-
-    @GetMapping("/registration")
-    public String registration(Model model) {
-        return "store-registration";
     }
 
     @GetMapping("/product-detail")

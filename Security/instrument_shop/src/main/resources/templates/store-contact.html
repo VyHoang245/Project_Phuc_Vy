@@ -1,0 +1,154 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+
+<head th:replace="layout :: cssStyle"> </head>
+
+<body data-mobile-nav-style="classic">
+    <header th:replace="layout :: header"> </header>
+    <section th:replace="~{layout :: pageTitle('Contact us')}"></section>
+    <!-- start section -->
+    <section>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2"
+                data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 600, "delay":100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                <div class="col md-mb-35px">
+                    <span
+                        class="fs-17 fw-600 d-block w-90 sm-w-100 text-base-color border-bottom border-color-base-color pb-15px mb-15px"><i
+                            class="feather icon-feather-map-pin d-inline-block text-base-color me-10px"></i>Office
+                        location</span>
+                    <div>
+
+                        <p class="w-100 m-0">Nam Ky Khoi Nghia Street, Hoa Phu Ward,
+                            <br>Thu Dau Mot City, Binh Duong Province, Vietnam
+                        </p>
+                    </div>
+                </div>
+                <div class="col md-mb-35px">
+                    <span
+                        class="fs-17 fw-600 d-block w-90 sm-w-100 text-base-color border-bottom border-color-base-color pb-15px mb-15px"><i
+                            class="feather icon-feather-mail d-inline-block text-base-color me-10px"></i>Send a
+                        message</span>
+                    <a href="cdn-cgi/l/email-protection.html#d3babdb5bc93aabca6a1b7bcbeb2babdfdb0bcbe"><span
+                            class="__cf_email__"
+                            data-cfemail="e68f888089a69f89939482898b878f88c885898b">cit@eiu.edu.vn</span></a><br>
+                    <a href="cdn-cgi/l/email-protection.html#a0d3c1ccc5d3e0d9cfd5d2c4cfcdc1c9ce8ec3cfcd"><span
+                            class="__cf_email__"
+                            data-cfemail="186b79747d6b5861776d6a7c7775797176367b7775">engineering@eiu.edu.vn</span></a>
+                </div>
+                <div class="col xs-mb-35px">
+                    <span
+                        class="fs-17 fw-600 d-block w-90 sm-w-100 text-base-color border-bottom border-color-base-color pb-15px mb-15px"><i
+                            class="feather icon-feather-phone d-inline-block text-base-color me-10px"></i>Call us
+                        directly</span>
+                    <a href="tel:1800222000">(+84) 0274 222 0372</a><br>
+                    <!-- <a href="tel:1800222002">1-800-222-002</a> -->
+                </div>
+                <div class="col">
+                    <span
+                        class="fs-17 fw-600 d-block w-90 sm-w-100 text-base-color border-bottom border-color-base-color pb-15px mb-15px"><i
+                            class="feather icon-feather-users d-inline-block text-base-color me-10px"></i>Join our
+                        team</span>
+                    <a href="cdn-cgi/l/email-protection.html#9bf3f2e9fedbe2f4eee9fff4f6faf2f5b5f8f4f6"><span
+                            class="__cf_email__"
+                            data-cfemail="e68e8f9483a69f89939482898b878f88c885898b">cit@eiu.edu.vn</span></a><br>
+                    <a href="cdn-cgi/l/email-protection.html#7d150f3d0412080f1912101c1413531e1210"><span
+                            class="__cf_email__"
+                            data-cfemail="40283200392f3532242f2d21292e6e232f2d">engineering@eiu.edu.vn</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start section -->
+    <section class="pt-0 position-relative overflow-hidden">
+        <div class="container">
+            <div class="row mb-20px">
+                <div class="col-lg-10 col-md-12"
+                    data-anime='{ "effect": "slide", "color": "#1B3250", "direction":"rl", "easing": "easeOutQuad", "delay":50}'>
+                    <img src="Images/demo-decor-store-contact-01.jpg" alt="">
+                </div>
+            </div>
+            <div class="row align-items-end">
+                <div class="col-lg-7 col-md-12 align-self-start md-mt-15px"
+                    data-bottom-top="transform: translate3d(80px, 20px, 0px);"
+                    data-top-bottom="transform: translate3d(-80px, 20px, 0px);">
+                    <span
+                        class="alt-font fs-120 xs-fs-75 fw-600 opacity-3 d-block d-lg-inline-block text-center ls-minus-3px text-white-space-nowrap xs-text-white-space-normal">Get
+                        in touch!</span>
+                </div>
+                <div class="col-lg-5 contact-form-style-03 position-relative overlap-section-one-fourth md-mt-0"
+                    data-anime='{ "el": "childs", "translateY": [50, 0],"opacity": [0,1], "duration": 800, "delay": 550, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <div class="bg-base-color p-16 lg-p-10 position-relative overflow-hidden mt-50px">
+                        <i
+                            class="bi bi-chat-text fs-140 text-white opacity-1 position-absolute top-minus-30px right-minus-20px"></i>
+                        <h2 class="fw-600 alt-font text-white mb-30px fancy-text-style-4 ls-minus-1px">Say
+                            <span
+                                data-fancy-text='{ "effect": "rotate", "string": ["hello!", "hallå!", "salve!"] }'></span>
+                        </h2>
+                        <form action="email-templates/contact-form.php" method="post">
+                            <div class="position-relative form-group mb-10px">
+                                <span class="form-icon text-white"><i class="bi bi-person icon-small"></i></span>
+                                <input
+                                    class="fw-300 ps-0 border-radius-0px bg-transparent border-color-transparent-white-light placeholder-medium-gray form-control required"
+                                    type="text" name="name" placeholder="Your name*">
+                            </div>
+                            <div class="position-relative form-group mb-10px">
+                                <span class="form-icon text-white"><i class="bi bi-envelope icon-small"></i></span>
+                                <input
+                                    class="fw-300 ps-0 border-radius-0px bg-transparent border-color-transparent-white-light placeholder-medium-gray form-control required"
+                                    type="email" name="email" placeholder="Your email address*">
+                            </div>
+                            <div class="position-relative form-group form-textarea mt-10px">
+                                <textarea
+                                    class="fw-300 ps-0 border-radius-0px bg-transparent border-color-transparent-white-light placeholder-medium-gray form-control"
+                                    name="comment" placeholder="Your message" rows="3"></textarea>
+                                <span class="form-icon text-white"><i
+                                        class="bi bi-chat-square-dots icon-small"></i></span>
+                                <input type="hidden" name="redirect" value="">
+                                <button
+                                    class="btn btn-white btn-large fw-600 btn-switch-text btn-box-shadow btn-round-edge submit mt-30px"
+                                    type="submit">
+                                    <span>
+                                        <span class="btn-double-text" data-text="Send message">Send message</span>
+                                    </span>
+                                </button>
+                                <div class="form-results mt-20px d-none"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start section -->
+    <section class="p-0 border-radius-6px lg-no-border-radius overflow-hidden" id="location">
+        <div class="container-fluid px-0">
+            <div class="row g-0">
+                <!-- <div class=" p-0"> -->
+                <!-- <div id="map" class="map"> -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.806217231611!2d106.6659148745205!3d11.053150754029598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1d7df763eaf%3A0xf4323e44f2867057!2zxJDhuqFpIGjhu41jIFF14buRYyB04bq_IE1p4buBbiDEkMO0bmc!5e0!3m2!1svi!2s!4v1733475524472!5m2!1svi!2s"
+                    width="1910" ; height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- </div> -->
+                <!-- </div> -->
+            </div>
+
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start footer -->
+    <footer th:replace="layout :: footer"> </footer>
+    <!-- end footer -->
+    <!-- start scroll progress -->
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+        </a>
+    </div>
+    <section th:replace="layout :: scriptStyle"> </section>
+
+</body>
+
+</html>

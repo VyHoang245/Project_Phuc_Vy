@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: cssStyle"> </head>
+
+<body data-mobile-nav-style="classic">
+    <header th:replace="layout :: header"> </header>
+    <div th:replace="~{layout :: pageTitle('Account Register')}"></div>
+    <!-- start section -->
+    <section>
+        <div class="container">
+            <div class="row g-0 justify-content-center">
+                <div class="col-lg-6 col-md-10 p-6 box-shadow-extra-large border-radius-6px sign-up"
+                    data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay":150, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <span class="fs-26 xs-fs-24 alt-font fw-600 text-dark-gray mb-20px d-block">Create an account</span>
+                    <form th:action="@{/registration}" method="post" th:object="${userDTO}">
+                        <label class="text-dark-gray mb-10px fw-500">Username<span class="text-red">*</span></label>
+                        <input class="mb-20px bg-very-light-gray form-control required" type="text" name="username"
+                            placeholder="Enter your username">
+                        <label class="text-dark-gray mb-10px fw-500">Email address<span
+                                class="text-red">*</span></label>
+                        <input class="mb-20px bg-very-light-gray form-control required" type="email" name="email"
+                            placeholder="Enter your email">
+                        <label class="text-dark-gray mb-10px fw-500">Password<span class="text-red">*</span></label>
+                        <input class="mb-20px bg-very-light-gray form-control required" type="password" name="password"
+                            placeholder="Enter your password">
+                        <span class="fs-14 lh-22 w-90 lg-w-100 md-w-90 sm-w-100 d-block mb-30px">If you have an account,
+                            you can <a href="/login" class="text-dark-gray text-decoration-line-bottom fw-500">Sign
+                                In</a></span>
+                        <button
+                            class="btn btn-medium btn-round-edge btn-base-color btn-box-shadow submit w-100 text-transform-none"
+                            type="submit" value="Register">Register</button>
+                        <div class="form-results mt-20px d-none"></div>
+                    </form>
+                </div>
+
+
+                <!-- <div class="col-lg-6 col-md-10 p-6 box-shadow-extra-large border-radius-6px sign-up"
+                    data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay":150, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <span class="fs-26 xs-fs-24 alt-font fw-600 text-dark-gray mb-20px d-block">Create an account</span>
+                    <form action="email-templates/contact-form.php" method="post">
+                        <label class="text-dark-gray mb-10px fw-500">Username<span class="text-red">*</span></label>
+                        <input class="mb-20px bg-very-light-gray form-control required" type="text" name="name"
+                            placeholder="Enter your username">
+                        <label class="text-dark-gray mb-10px fw-500">Email address<span
+                                class="text-red">*</span></label>
+                        <input class="mb-20px bg-very-light-gray form-control required" type="email" name="email"
+                            placeholder="Enter your email">
+                        <label class="text-dark-gray mb-10px fw-500">Password<span class="text-red">*</span></label>
+                        <input class="mb-20px bg-very-light-gray form-control required" type="password" name="password"
+                            placeholder="Enter your password">
+                        <span class="fs-14 lh-22 w-90 lg-w-100 md-w-90 sm-w-100 d-block mb-30px">If you have an account,
+                            you can <a href="#" class="text-dark-gray text-decoration-line-bottom fw-500">Sign
+                                In</a></span>
+                        <button
+                            class="btn btn-medium btn-round-edge btn-base-color btn-box-shadow submit w-100 text-transform-none"
+                            type="submit">Register</button>
+                        <div class="form-results mt-20px d-none"></div>
+                    </form>
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start footer -->
+    <footer th:replace="layout :: footer"> </footer>
+    <!-- end footer -->
+    <!-- start scroll progress -->
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+        </a>
+    </div>
+    <!-- end scroll progress -->
+    <!-- javascript libraries -->
+    <section th:replace="layout :: scriptStyle"> </section>
+</body>
+
+</html>

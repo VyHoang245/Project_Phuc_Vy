@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!-- Mirrored from admin.pixelstrap.net/admiro/template/list-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 14:45:10 GMT -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PV Symphony -Admin Template</title>
+    <!-- Favicon icon-->
+    <link rel="icon" href="../Images/logo_with_V_and_P__instrument-removebg-preview.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../Images/logo_with_V_and_P__instrument-removebg-preview.png" type="image/x-icon" />
+    <!-- Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&amp;display=swap"
+            rel="stylesheet" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+          integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Whether Icon css-->
+    <link rel="stylesheet" type="text/css" href="../CSS/scrollbar.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/style-simple-datatable.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/slick-theme.css" />
+    <!-- App css -->
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link id="color" rel="stylesheet" href="../CSS/color-1.css" media="screen" />
+</head>
+
+<body>
+<!-- page-wrapper Start-->
+<!-- tap on top starts-->
+<div class="tap-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+<!-- tap on tap ends-->
+<!-- loader-->
+<div class="loader-wrapper">
+    <div class="loader"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+<div class="page-wrapper compact-wrapper" id="pageWrapper">
+    <header class="page-header row">
+        <div class="logo-wrapper d-flex align-items-center col-auto">
+            <a href="index.html">
+                <img class="light-logo img-fluid" src="../Images/logo1.png" alt="logo" />
+            </a>
+            <a class="close-btn toggle-sidebar" href="javascript:void(0)">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="page-main-header col">
+            <div class="nav-right">
+                <ul class="header-right">
+                    <li> <a class="dark-mode" href="javascript:void(0)">
+                        <i class="fa fa-moon-o" aria-hidden="true"></i>
+                    </a></li>
+                    <li class="profile-nav custom-dropdown">
+                        <div class="userModel-wrap">
+                            <div class="userModel-img"><img src="../images/profile.png" alt="userModel" /></div>
+                            <div class="userModel-content">
+                                <h6>Ava Davis</h6>
+                                <p class="mb-0">Admin<i class="fa fa-angle-down"></i></p>
+                            </div>
+                        </div>
+                        <div class="custom-menu overflow-hidden">
+                            <ul class="profile-body">
+                                <li class="d-flex">
+                                    <svg class="svg-color">
+                                        <use href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Profile"></use>
+                                    </svg>
+                                    <a class="ms-2" href="userModel-profile.html">Account</a>
+                                </li>
+                                <li class="d-flex">
+                                    <svg class="svg-color">
+                                        <use href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Message"></use>
+                                    </svg><a class="ms-2" href="letter-box.html">Inbox</a>
+                                </li>
+                                <li class="d-flex">
+                                    <svg class="svg-color">
+                                        <use href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Login"></use>
+                                    </svg><a class="ms-2" href="login.html">Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Page Body Start-->
+    <div class="page-body-wrapper">
+        <!-- Page sidebar start-->
+        <asivde class="page-sidebar">
+            <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+            <div class="main-sidebar" id="main-sidebar">
+                <ul class="sidebar-menu" id="simple-bar">
+                    <li class="pin-title sidebar-main-title">
+                        <div>
+                            <h5 class="sidebar-title f-w-700">Pinned</h5>
+                        </div>
+                    </li>
+                    <li class="sidebar-list"><i class="fa fa-thumb-tack fa-thumbtack fa-thumbtack"></i>
+                        <a class="sidebar-link" href="/admin">
+                            <i class="fa fa-home stroke-icon" aria-hidden="true"></i>
+                            <h6>Dashboard</h6>
+                        </a>
+                    </li>
+                    <li class="sidebar-list"> <i class="fa fa-thumb-tack fa-thumbtack"></i>
+                        <a class="sidebar-link" href="/category">
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                            <h6 class="f-w-600">Manage Categories</h6>
+                        </a>
+                    </li>
+                    <li class="sidebar-list"> <i class="fa fa-thumb-tack fa-thumbtack"></i>
+                        <a class="sidebar-link" href="/manage-products">
+                            <i class="fa fa-shopping-bag stroke-icon" aria-hidden="true"></i>
+                            <h6 class="f-w-600">Manage Products</h6>
+                        </a>
+                    </li>
+                    <li class="sidebar-list"> <i class="fa fa-thumb-tack fa-thumbtack"></i><a class="sidebar-link"
+                                                                                              href="javascript:void(0)">
+                        <i class="fa fa-userModel-circle stroke-icon" aria-hidden="true"></i>
+                        <h6 class="f-w-600">Users</h6><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                        <ul class="sidebar-submenu">
+                            <li> <a href="edit-profile.html">Users Edit</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-list"> <i class="fa fa-thumb-tack fa-thumbtack"></i><a class="sidebar-link"
+                                                                                              href="contacts.html">
+                        <i class="fa fa-phone stroke-icon" aria-hidden="true"></i>
+                        <h6 class="f-w-600">Contacts </h6>
+                    </a></li>
+                    <li class="sidebar-list"> <i class="fa fa-thumb-tack fa-thumbtack"></i><a class="sidebar-link"
+                                                                                              href="javascript:void(0)">
+                        <i class="fa fa-newspaper-o stroke-icon" aria-hidden="true"></i>
+                        <h6 class="f-w-600">Blog </h6><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                        <ul class="sidebar-submenu">
+                            <li> <a href="blog.html">Blog Details</a></li>
+                            <li><a href="add_post.html">Add Post</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+        </asivde>
+        <!-- Page sidebar end-->
+        <div class="page-body">
+            <div class="container-fluid">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-sm-6 col-12">
+                            <h2>Product list</h2>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home svg-color"></i></a></li>
+                                <li class="breadcrumb-item">Ecommerce</li>
+                                <li class="breadcrumb-item active">Product list</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Container-fluid starts-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="list-product-header">
+                                    <div>
+                                        <div class="light-box"><a data-bs-toggle="collapse" href="#collapseProduct" role="button"
+                                                                  aria-expanded="false" aria-controls="collapseProduct"><i class="filter-icon show"
+                                                                                                                           data-feather="filter"></i><i class="fa fa-times icon-close filter-close hide"></i></a></div>
+
+                                    </div>
+                                    <div class="collapse" id="collapseProduct">
+                                        <div class="card card-body list-product-body">
+                                            <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 g-3">
+                                                <div class="col">
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected="">Choose Product</option>
+                                                        <option value="1">Guitar E</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col">
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected="">Choose Category</option>
+                                                        <option value="1">Guitar</option>
+                                                    </select>
+                                                </div>
+                                                <!-- <div class="col">
+                                                <select class="form-select" aria-label="Default select example">
+                                                  <option selected="">Choose Sub Category</option>
+                                                  <option value="1">Smart Phones</option>
+                                                </select>
+                                              </div> -->
+                                                <div class="col">
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected="">Status</option>
+                                                        <option value="1">In Stock</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col">
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected="">Price</option>
+                                                        <option value="1">56000.00</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-product">
+                                    <table class="table" id="project-status">
+                                        <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="form-check">
+                                                    <input class="form-check-input checkbox-primary" type="checkbox" />
+                                                </div>
+                                            </th>
+                                            <th> <span class="f-light f-w-600">Full Name</span></th>
+                                            <th> <span class="f-light f-w-600">UserName</span></th>
+                                            <th> <span class="f-light f-w-600">Password</span></th>
+                                            <th> <span class="f-light f-w-600">Email</span></th>
+                                            <th> <span class="f-light f-w-600">Phone</span></th>
+
+                                            <th> <span class="f-light f-w-600">Action</span></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="product-removes" th:each="userModel:${users}">
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input checkbox-primary" type="checkbox" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="f-light" th:text="${userModel.fullName}"></p>
+                                            </td>
+                                            <td>
+                                                <p class="f-light" th:text="${userModel.userName}"></p>
+                                            </td>
+                                            <td>
+                                                <p class="f-light" th:text="${userModel.dob}"></p>
+                                            </td>
+                                            <td>
+                                                <p class="f-light" th:text="@{${userModel.email}}"></p>
+                                            </td>
+                                            <td>
+                                                <p class="f-light" th:text="${userModel.phone}"></p>
+                                            </td>
+
+
+                                            <td>
+                                                <div class="product-action">
+                                                    <a th:href="@{/editProduct/{id}(id=${product.id})}"><i class="fa fa-pencil"
+                                                                                                           aria-hidden="true"></i></a>
+                                                    <a th:href="@{/deleteProduct/{id}(id=${product.id})}"><i class="fa fa-trash-o"
+                                                                                                             aria-hidden="true"></i></a>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jquery-->
+<script src="../JS/jquery.min.js"></script>
+<!-- bootstrap js-->
+<script src="../JS/bootstrap.bundle.min.js" defer=""></script>
+<script src="../JS/popper.min.js" defer=""></script>
+<!--fontawesome-->
+<script src="../JS/fontawesome-min.js"></script>
+<!-- feather-->
+<script src="../JS/feather.min.js"></script>
+<script src="../JS/custom-script.js"></script>
+<!-- sidebar -->
+<script src="../JS/sidebar.js"></script>
+<!-- scrollbar-->
+<script src="../JS/simplebar.js"></script>
+<script src="../JS/custom.js"></script>
+<!-- slick-->
+<script src="../JS/slick.min.js"></script>
+<script src="../JS/slick.js"></script>manage-products.html
+<!-- datatables-->
+<script src="../JS/simple-datatables%40latest.js"></script>
+<!-- custom_list_product-->
+<script src="../JS/custom-list-product.js"></script>
+<!-- custom script -->
+<script src="../JS/script.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#project-status th:nth-child(7) a").removeClass("datatable-sorter")
+    })
+</script>
+</body>
+
+</html>

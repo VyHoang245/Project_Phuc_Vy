@@ -1,6 +1,7 @@
 package com.project.vpweb.controllers;
 
 import com.project.vpweb.DTO.UserDTO;
+import com.project.vpweb.repository.RoleRepository;
 import org.springframework.ui.Model;
 import com.project.vpweb.services.*;
 import com.project.vpweb.models.*;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Set;
 
 @Controller
 public class AdminControllers {
@@ -22,36 +24,7 @@ public class AdminControllers {
     @Autowired
     private UserService userService;
     @Autowired
-    private ShopppingCartService shoppingCartService;
-
-    @GetMapping("")
-    public String index(Model model) {
-        model.addAttribute("products", productService.getAllProducts());
-        model.addAttribute("categories", categoryService.getAllCategories());
-        return "store";
-    }
-    @GetMapping("/login")
-    public String loginPage() {
-        return "loginPage";
-    }
-    @GetMapping("/registration")
-    public String registrationPage(Model model) {
-        model.addAttribute("userDTO", new UserDTO());
-        return "register";
-    }
-
-    @PostMapping("/registration")
-    public String registerUser(@ModelAttribute UserDTO userDTO) {
-        UserModel userModel = new UserModel();
-        userModel.setUserName(userDTO.getUsername());
-        userModel.setPassword(userDTO.getPassword());
-        userModel.setEmail(userDTO.getEmail());
-        userModel.setRole("USER");
-        userModel.setAddress("");
-        userModel.setFullName("");
-       userService.addUser(userModel);
-        return "redirect:/login";
-    }
+    private RoleRepository roleRepository;
 
     @GetMapping("/admin")
     public String adminDashboard(Model model) {
@@ -65,10 +38,6 @@ public class AdminControllers {
         model.addAttribute("products", productService.getAllProducts());
         model.addAttribute("categories", categoryService.getAllCategories());
         return "manage-products";
-    }
-    @GetMapping("/product-detail")
-    public String productDetail(Model model) {
-        return "store-single-product";
     }
 
     @GetMapping("/getProducts")
@@ -111,12 +80,12 @@ public class AdminControllers {
         return "redirect:/admin/products";
     }
 
-    @GetMapping("/admin/products")
-    public String listProducts(Model model) {
-        model.addAttribute("products", productService.getAllProducts());
-        model.addAttribute("categories", categoryService.getAllCategories());
-        return "admin/list-products";
-    }
+//    @GetMapping("/admin/products")
+//    public String listProducts(Model model) {
+//        model.addAttribute("products", productService.getAllProducts());
+//        model.addAttribute("categories", categoryService.getAllCategories());
+//        return "admin/list-products";
+//    }
 
     //	User management
     @GetMapping("/manage-users")

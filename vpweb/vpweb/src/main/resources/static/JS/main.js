@@ -3417,8 +3417,10 @@ $(".main-menuMB").on("click", "li", function () {
         var th = $(this).closest('.quantity').find('.qty-text');
         var currentVal = parseInt(th.val());
         var maxVal = parseInt(th.data('max'));
+        var url = th.attr('data-href');
         if (currentVal < maxVal) {
             th.val(currentVal + 1);
+            var curVal = parseInt(th.val());
             updateTotals();
 
             var newUrl = url + '/' + curVal;

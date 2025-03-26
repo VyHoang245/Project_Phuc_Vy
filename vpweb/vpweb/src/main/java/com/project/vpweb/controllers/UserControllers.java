@@ -1,16 +1,21 @@
 package com.project.vpweb.controllers;
 
 import com.project.vpweb.DTO.OrderRequest;
+import com.project.vpweb.DTO.UserDTO;
 import com.project.vpweb.models.*;
+import com.project.vpweb.repository.RoleRepository;
 import com.project.vpweb.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class UserControllers {
@@ -18,6 +23,51 @@ public class UserControllers {
     private ProductService productService;
     @Autowired
     private ShopppingCartService shoppingCartService;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private RoleRepository roleRepository;
+    @Autowired
+    private CategoryService categoryService;
+
+    @GetMapping("/login")
+    public String loginPage() {
+        return "loginPage";
+    }
+    @GetMapping("/registration")
+    public String registrationPage(Model model) {
+        model.addAttribute("userDTO", new UserDTO());
+        return "register";
+    }
+
+    @PostMapping("/registration")
+    public String registerUser(@ModelAttribute UserDTO userDTO) {
+        UserModel userModel = new UserModel();
+        userModel.setUserName(userDTO.getUsername());
+        userModel.setPassword(userDTO.getPassword());
+        userModel.setEmail(userDTO.getEmail());
+
+        Role userRole = roleRepository.findByName("ROLE_USER");
+        if (userRole == null) {
+            throw new RuntimeException("Default role USER not found in database!");
+        }
+        userModel.setRoles(Set.of(userRole));
+        userModel.setAddress("");
+        userModel.setFullName("");
+        userService.addUser(userModel);
+        return "redirect:/login";
+    }
+    @GetMapping("")
+    public String index(Model model) {
+        model.addAttribute("products", productService.getAllProducts());
+        model.addAttribute("categories", categoryService.getAllCategories());
+        return "store";
+    }
+    @GetMapping("/product-detail")
+    public String productDetail(Model model) {
+        return "store-single-product";
+    }
+
     @GetMapping("/shop")
     public String shop(Model model) {
         model.addAttribute("products", productService.getAllProducts());
@@ -25,14 +75,12 @@ public class UserControllers {
     }
 
     @GetMapping("/about")
-    public String about(Model model) {
-//        model.addAttribute("products", productService.getAllProducts());
+    public String about() {
         return "store-about";
     }
 
     @GetMapping("/faq")
-    public String faq(Model model) {
-//        model.addAttribute("products", productService.getAllProducts());
+    public String faq() {
         return "store-faq";
     }
 
@@ -42,8 +90,7 @@ public class UserControllers {
     }
 
     @GetMapping("/blog-detail")
-    public String blogDetail(Model model) {
-//        model.addAttribute("products", productService.getAllProducts());
+    public String blogDetail() {
         return "store-blog-single-classic";
     }
 
@@ -53,8 +100,11 @@ public class UserControllers {
     }
 
     @GetMapping("/cart")
-    public String manageCarts(Model model) {
-        List<ShoppingCart> cartList = shoppingCartService.getShoppingCartByUserId(1);
+    public String manageCarts(Model model, @AuthenticationPrincipal CustomUserDetails user) {
+        if(user == null) {
+            return "redirect:/login";
+        }
+        List<ShoppingCart> cartList = shoppingCartService.getShoppingCartByUserId(user.getId());
         model.addAttribute("cartList", cartList);
         return "store-cart";
     }
@@ -63,7 +113,7 @@ public class UserControllers {
     public String deleteCart(@PathVariable int id) {
         shoppingCartService.deleteShoppingCart(id);
 
-        return "redirect:/shopping-Cart";
+        return "redirect:/cart";
     }
 
     //Check out

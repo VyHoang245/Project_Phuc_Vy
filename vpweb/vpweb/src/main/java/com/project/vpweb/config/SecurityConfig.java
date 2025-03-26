@@ -27,21 +27,9 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        http.csrf(customizer -> customizer.disable());
-//        http.authorizeHttpRequests(authorizeRequests ->authorizeRequests.anyRequest().authenticated());
-//
-//        http.formLogin(Customizer.withDefaults());
-//        http.httpBasic(Customizer.withDefaults());
-//        http.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
-//        Customizer<CsrfConfigurer<HttpSecurity>> custCsrf = new Customizer<CsrfConfigurer<HttpSecurity>>() {
-//            @Override
-//            public void customize(CsrfConfigurer<HttpSecurity> customizer) {
-//customizer.disable();
-//            }
-//        };
-//        http.csrf(custCsrf);
         http.authorizeHttpRequests(authorizeRequests ->authorizeRequests
+//                        .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/","/login","/registration", "/CSS/**", "/assets/**", "/Images/**", "/JS/**", "/fonts/**").permitAll()
                 .anyRequest().authenticated())
         .formLogin(formLogin ->formLogin.loginPage("/login")

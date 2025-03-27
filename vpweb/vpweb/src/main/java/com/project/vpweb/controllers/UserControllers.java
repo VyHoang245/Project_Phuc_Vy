@@ -26,7 +26,7 @@ public class UserControllers {
     @Autowired
     private UserService userService;
     @Autowired
-    private RoleRepository roleRepository;
+    private RoleService roleService;
     @Autowired
     private CategoryService categoryService;
 
@@ -34,6 +34,7 @@ public class UserControllers {
     public String loginPage() {
         return "loginPage";
     }
+
     @GetMapping("/registration")
     public String registrationPage(Model model) {
         model.addAttribute("userDTO", new UserDTO());
@@ -47,7 +48,7 @@ public class UserControllers {
         userModel.setPassword(userDTO.getPassword());
         userModel.setEmail(userDTO.getEmail());
 
-        Role userRole = roleRepository.findByName("ROLE_USER");
+        Role userRole = roleService.getRoleByName("ROLE_USER");
         if (userRole == null) {
             throw new RuntimeException("Default role USER not found in database!");
         }
@@ -57,12 +58,14 @@ public class UserControllers {
         userService.addUser(userModel);
         return "redirect:/login";
     }
+
     @GetMapping("")
     public String index(Model model) {
         model.addAttribute("products", productService.getAllProducts());
         model.addAttribute("categories", categoryService.getAllCategories());
         return "store";
     }
+
     @GetMapping("/product-detail")
     public String productDetail(Model model) {
         return "store-single-product";
@@ -101,7 +104,7 @@ public class UserControllers {
 
     @GetMapping("/cart")
     public String manageCarts(Model model, @AuthenticationPrincipal CustomUserDetails user) {
-        if(user == null) {
+        if (user == null) {
             return "redirect:/login";
         }
         List<ShoppingCart> cartList = shoppingCartService.getShoppingCartByUserId(user.getId());
@@ -118,9 +121,9 @@ public class UserControllers {
 
     //Check out
     @GetMapping("/checkout")
-    public String checkOutPage(Model model) {
+    public String checkOutPage(Model model, @AuthenticationPrincipal CustomUserDetails user) {
         model.addAttribute("orderRequest", new OrderRequest());
-        List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(1);
+        List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(user.getId());
         model.addAttribute("carts", carts);
         return "store-checkout";
     }

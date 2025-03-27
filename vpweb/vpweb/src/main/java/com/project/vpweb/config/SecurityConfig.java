@@ -28,14 +28,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http.authorizeHttpRequests(authorizeRequests ->authorizeRequests
+        http.authorizeHttpRequests(authorizeRequests -> authorizeRequests
 //                        .requestMatchers("/admin/**").hasRole("ADMIN")
-                .requestMatchers("/","/login","/registration", "/CSS/**", "/assets/**", "/Images/**", "/JS/**", "/fonts/**").permitAll()
-                .anyRequest().authenticated())
-        .formLogin(formLogin ->formLogin.loginPage("/login")
-                .defaultSuccessUrl("/", true)
-                .failureHandler(new CustomAuthenticationFailureHandler())
-                .permitAll())
+                        .requestMatchers("/", "/login", "/registration", "/CSS/**", "/assets/**", "/Images/**", "/JS/**", "/fonts/**").permitAll()
+                        .anyRequest().authenticated())
+                .formLogin(formLogin -> formLogin.loginPage("/login")
+                        .defaultSuccessUrl("/", true)
+                        .failureHandler(new CustomAuthenticationFailureHandler())
+                        .permitAll())
                 .logout(LogoutConfigurer::permitAll)
                 .csrf(csrf -> csrf.disable());
 
@@ -48,7 +48,8 @@ public class SecurityConfig {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {return new BCryptPasswordEncoder();
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
 //    @Bean
@@ -59,7 +60,7 @@ public class SecurityConfig {
 //    }
 
     @Bean
-    public AuthenticationProvider authenticationProvider(){
+    public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(passwordEncoder());
         provider.setUserDetailsService(userDetailsService());

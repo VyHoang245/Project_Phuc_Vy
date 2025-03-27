@@ -13053,7 +13053,10 @@ blockquote footer {
 
 .btn.btn-double-border.btn-very-small,
 .btn.btn-switch-text.btn-extra-large {
-    padding: 0
+    padding: 14px;
+}
+.btnCheckout{
+    padding:0 !important;
 }
 
 .btn.btn-double-border.btn-very-small>span {
@@ -23559,18 +23562,15 @@ footer .footer-navbar .nav-item:last-child a {
     text-align: right;
     margin: 15px 0;
 }
+.priceText{
+    text-align: right;
+}
 /* account page */
 
 /*home page*/
 .icon-login{
     padding: 20px;
 }
-/*.icon-login a:hover .profile-body{*/
-/*    padding: 20px;*/
-/*    position: relative;*/
-/*    background-color: red;*/
-/*}*/
-/*profile*/
 .profile-body {
     display: none;
     position: absolute;
@@ -23606,6 +23606,3 @@ footer .footer-navbar .nav-item:last-child a {
 .widget-text:hover .profile-body {
     display: block;
 }
-/*.loginIcon:hover .profile-body{*/
-/*    background-color: red;*/
-/*}*/

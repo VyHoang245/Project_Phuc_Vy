@@ -56556,3 +56556,23 @@ label {
 .setting-sidebar .customizer-footer .btn svg {
   transition: color 0.3s;
 }
+
+/*Order detail manage page*/
+.orderInformation {
+    display: flex;
+    font-size: 16px;
+}
+
+.informationOrder {
+    margin-left: 20px;
+    position: relative;
+}
+
+.cart-products th {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-products td {
+    vertical-align: middle;
+}

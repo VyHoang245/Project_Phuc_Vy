@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.*;
 
 @RestController
@@ -70,30 +71,33 @@ public class ShoppingCartControllers {
 
     }
 
-//Order
-@PostMapping("/submit")
-public ResponseEntity<String> submitOrder(OrderRequest orderRequest) {
-    Order order = new Order();
-    order.setUser(userService.getUserById(1));
-    order.setFullName(orderRequest.getFirstName()+orderRequest.getLastName());
-    order.setPhone(orderRequest.getPhone());
-    order.setAddress(orderRequest.getStreet()+"-"+orderRequest.getWard()+"-"+orderRequest.getCity()+"-"+orderRequest.getProvince());
-    order.setTotalPrice(orderRequest.getTotalPrice());
-    order.setNote(orderRequest.getNotes());
+    //Order
+    @PostMapping("/submit")
+    public ResponseEntity<String> submitOrder(OrderRequest orderRequest) {
+        Order order = new Order();
+        order.setUser(userService.getUserById(1));
+        order.setFullName(orderRequest.getFirstName()+orderRequest.getLastName());
+        order.setPhone(orderRequest.getPhone());
+        order.setAddress(orderRequest.getStreet() + " - " + orderRequest.getWard() + " - " + orderRequest.getCity() + " - " + orderRequest.getProvince());
+//    order.setAddress(orderRequest.getProvince() + " - " + orderRequest.getCity() + " - " + orderRequest.getWard() + " - " + orderRequest.getStreet());
+        order.setTotalPrice(orderRequest.getTotalPrice());
+        order.setNote(orderRequest.getNotes());
+        order.setOrderDate(String.valueOf(LocalDate.now()));
+        order.setOrderStatus("New");
 //    order.setPaymentMethod(orderRequest.getPaymentMethod());
 
-    List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(1);
-    List<OrderDetail> orderDetails = new ArrayList<>();
-    for (ShoppingCart cart : carts) {
-        OrderDetail orderDetail = new OrderDetail();
-        orderDetail.setOrder(order);
-        orderDetail.setProduct(productService.getProductById(cart.getProduct().getId()));
-        orderDetail.setQuantity(cart.getQuantity());
-        orderDetails.add(orderDetail);
-    }
+        List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(1);
+        List<OrderDetail> orderDetails = new ArrayList<>();
+        for (ShoppingCart cart : carts) {
+            OrderDetail orderDetail = new OrderDetail();
+            orderDetail.setOrder(order);
+            orderDetail.setProduct(productService.getProductById(cart.getProduct().getId()));
+            orderDetail.setQuantity(cart.getQuantity());
+            orderDetails.add(orderDetail);
+        }
 
-    orderService.saveOrder(order, orderDetails);
-    return ResponseEntity.ok("Order placed successfully");
-}
+        orderService.saveOrder(order, orderDetails);
+        return ResponseEntity.ok("Order placed successfully");
+    }
 
 }

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<!-- Mirrored from admin.pixelstrap.net/admiro/template/list-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2024 14:45:10 GMT -->
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -28,7 +26,6 @@
     <link rel="stylesheet" type="text/css" href="../CSS/slick-theme.css"/>
     <!-- App css -->
     <link rel="stylesheet" href="../CSS/style.css"/>
-    <link id="color" rel="stylesheet" href="../CSS/color-1.css" media="screen"/>
 </head>
 
 <body>
@@ -68,19 +65,19 @@
                             <ul class="profile-body">
                                 <li class="d-flex">
                                     <svg class="svg-color">
-                                        <use href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Profile"></use>
+                                        <!--                                        <use href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Profile"></use>-->
                                     </svg>
                                     <a class="ms-2" href="user-profile.html">Account</a>
                                 </li>
                                 <li class="d-flex">
                                     <svg class="svg-color">
-                                        <use href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Message"></use>
+                                        <!--                                        <use href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Message"></use>-->
                                     </svg>
                                     <a class="ms-2" href="letter-box.html">Inbox</a>
                                 </li>
                                 <li class="d-flex">
                                     <svg class="svg-color">
-                                        <use href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Login"></use>
+                                        <!--                                        <use href="https://admin.pixelstrap.net/admiro/assets/svg/iconly-sprite.svg#Login"></use>-->
                                     </svg>
                                     <a class="ms-2" href="login.html">Log Out</a>
                                 </li>
@@ -112,7 +109,7 @@
                     <li class="sidebar-list"><i class="fa fa-thumb-tack fa-thumbtack"></i>
                         <a class="sidebar-link" href="/manage-category">
                             <i class="fa fa-table" aria-hidden="true"></i>
-                            <h6 class="f-w-600">Manage Categoris</h6>
+                            <h6 class="f-w-600">Manage Categories</h6>
                         </a>
                     </li>
                     <li class="sidebar-list"><i class="fa fa-thumb-tack fa-thumbtack"></i>
@@ -133,11 +130,11 @@
                         <h6 class="f-w-600">Users</h6><i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                         <ul class="sidebar-submenu">
-                            <li><a href="edit-profile.html">Users Edit</a></li>
+                            <li><a href="#">Users Edit</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-list"><i class="fa fa-thumb-tack fa-thumbtack"></i><a class="sidebar-link"
-                                                                                             href="contacts.html">
+                                                                                             href="#">
                         <i class="fa fa-phone stroke-icon" aria-hidden="true"></i>
                         <h6 class="f-w-600">Contacts </h6>
                     </a></li>
@@ -148,7 +145,7 @@
                     </a>
                         <ul class="sidebar-submenu">
                             <li><a href="blog.html">Blog Details</a></li>
-                            <li><a href="add_post.html">Add Post</a></li>
+                            <li><a href="#">Add Post</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -161,14 +158,15 @@
                 <div class="page-title">
                     <div class="row">
                         <div class="col-sm-6 col-12">
-                            <h2>Product list</h2>
+                            <h2>Orders #ID123</h2>
                         </div>
                         <div class="col-sm-6 col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html"><i
                                         class="fa fa-home svg-color"></i></a></li>
-                                <li class="breadcrumb-item">Manage Products</li>
-                                <li class="breadcrumb-item active">Product list</li>
+                                <li class="breadcrumb-item">Manage Order</li>
+                                <li class="breadcrumb-item">Order List</li>
+                                <li class="breadcrumb-item active">Order</li>
                             </ol>
                         </div>
                     </div>
@@ -177,124 +175,125 @@
             <!-- Container-fluid starts-->
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="list-product-header">
-                                    <div>
-                                        <div class="light-box"><a data-bs-toggle="collapse" href="#collapseProduct"
-                                                                  role="button"
-                                                                  aria-expanded="false" aria-controls="collapseProduct"><i
-                                                class="filter-icon show"
-                                                data-feather="filter"></i><i
-                                                class="fa fa-times icon-close filter-close hide"></i></a></div>
-                                        <a class="btn btn-primary" th:href="@{/addProduct}"><i
-                                                class="fa-solid fa fa-plus"></i>Add
-                                            Product</a>
-                                    </div>
-                                    <div class="collapse" id="collapseProduct">
-                                        <div class="card card-body list-product-body">
-                                            <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 g-3">
-                                                <div class="col">
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected="">Choose Product</option>
-                                                        <option value="1">Guitar E</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col">
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected="">Choose Category</option>
-                                                        <option value="1">Guitar</option>
-                                                    </select>
-                                                </div>
-                                                <!-- <div class="col">
-                                                <select class="form-select" aria-label="Default select example">
-                                                  <option selected="">Choose Sub Category</option>
-                                                  <option value="1">Smart Phones</option>
-                                                </select>
-                                              </div> -->
-                                                <div class="col">
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected="">Status</option>
-                                                        <option value="1">In Stock</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col">
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected="">Price</option>
-                                                        <option value="1">56000.00</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="orderInformation">
+                                <p><span style="font-weight: bold">Date:</span> October 7, 2020</p>
+                                <p class="informationOrder"><span style="font-weight: bold">Items:</span> 15</p>
+                                <p class="informationOrder"><span style="font-weight: bold">Total:</span> 15,000,000
+                                </p>
+                                <p class="informationOrder"><span style="font-weight: bold">Status:</span> Done</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-9" style="border-right: 1px solid #e5e5e5;">
+                                    <div class="list-product">
+                                        <table class="table" id="project-status">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input checkbox-primary"
+                                                               type="checkbox"/>
+                                                    </div>
+                                                </th>
+                                                <th><span class="f-light f-w-800">Product Name</span></th>
+                                                <th><span class="f-light f-w-800">Price</span></th>
+                                                <th><span class="f-light f-w-800">Quantity</span></th>
+                                                <th><span class="f-light f-w-800">Total</span></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="product-removes">
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input checkbox-primary"
+                                                               type="checkbox"/>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="product-names">
+                                                        <div class="light-product-box"><img class="img-fluid"
+                                                                                            src="../Images/Ming Jiang Zhu 905 x Bam x CodaBow Violin Bundle.png"
+                                                                                            alt=" ..."/></div>
+
+                                                        <p class="f-light">Lucero LFB250Sce SpruceCypress Thinline
+                                                            Acoustic-Electric Classical
+                                                            Guitar Natural</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="f-light">$23.00</p>
+                                                </td>
+                                                <td>
+                                                    <p class="f-light">12</p>
+                                                </td>
+
+                                                <td>
+                                                    <p class="f-light">$124,225</p>
+                                                </td>
+                                            </tr>
+                                            <tr class="product-removes">
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input checkbox-primary"
+                                                               type="checkbox"/>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="product-names">
+                                                        <div class="light-product-box"><img class="img-fluid"
+                                                                                            src="../Images/Ming Jiang Zhu 905 x Bam x CodaBow Violin Bundle.png"
+                                                                                            alt=" ..."/></div>
+
+                                                        <p class="f-light">Lucero LFB250Sce SpruceCypress Thinline
+                                                            Acoustic-Electric Classical
+                                                            Guitar Natural</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="f-light">$23.00</p>
+                                                </td>
+                                                <td>
+                                                    <p class="f-light">12</p>
+                                                </td>
+
+                                                <td>
+                                                    <p class="f-light">$124,225</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td><span class="f-light f-w-800">Total</span></td>
+                                                <td></td>
+                                                <td><span class="f-light f-w-800">15</span></td>
+                                                <td><span class="f-light f-w-800">$150,500,000</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-
-                                <div class="list-product">
-                                    <table class="table" id="project-status">
-                                        <thead>
-                                        <tr>
-                                            <th>
-                                                <div class="form-check">
-                                                    <input class="form-check-input checkbox-primary" type="checkbox"/>
-                                                </div>
-                                            </th>
-                                            <th><span class="f-light f-w-600">Product Name</span></th>
-                                            <th><span class="f-light f-w-600">Brand</span></th>
-                                            <th><span class="f-light f-w-600">Category</span></th>
-                                            <th><span class="f-light f-w-600">Price</span></th>
-                                            <th><span class="f-light f-w-600">Qty</span></th>
-
-                                            <th><span class="f-light f-w-600">Action</span></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="product-removes" th:each="product:${products}">
-                                            <td>
-                                                <div class="form-check">
-                                                    <input class="form-check-input checkbox-primary" type="checkbox"/>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="product-names">
-                                                    <div class="light-product-box"><img class="img-fluid"
-                                                                                        th:src="@{'../assets/images/'+${product.imageLink}}"
-                                                                                        alt="..."/></div>
-
-                                                    <a th:href="@{/editProduct/{id}(id=${product.id})}">
-                                                        <p th:text="${product.name}"></p>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="f-light" th:text="${product.brand}"></p>
-                                            </td>
-                                            <td>
-                                                <p class="f-light" th:text="${product.category.getName()}"></p>
-                                            </td>
-                                            <td>
-                                                <p class="f-light" th:text="@{'$'+${product.price}}"></p>
-                                                <!--                        ${#numbers.formatDecimal(num,3,'POINT',2,'COMMA')}-->
-                                            </td>
-                                            <td>
-                                                <p class="f-light" th:text="${product.quantityInStock}"></p>
-                                            </td>
-
-
-                                            <td>
-                                                <div class="product-action">
-                                                    <a th:href="@{/editProduct/{id}(id=${product.id})}"><i
-                                                            class="fa fa-pencil"
-                                                            aria-hidden="true"></i></a>
-                                                    <a th:href="@{/deleteProduct/{id}(id=${product.id})}"><i
-                                                            class="fa fa-trash-o"
-                                                            aria-hidden="true"></i></a>
-
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="col-sm-3">
+                                    <div class="card">
+                                        <h3 style="padding-top: 12px; padding-left: 20px">Customer</h3>
+                                        <div class="card-body d-flex pt-2 pb-2">
+                                            <div class="customer-image">
+                                                <img style="border-radius:50%" src="../Images/avtar-07.jpg"
+                                                     width="50"
+                                                     height="50" alt="">
+                                            </div>
+                                            <div class="customer-name">
+                                                <p style="padding-left: 12px; font-size: 16px; font-weight: 700">Phuc
+                                                    Bui</p>
+                                            </div>
+                                        </div>
+                                        <div style="padding-top: 12px; padding-left: 20px">
+                                            <p><span style="font-weight: bold">Phone number:</span> 0344898238</p>
+                                            <p><span style="font-weight: bold">Shipping Address:</span> 18 Phú Hòa -
+                                                Phường Thành Công - Quận Ba Đình -
+                                                Thành phố Hà Nội</p>
+                                            <p><span style="font-weight: bold">Note:</span> This is note</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -322,7 +321,6 @@
 <!-- slick-->
 <script src="../JS/slick.min.js"></script>
 <script src="../JS/slick.js"></script>
-manage-products.html
 <!-- datatables-->
 <script src="../JS/simple-datatables%40latest.js"></script>
 <!-- custom_list_product-->
@@ -332,7 +330,7 @@ manage-products.html
 
 <script>
     $(document).ready(function () {
-        $("#project-status th:nth-child(7) a").removeClass("datatable-sorter")
+        $("#project-status th:nth-child(5) a").removeClass("datatable-sorter")
     })
 </script>
 </body>

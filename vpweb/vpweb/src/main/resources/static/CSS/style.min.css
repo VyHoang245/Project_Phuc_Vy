@@ -23560,3 +23560,52 @@ footer .footer-navbar .nav-item:last-child a {
     margin: 15px 0;
 }
 /* account page */
+
+/*home page*/
+.icon-login{
+    padding: 20px;
+}
+/*.icon-login a:hover .profile-body{*/
+/*    padding: 20px;*/
+/*    position: relative;*/
+/*    background-color: red;*/
+/*}*/
+/*profile*/
+.profile-body {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 10px;
+    min-width: 150px;
+    z-index: 1;
+    border-radius: 6px 0 6px 6px;
+}
+.profile-body li {
+    padding: 10px;
+}.profile-body li i{
+    padding-right: 10px;
+}
+.profile-body li a {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.profile-body li a:hover {
+    color: #888e95;
+}
+.widget-text{
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+}
+
+.widget-text:hover .profile-body {
+    display: block;
+}
+/*.loginIcon:hover .profile-body{*/
+/*    background-color: red;*/
+/*}*/

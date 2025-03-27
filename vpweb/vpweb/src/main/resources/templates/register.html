@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>register</title>
+    <head th:replace="layout :: cssStyle"></head>
 </head>
 <body>
-<form th:action="@{/registration}" method="post" th:object="${userModel}">
-  <input name="username" type="text" placeholder="Username">
-  <input name="password" type="password" placeholder="Password">
-  <button type="submit">Submit</button>
-</form>
+<header th:replace="layout :: header"></header>
+<div th:replace="~{layout :: pageTitle('Account Register')}"></div>
+
+<section>
+    <div class="container">
+        <div class="row g-0 justify-content-center">
+            <div class="col-lg-6 col-md-10 p-6 box-shadow-extra-large border-radius-6px sign-up">
+                <span class="fs-26 xs-fs-24 alt-font fw-600 text-dark-gray mb-20px d-block">Create an account</span>
+                <form th:action="@{/registration}" method="post" th:object="${userModel}">
+                    <label class="text-dark-gray mb-10px fw-500">Username<span class="text-red">*</span></label>
+                    <input class="mb-20px bg-very-light-gray form-control required" name="username" type="text" placeholder="Enter your username">
+                    <label class="text-dark-gray mb-10px fw-500">Email address<span
+                            class="text-red">*</span></label>
+                    <input class="mb-20px bg-very-light-gray form-control required" type="email" name="email"
+                           placeholder="Enter your email">
+                    <label class="text-dark-gray mb-10px fw-500">Password<span class="text-red">*</span></label>
+                    <input class="mb-20px bg-very-light-gray form-control required" name="password" type="password" placeholder="Enter your password">
+                    <span class="fs-14 lh-22 w-90 lg-w-100 md-w-90 sm-w-100 d-block mb-30px">If you have an account,
+                            you can <a href="/login" class="text-dark-gray text-decoration-line-bottom fw-500">Sign
+                                In</a></span>
+                    <button
+                            class="btn btn-medium btn-round-edge btn-base-color btn-box-shadow submit w-100 text-transform-none"
+                            type="submit" value="Register">Register</button>
+                    <div class="form-results mt-20px d-none"></div>
+<!--                    <button type="submit">Submit</button>-->
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 <form th:action="@{/logout}">
     <button type="submit" value="Logout">Log out</button>

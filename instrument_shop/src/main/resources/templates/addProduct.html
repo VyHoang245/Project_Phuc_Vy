@@ -154,7 +154,7 @@
 						</a>
 					</li>
 					<li class="sidebar-list"> <i class="fa fa-thumb-tack fa-thumbtack"></i>
-						<a class="sidebar-link active" href="list-products.html">
+						<a class="sidebar-link active" href="/manage-products">
 							<i class="fa fa-shopping-bag stroke-icon" aria-hidden="true"></i>
 							<h6 class="f-w-600">Manage Products</h6>
 						</a>
@@ -235,8 +235,8 @@
 												<br>
 												<label for="category" >Category<span style="color:red;">*</span></label>
 												<br>
-<!--												<input type="text" th:field="*{category}" id="category" class="form-control input-sm"-->
-<!--													   required="required">-->
+												<!--												<input type="text" th:field="*{category}" id="category" class="form-control input-sm"-->
+												<!--													   required="required">-->
 												<select class="form-select" aria-label="Default select example" id="category" th:field="*{category}">
 
 													<option th:each="category : ${categories}" th:value="${category.getId()}" th:text="${category.getName()}"></option>

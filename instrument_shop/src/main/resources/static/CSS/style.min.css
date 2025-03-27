@@ -13053,9 +13053,11 @@ blockquote footer {
 
 .btn.btn-double-border.btn-very-small,
 .btn.btn-switch-text.btn-extra-large {
-    padding: 0
+    padding: 14px;
 }
-
+.btnCheckout{
+    padding:0 !important;
+}
 .btn.btn-double-border.btn-very-small>span {
     padding: 10px 22px
 }
@@ -23559,4 +23561,10 @@ footer .footer-navbar .nav-item:last-child a {
     text-align: right;
     margin: 15px 0;
 }
+
+.priceText{
+    text-align: right;
+}
+
+
 /* account page */

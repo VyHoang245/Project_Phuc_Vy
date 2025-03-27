@@ -43996,7 +43996,8 @@ p.data-attributes svg {
 }
 
 .product-names .light-product-box img {
-  height: 26px;
+  height: 60px;
+  width: 60px;
 }
 
 .product-action {
@@ -56575,4 +56576,8 @@ label {
 
 .cart-products td {
     vertical-align: middle;
+}
+
+.table td{
+    vertical-align: middle !important;
 }

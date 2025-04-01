@@ -33,6 +33,11 @@ public class CustomUserDetailsService implements UserDetailsService {
                 byLogin.getId(),  // Store ID
                 byLogin.getUserName(),
                 byLogin.getPassword(),
+                byLogin.getEmail(),
+                byLogin.getPhone(),
+                byLogin.getAddress(),
+                byLogin.getGender(),
+                byLogin.getFullName(),
                 byLogin.getRoles().stream()
                         .map(role -> new SimpleGrantedAuthority(role.getName())) // Convert roles to GrantedAuthority
                         .collect(Collectors.toList())

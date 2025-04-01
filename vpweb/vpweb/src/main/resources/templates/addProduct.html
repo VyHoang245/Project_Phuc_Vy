@@ -221,7 +221,7 @@
 							</div>
 							<div class="card-body">
 								<div class="row g-xl-5 g-3">
-									<form th:action="@{/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
+									<form th:action="@{/admin/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
 										<div class="row">
 											<div class="col-lg-6 col-12">
 												<label for="name" >Products Name<span style="color:red;">*</span></label>
@@ -280,41 +280,7 @@
 		</div>
 	</div>
 </div>
-<!-- jquery-->
-<script src="../JS/jquery.min.js"></script>
-<!-- bootstrap js-->
-<script src="../JS/bootstrap.bundle.min.js" defer=""></script>
-<script src="../JS/popper.min.js" defer=""></script>
-<!-- sidebar -->
-<script src="../JS/sidebar.js"></script>
-<!-- form_validation_custom-->
-<script src="../JS/form-validation-custom.js"></script>
-<!-- dropzone-->
-<script src="../JS/dropzone.js"></script>
-<script src="../JS/dropzone-script.js"></script>
-<!-- scrollbar-->
-<script src="../JS/simplebar.js"></script>
-<script src="../JS/custom.js"></script>
-<!-- slick-->
-<script src="../JS/slick.min.js"></script>
-<script src="../JS/slick.js"></script>
-<!-- form validation -->
-<script src="../JS/form-validation-custom.js"></script>
-<!-- flatpicker-->
-<script src="../JS/flatpickr.js"></script>
-<script src="../JS/custom-flatpickr.js"></script>
-<!-- select2_options-->
-<script src="../JS/dist/tagify.js"></script>
-<script src="../JS/tagify.polyfills.min.js"></script>
-<script src="../JS/intlTelInput.min.js"></script>
-<!-- page_select4-->
-<script src="../JS/select4-custom.js"> </script>
-<!-- editors-->
-<script src="../JS/quill.js"></script>
-<!-- editors2-->
-<script src="../JS/custom-add-product.js"></script>
-<!-- custom script -->
-<script src="../JS/script.js"></script>
+<div th:replace="layoutAdmin :: scriptStyle"> </div>
 </body>
 
 </html>

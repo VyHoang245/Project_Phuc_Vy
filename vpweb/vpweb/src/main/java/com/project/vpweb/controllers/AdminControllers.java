@@ -1,6 +1,5 @@
 package com.project.vpweb.controllers;
 
-import com.project.vpweb.DTO.UserDTO;
 import com.project.vpweb.repository.RoleRepository;
 import org.springframework.ui.Model;
 import com.project.vpweb.services.*;
@@ -12,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequestMapping("/admin")
@@ -56,6 +54,12 @@ public class AdminControllers {
         model.addAttribute("categories", categoryService.getAllCategories());
         return "manage-products";
     }
+//    @GetMapping("/editProduct/{id}")
+//    public String editProduct(@PathVariable int id, Model model) {
+//        model.addAttribute("product", productService.getProductById(id));
+//        model.addAttribute("categories", categoryService.getAllCategories());
+//        return "editProduct";
+//    }
 
     @GetMapping("/getProducts")
     public String geProducts(Model model) {
@@ -73,20 +77,14 @@ public class AdminControllers {
     @PostMapping("/saveProduct")
     public String saveProduct(@RequestParam("file") MultipartFile file, Product product) throws IOException {
         productService.saveOrUpdateProduct(file, product);
-        return "redirect:/admin/products";
+        return "redirect:/admin/manage-products";
     }
 
-    @GetMapping("/editProduct/{id}")
-    public String editProduct(@PathVariable int id, Model model) {
-        model.addAttribute("product", productService.getProductById(id));
-        model.addAttribute("categories", categoryService.getAllCategories());
-        return "EditProduct";
-    }
+
 
     @GetMapping("/deleteProduct/{id}")
     public String deleteProduct(@PathVariable int id) {
         productService.deleteProduct(id);
-
         return "redirect:/admin/products";
     }
 

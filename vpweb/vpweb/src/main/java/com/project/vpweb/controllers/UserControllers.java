@@ -34,6 +34,8 @@ public class UserControllers {
     private CategoryService categoryService;
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private OrderDetailsService orderDetailsService;
 
     @GetMapping("/login")
     public String loginPage() {
@@ -169,8 +171,21 @@ public class UserControllers {
     }
 
     @GetMapping("/myAccount")
-    public String myAccount(Model model) {
-        
+    public String myAccount(Model model,@AuthenticationPrincipal CustomUserDetails user) {
+        if (user == null) {
+            return "redirect:/login";
+        }
+        List<Order> orders = orderService.getOrdersByUserId(user.getId());
+        model.addAttribute("user", user);
+        model.addAttribute("orders", orders);
+        model.addAttribute("orderDetails",orderDetailsService.getAllOrderDetails());
         return "store-account";
+    }
+
+    @GetMapping("/editProduct/{id}")
+    public String editProduct(@PathVariable int id, Model model) {
+        model.addAttribute("product", productService.getProductById(id));
+        model.addAttribute("categories", categoryService.getAllCategories());
+        return "editProduct";
     }
 }

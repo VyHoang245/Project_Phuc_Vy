@@ -67,33 +67,33 @@ public class ShoppingCartControllers {
     }
 
     //Order
-    @PostMapping("/submit")
-    public ResponseEntity<String> submitOrder(OrderRequest orderRequest, @AuthenticationPrincipal CustomUserDetails user) {
-        Order order = new Order();
-        UserModel userModel = userService.getUserByUsername(user.getUsername());
-        order.setUser(userModel);
-        order.setFullName(orderRequest.getFirstName() + " " + orderRequest.getLastName());
-        order.setPhone(orderRequest.getPhone());
-        order.setAddress(orderRequest.getStreet() + " - " + orderRequest.getWard() + " - " + orderRequest.getCity() + " - " + orderRequest.getProvince());
-        order.setOrderDate(String.valueOf(LocalDate.now()));
-        order.setOrderStatus("Pending");
-        order.setNote(orderRequest.getNotes());
-//    order.setPaymentMethod(orderRequest.getPaymentMethod());
-
-        List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(user.getId());
-        List<OrderDetail> orderDetails = new ArrayList<>();
-        double totalPrice = 0;
-        for (ShoppingCart cart : carts) {
-            OrderDetail orderDetail = new OrderDetail();
-            orderDetail.setOrder(order);
-            orderDetail.setProduct(productService.getProductById(cart.getProduct().getId()));
-            orderDetail.setQuantity(cart.getQuantity());
-            orderDetails.add(orderDetail);
-            totalPrice += cart.getQuantity() * cart.getProduct().getPrice();
-        }
-        order.setTotalPrice(totalPrice);
-        orderService.saveOrder(order, orderDetails);
-        return ResponseEntity.ok("Order placed successfully");
-    }
+//    @PostMapping("/submit")
+//    public ResponseEntity<String> submitOrder(OrderRequest orderRequest, @AuthenticationPrincipal CustomUserDetails user) {
+//        Order order = new Order();
+//        UserModel userModel = userService.getUserByUsername(user.getUsername());
+//        order.setUser(userModel);
+//        order.setFullName(orderRequest.getFirstName() + " " + orderRequest.getLastName());
+//        order.setPhone(orderRequest.getPhone());
+//        order.setAddress(orderRequest.getStreet() + " - " + orderRequest.getWard() + " - " + orderRequest.getCity() + " - " + orderRequest.getProvince());
+//        order.setOrderDate(String.valueOf(LocalDate.now()));
+//        order.setOrderStatus("Pending");
+//        order.setNote(orderRequest.getNotes());
+////    order.setPaymentMethod(orderRequest.getPaymentMethod());
+//
+//        List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(user.getId());
+//        List<OrderDetail> orderDetails = new ArrayList<>();
+//        double totalPrice = 0;
+//        for (ShoppingCart cart : carts) {
+//            OrderDetail orderDetail = new OrderDetail();
+//            orderDetail.setOrder(order);
+//            orderDetail.setProduct(productService.getProductById(cart.getProduct().getId()));
+//            orderDetail.setQuantity(cart.getQuantity());
+//            orderDetails.add(orderDetail);
+//            totalPrice += cart.getQuantity() * cart.getProduct().getPrice();
+//        }
+//        order.setTotalPrice(totalPrice);
+//        orderService.saveOrder(order, orderDetails);
+//        return ResponseEntity.ok("Order placed successfully");
+//    }
 
 }

@@ -6,6 +6,7 @@ import com.project.vpweb.models.*;
 import com.project.vpweb.repository.RoleRepository;
 import com.project.vpweb.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -29,6 +32,8 @@ public class UserControllers {
     private RoleService roleService;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private OrderService orderService;
 
     @GetMapping("/login")
     public String loginPage() {
@@ -133,9 +138,39 @@ public class UserControllers {
 //        productService.saveOrUpdateProduct(product);
         return "redirect:/admin/products";
     }
+    //Order
+    @PostMapping("/submit")
+    public String submitOrder(OrderRequest orderRequest, @AuthenticationPrincipal CustomUserDetails user) {
+        Order order = new Order();
+        UserModel userModel = userService.getUserByUsername(user.getUsername());
+        order.setUser(userModel);
+        order.setFullName(orderRequest.getFirstName() + " " + orderRequest.getLastName());
+        order.setPhone(orderRequest.getPhone());
+        order.setAddress(orderRequest.getStreet() + " - " + orderRequest.getWard() + " - " + orderRequest.getCity() + " - " + orderRequest.getProvince());
+        order.setOrderDate(String.valueOf(LocalDate.now()));
+        order.setOrderStatus("Pending");
+        order.setNote(orderRequest.getNotes());
+//    order.setPaymentMethod(orderRequest.getPaymentMethod());
+
+        List<ShoppingCart> carts = shoppingCartService.getShoppingCartByUserId(user.getId());
+        List<OrderDetail> orderDetails = new ArrayList<>();
+        double totalPrice = 0;
+        for (ShoppingCart cart : carts) {
+            OrderDetail orderDetail = new OrderDetail();
+            orderDetail.setOrder(order);
+            orderDetail.setProduct(productService.getProductById(cart.getProduct().getId()));
+            orderDetail.setQuantity(cart.getQuantity());
+            orderDetails.add(orderDetail);
+            totalPrice += cart.getQuantity() * cart.getProduct().getPrice();
+        }
+        order.setTotalPrice(totalPrice);
+        orderService.saveOrder(order, orderDetails);
+        return "redirect:/myAccount";
+    }
 
     @GetMapping("/myAccount")
     public String myAccount(Model model) {
+        
         return "store-account";
     }
 }

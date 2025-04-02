@@ -160,8 +160,8 @@ body {
 .pbmit-slider-area a.pbmit-rev-button::after,
 .pbmit-slider-footer-area a.pbmit-rev-button::after,
 .pbmit-static-btn .pbmit-button-inner .pbmit-button-wrapper::after {
-    content: '\e8eb';
-    font-family: pbminfotech-base-icons
+    content: '\f106';
+    font-family: 'FontAwesome';
 }
 
 .pbmit-blog-classic .pbmit-read-more-link a:hover .pbmit-btn-inner-wrapper::after,

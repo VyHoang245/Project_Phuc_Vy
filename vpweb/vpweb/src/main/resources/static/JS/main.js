@@ -3477,8 +3477,8 @@ $(".main-menuMB").on("click", "li", function () {
             $(this).text(`$${formattedSubtotal}`);
             grandTotal += subtotal;
         });
-
-        $('.totalPrice').text(`$${grandTotal.toFixed(2)}`);
+// let money = subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        $('.totalPrice').text(`$${grandTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`);
         // let subtotal = 123456;
         // let formattedSubtotal = subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         // $(this).text(`$${formattedSubtotal}`

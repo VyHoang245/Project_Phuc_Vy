@@ -23465,10 +23465,10 @@ footer .footer-navbar .nav-item:last-child a {
 }
 
 .order-body {
-    background-color: #e6eff4;
+    /*background-color: #e6eff4;*/
     margin-top: -16px;
     padding-top: 16px;
-
+    border: 1px solid #e6eff4;
 }
 
 .order-status {
